@@ -1,0 +1,451 @@
+WW.wcapitals = {
+"type": "FeatureCollection",
+"features": [
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Abidjan", "COUNTRY": "IVORY COAST", "CAP_POP": 2700000 }, "geometry": { "type": "Point", "coordinates": [ -4.023102, 5.323527 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Abu Dhabi", "COUNTRY": "UNITED ARAB EMIRATES", "CAP_POP": 722000 }, "geometry": { "type": "Point", "coordinates": [ 54.372330, 24.193705 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Accra", "COUNTRY": "GHANA", "CAP_POP": 949000 }, "geometry": { "type": "Point", "coordinates": [ -0.202277, 5.557164 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Adamstown", "COUNTRY": "PITCARIN ISLANDS", "CAP_POP": 0 }, "geometry": { "type": "Point", "coordinates": [ -130.092195, -25.067977 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Addis Ababa", "COUNTRY": "ETHIOPIA", "CAP_POP": 1423111 }, "geometry": { "type": "Point", "coordinates": [ 38.745486, 9.021733 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Agana", "COUNTRY": "GUAM", "CAP_POP": 132726 }, "geometry": { "type": "Point", "coordinates": [ 144.747553, 13.466304 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Algiers", "COUNTRY": "ALGERIA", "CAP_POP": 1483000 }, "geometry": { "type": "Point", "coordinates": [ 3.019348, 36.724549 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Alma-ata", "COUNTRY": "KAZAKHSTAN", "CAP_POP": 1108000 }, "geometry": { "type": "Point", "coordinates": [ 76.912085, 43.256988 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Alofi", "COUNTRY": "NIUE", "CAP_POP": 3300 }, "geometry": { "type": "Point", "coordinates": [ -169.862598, -19.050451 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Amman", "COUNTRY": "JORDAN", "CAP_POP": 936000 }, "geometry": { "type": "Point", "coordinates": [ 35.931357, 31.950160 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Amsterdam", "COUNTRY": "NETHERLANDS", "CAP_POP": 694656 }, "geometry": { "type": "Point", "coordinates": [ 4.892478, 52.374181 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Andorra La Vella", "COUNTRY": "ANDORRA", "CAP_POP": 54000 }, "geometry": { "type": "Point", "coordinates": [ 1.556768, 42.524078 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Ankara", "COUNTRY": "TURKEY", "CAP_POP": 2553000 }, "geometry": { "type": "Point", "coordinates": [ 32.851646, 39.930682 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Antanarivo", "COUNTRY": "MADAGASCAR", "CAP_POP": 802000 }, "geometry": { "type": "Point", "coordinates": [ 47.526418, -18.910634 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Apia", "COUNTRY": "WESTERN SAMOA", "CAP_POP": 35000 }, "geometry": { "type": "Point", "coordinates": [ -171.750192, -13.833884 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Ashkhabad", "COUNTRY": "TURKMENISTAN", "CAP_POP": 416000 }, "geometry": { "type": "Point", "coordinates": [ 58.389096, 37.951976 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Asmera", "COUNTRY": "ERITREA", "CAP_POP": 0 }, "geometry": { "type": "Point", "coordinates": [ 38.990927, 15.099733 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Asuncion", "COUNTRY": "PARAGUAY", "CAP_POP": 607000 }, "geometry": { "type": "Point", "coordinates": [ -57.622728, -25.307546 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Athens", "COUNTRY": "GREECE", "CAP_POP": 748110 }, "geometry": { "type": "Point", "coordinates": [ 23.615828, 38.022263 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Avarua", "COUNTRY": "COOK ISLANDS", "CAP_POP": 219600 }, "geometry": { "type": "Point", "coordinates": [ -166.081885, -11.912753 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Baghdad", "COUNTRY": "IRAQ", "CAP_POP": 3400000 }, "geometry": { "type": "Point", "coordinates": [ 44.396489, 33.335055 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Bairiki", "COUNTRY": "KIRIBATI", "CAP_POP": 25000 }, "geometry": { "type": "Point", "coordinates": [ -157.364533, 1.832317 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Baku", "COUNTRY": "AZERBAIJAN", "CAP_POP": 1115000 }, "geometry": { "type": "Point", "coordinates": [ 49.814949, 40.325883 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Bamako", "COUNTRY": "MALI", "CAP_POP": 750000 }, "geometry": { "type": "Point", "coordinates": [ -7.987837, 12.652090 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Bandar Seri Begawan", "COUNTRY": "BRUNEI DARUSSALAM", "CAP_POP": 51000 }, "geometry": { "type": "Point", "coordinates": [ 114.923551, 4.902839 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Bangkok", "COUNTRY": "THAILAND", "CAP_POP": 5174682 }, "geometry": { "type": "Point", "coordinates": [ 100.290191, 13.499766 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Bangui", "COUNTRY": "CENTRAL AFRICAN REPUBLIC", "CAP_POP": 596000 }, "geometry": { "type": "Point", "coordinates": [ 18.560833, 4.364611 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Banjul", "COUNTRY": "GAMBIA", "CAP_POP": 44188 }, "geometry": { "type": "Point", "coordinates": [ -16.590006, 13.454318 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Basse-Terre", "COUNTRY": "GUADELOUPE", "CAP_POP": 35000 }, "geometry": { "type": "Point", "coordinates": [ -61.726475, 16.001755 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Basseterre", "COUNTRY": "ST. KITTS & NEVIS", "CAP_POP": 15000 }, "geometry": { "type": "Point", "coordinates": [ -62.708408, 17.295506 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Beijing", "COUNTRY": "CHINA", "CAP_POP": 6900000 }, "geometry": { "type": "Point", "coordinates": [ 116.388527, 39.907848 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Beirut", "COUNTRY": "LEBANON", "CAP_POP": 1100000 }, "geometry": { "type": "Point", "coordinates": [ 35.557152, 33.877766 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Belgrade", "COUNTRY": "YUGOSLAVIA", "CAP_POP": 1553000 }, "geometry": { "type": "Point", "coordinates": [ 20.410626, 44.801000 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Belmopan", "COUNTRY": "BELIZE", "CAP_POP": 8000 }, "geometry": { "type": "Point", "coordinates": [ -88.778290, 17.260942 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Berlin", "COUNTRY": "GERMANY", "CAP_POP": 3410000 }, "geometry": { "type": "Point", "coordinates": [ 13.325245, 52.517579 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Bern", "COUNTRY": "SWITZERLAND", "CAP_POP": 134400 }, "geometry": { "type": "Point", "coordinates": [ 7.443635, 46.949349 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Bishkek", "COUNTRY": "KYRGYZSTAN", "CAP_POP": 631000 }, "geometry": { "type": "Point", "coordinates": [ 73.300947, 42.503736 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Bissau", "COUNTRY": "GUINEA BISSAU", "CAP_POP": 138000 }, "geometry": { "type": "Point", "coordinates": [ -15.494516, 11.965690 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Bogota", "COUNTRY": "COLOMBIA", "CAP_POP": 4921000 }, "geometry": { "type": "Point", "coordinates": [ -74.080604, 4.628655 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Brasilia", "COUNTRY": "BRAZIL", "CAP_POP": 1576657 }, "geometry": { "type": "Point", "coordinates": [ -47.898446, -15.794281 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Bratislava", "COUNTRY": "SLOVAKIA", "CAP_POP": 440000 }, "geometry": { "type": "Point", "coordinates": [ 17.127619, 48.154425 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Brazzaville", "COUNTRY": "CONGO", "CAP_POP": 937000 }, "geometry": { "type": "Point", "coordinates": [ 15.282202, -4.282474 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Bridgetown", "COUNTRY": "BARBADOS", "CAP_POP": 6700 }, "geometry": { "type": "Point", "coordinates": [ -59.570973, 13.142197 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Brussels", "COUNTRY": "BELGIUM", "CAP_POP": 970346 }, "geometry": { "type": "Point", "coordinates": [ 4.365334, 50.838175 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Bucharest", "COUNTRY": "ROMANIA", "CAP_POP": 2014359 }, "geometry": { "type": "Point", "coordinates": [ 26.098154, 44.231400 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Budapest", "COUNTRY": "HUNGARY", "CAP_POP": 2113645 }, "geometry": { "type": "Point", "coordinates": [ 19.092204, 47.515987 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Buenos Aires", "COUNTRY": "ARGENTINA", "CAP_POP": 12582000 }, "geometry": { "type": "Point", "coordinates": [ -58.410285, -34.667860 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Bujumbura", "COUNTRY": "BURUNDI", "CAP_POP": 240000 }, "geometry": { "type": "Point", "coordinates": [ 29.354543, -3.374089 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Cairo", "COUNTRY": "EGYPT", "CAP_POP": 6452000 }, "geometry": { "type": "Point", "coordinates": [ 31.249093, 30.078607 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Canberra", "COUNTRY": "AUSTRALIA", "CAP_POP": 297300 }, "geometry": { "type": "Point", "coordinates": [ 149.042855, -35.353492 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Capitol Hill", "COUNTRY": "NORTHERN MARIANA ISLANDS", "CAP_POP": 0 }, "geometry": { "type": "Point", "coordinates": [ 145.764774, 15.193895 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Caracas", "COUNTRY": "VENEZUELA", "CAP_POP": 1290000 }, "geometry": { "type": "Point", "coordinates": [ -66.898562, 10.494798 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Castries", "COUNTRY": "SAINT LUCIA", "CAP_POP": 55000 }, "geometry": { "type": "Point", "coordinates": [ -60.950652, 13.969330 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Cayenne", "COUNTRY": "FRENCH GUIANA", "CAP_POP": 37097 }, "geometry": { "type": "Point", "coordinates": [ -52.331103, 4.933134 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Charlotte Amalie", "COUNTRY": "U.S. VIRGIN ISLANDS", "CAP_POP": 0 }, "geometry": { "type": "Point", "coordinates": [ -64.759389, 17.771681 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Colombo", "COUNTRY": "SRI LANKA", "CAP_POP": 615000 }, "geometry": { "type": "Point", "coordinates": [ 79.848007, 6.926333 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Conakry", "COUNTRY": "GUINEA", "CAP_POP": 705000 }, "geometry": { "type": "Point", "coordinates": [ -13.672788, 9.549350 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Copenhagen", "COUNTRY": "DENMARK", "CAP_POP": 1358540 }, "geometry": { "type": "Point", "coordinates": [ 12.520922, 55.705289 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Dakar", "COUNTRY": "SENEGAL", "CAP_POP": 1700000 }, "geometry": { "type": "Point", "coordinates": [ -17.453062, 14.686059 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Damascus", "COUNTRY": "SYRIAN ARAB REP.", "CAP_POP": 1451000 }, "geometry": { "type": "Point", "coordinates": [ 36.311893, 33.520255 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Dar es Salaam", "COUNTRY": "TANZANIA", "CAP_POP": 1400000 }, "geometry": { "type": "Point", "coordinates": [ 39.268277, -6.824953 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Dhaka", "COUNTRY": "BANGLADESH", "CAP_POP": 6100000 }, "geometry": { "type": "Point", "coordinates": [ 90.406877, 23.710426 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Djibouti", "COUNTRY": "DJIBOUTI", "CAP_POP": 290000 }, "geometry": { "type": "Point", "coordinates": [ 43.143879, 11.593369 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Doha", "COUNTRY": "QATAR", "CAP_POP": 250000 }, "geometry": { "type": "Point", "coordinates": [ 51.535333, 25.286443 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Dublin", "COUNTRY": "IRELAND", "CAP_POP": 550000 }, "geometry": { "type": "Point", "coordinates": [ -6.259727, 53.342480 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Dushanbe", "COUNTRY": "TAJIKISTAN", "CAP_POP": 582000 }, "geometry": { "type": "Point", "coordinates": [ 68.773971, 38.560833 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Fort-de-France", "COUNTRY": "MARTINIQUE", "CAP_POP": 97814 }, "geometry": { "type": "Point", "coordinates": [ -61.076487, 14.598631 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Freetown", "COUNTRY": "SIERRA LEONE", "CAP_POP": 469000 }, "geometry": { "type": "Point", "coordinates": [ -13.240287, 8.485112 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Funafuti", "COUNTRY": "TUVALU", "CAP_POP": 28000 }, "geometry": { "type": "Point", "coordinates": [ 177.061306, -12.503470 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Gaborone", "COUNTRY": "BOTSWANA", "CAP_POP": 138000 }, "geometry": { "type": "Point", "coordinates": [ 25.907154, -24.657181 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "George Town", "COUNTRY": "CAYMAN ISLANDS", "CAP_POP": 20000 }, "geometry": { "type": "Point", "coordinates": [ -81.386922, 19.297635 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Georgetown", "COUNTRY": "GUYANA", "CAP_POP": 170000 }, "geometry": { "type": "Point", "coordinates": [ -58.155424, 6.803228 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Guatemala", "COUNTRY": "GUATEMALA", "CAP_POP": 1115000 }, "geometry": { "type": "Point", "coordinates": [ -90.524634, 14.616929 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Hamilton", "COUNTRY": "BERMUDA", "CAP_POP": 2000 }, "geometry": { "type": "Point", "coordinates": [ -64.799910, 32.300962 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Hanoi", "COUNTRY": "VIETNAM", "CAP_POP": 2600000 }, "geometry": { "type": "Point", "coordinates": [ 105.820068, 21.032403 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Harare", "COUNTRY": "ZIMBABWE", "CAP_POP": 730000 }, "geometry": { "type": "Point", "coordinates": [ 31.052557, -17.832126 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Havana", "COUNTRY": "CUBA", "CAP_POP": 2013746 }, "geometry": { "type": "Point", "coordinates": [ -82.191791, 23.005309 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Helsinki", "COUNTRY": "FINLAND", "CAP_POP": 487749 }, "geometry": { "type": "Point", "coordinates": [ 24.974686, 60.197149 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Honiara", "COUNTRY": "SOLOMON ISLANDS", "CAP_POP": 30499 }, "geometry": { "type": "Point", "coordinates": [ 159.949937, -9.428055 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Islamabad", "COUNTRY": "PAKISTAN", "CAP_POP": 201000 }, "geometry": { "type": "Point", "coordinates": [ 73.059692, 33.719466 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Jakarta", "COUNTRY": "INDONESIA", "CAP_POP": 8800000 }, "geometry": { "type": "Point", "coordinates": [ 106.829238, -6.184958 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Jamestown", "COUNTRY": "ST. HELENA", "CAP_POP": 0 }, "geometry": { "type": "Point", "coordinates": [ -14.378384, -7.890699 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Jamestown", "COUNTRY": "TURKS AND CAICOS ISLANDS", "CAP_POP": 10000 }, "geometry": { "type": "Point", "coordinates": [ -72.193532, 21.805261 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Jerusalem", "COUNTRY": "ISRAEL", "CAP_POP": 504000 }, "geometry": { "type": "Point", "coordinates": [ 35.225143, 31.788280 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Kabul", "COUNTRY": "AFGHANISTAN", "CAP_POP": 1400000 }, "geometry": { "type": "Point", "coordinates": [ 69.135964, 34.532273 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Kampala", "COUNTRY": "UGANDA", "CAP_POP": 773000 }, "geometry": { "type": "Point", "coordinates": [ 32.573472, 0.321225 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Kathmandu", "COUNTRY": "NEPAL", "CAP_POP": 422000 }, "geometry": { "type": "Point", "coordinates": [ 85.312564, 27.712967 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Khartoum", "COUNTRY": "SUDAN", "CAP_POP": 476000 }, "geometry": { "type": "Point", "coordinates": [ 32.618146, 15.618667 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Kiev", "COUNTRY": "UKRAINE", "CAP_POP": 2637000 }, "geometry": { "type": "Point", "coordinates": [ 30.500108, 50.449765 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Kigali", "COUNTRY": "RWANDA", "CAP_POP": 232000 }, "geometry": { "type": "Point", "coordinates": [ 30.057330, -1.951748 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Kingston", "COUNTRY": "NORFOLK ISLAND", "CAP_POP": 0 }, "geometry": { "type": "Point", "coordinates": [ 168.048591, -29.067013 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Kingston", "COUNTRY": "JAMAICA", "CAP_POP": 104000 }, "geometry": { "type": "Point", "coordinates": [ -76.797494, 18.014872 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Kingstown", "COUNTRY": "ST. VINCENT & GRENADINE", "CAP_POP": 15000 }, "geometry": { "type": "Point", "coordinates": [ -61.186233, 13.202168 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Kinshasa", "COUNTRY": "ZAIRE", "CAP_POP": 3741000 }, "geometry": { "type": "Point", "coordinates": [ 15.327421, -4.355507 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Kishinev", "COUNTRY": "MOLDOVA, REPUBLIC OF", "CAP_POP": 753000 }, "geometry": { "type": "Point", "coordinates": [ 28.839653, 47.028374 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Koror", "COUNTRY": "PALAU ISLANDS", "CAP_POP": 0 }, "geometry": { "type": "Point", "coordinates": [ 134.552517, 7.518360 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Kuala Lumpur", "COUNTRY": "MALAYSIA", "CAP_POP": 1000000 }, "geometry": { "type": "Point", "coordinates": [ 101.707722, 3.148734 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Kuwait", "COUNTRY": "KUWAIT", "CAP_POP": 151060 }, "geometry": { "type": "Point", "coordinates": [ 47.855985, 29.298607 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "La Paz", "COUNTRY": "BOLIVIA", "CAP_POP": 1669000 }, "geometry": { "type": "Point", "coordinates": [ -68.146600, -16.501182 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Lagos", "COUNTRY": "NIGERIA", "CAP_POP": 1347000 }, "geometry": { "type": "Point", "coordinates": [ 3.421885, 6.438074 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Las Palmas", "COUNTRY": "CANARY ISLANDS", "CAP_POP": 0 }, "geometry": { "type": "Point", "coordinates": [ -13.583791, 29.166434 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Libreville", "COUNTRY": "GABON", "CAP_POP": 275000 }, "geometry": { "type": "Point", "coordinates": [ 9.452182, 0.389282 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Lilongwe", "COUNTRY": "MALAWI", "CAP_POP": 220000 }, "geometry": { "type": "Point", "coordinates": [ 33.772339, -13.985215 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Lima", "COUNTRY": "PERU", "CAP_POP": 5826000 }, "geometry": { "type": "Point", "coordinates": [ -77.045536, -12.084346 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Lisbon", "COUNTRY": "PORTUGAL", "CAP_POP": 827800 }, "geometry": { "type": "Point", "coordinates": [ -9.124631, 38.756587 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Ljubljana", "COUNTRY": "SLOVENIA", "CAP_POP": 323000 }, "geometry": { "type": "Point", "coordinates": [ 14.512789, 46.058697 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Lome", "COUNTRY": "TOGO", "CAP_POP": 600000 }, "geometry": { "type": "Point", "coordinates": [ 1.226331, 6.125266 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "London", "COUNTRY": "UNITED KINGDOM", "CAP_POP": 9170000 }, "geometry": { "type": "Point", "coordinates": [ -0.180306, 51.488949 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Luanda", "COUNTRY": "ANGOLA", "CAP_POP": 1100000 }, "geometry": { "type": "Point", "coordinates": [ 13.233567, -8.814471 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Lusaka", "COUNTRY": "ZAMBIA", "CAP_POP": 982000 }, "geometry": { "type": "Point", "coordinates": [ 28.280874, -15.411394 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Luxembourg", "COUNTRY": "LUXEMBOURG", "CAP_POP": 80000 }, "geometry": { "type": "Point", "coordinates": [ 6.112253, 49.593559 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Madrid", "COUNTRY": "SPAIN", "CAP_POP": 2909000 }, "geometry": { "type": "Point", "coordinates": [ -3.692848, 40.443019 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Majuro", "COUNTRY": "MARSHALL ISLANDS", "CAP_POP": 43417 }, "geometry": { "type": "Point", "coordinates": [ 171.915710, 7.104924 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Malabo", "COUNTRY": "EQUATORIAL GUINEA", "CAP_POP": 37500 }, "geometry": { "type": "Point", "coordinates": [ 8.771898, 3.756212 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Male", "COUNTRY": "MALDIVES", "CAP_POP": 55130 }, "geometry": { "type": "Point", "coordinates": [ 73.429376, 5.663898 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Managua", "COUNTRY": "NICARAGUA", "CAP_POP": 1000000 }, "geometry": { "type": "Point", "coordinates": [ -86.272800, 12.150420 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Manama", "COUNTRY": "BAHRAIN", "CAP_POP": 151000 }, "geometry": { "type": "Point", "coordinates": [ 50.610916, 26.060315 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Manila", "COUNTRY": "PHILIPPINES", "CAP_POP": 1728400 }, "geometry": { "type": "Point", "coordinates": [ 121.006534, 14.609277 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Maputo", "COUNTRY": "MOZAMBIQUE", "CAP_POP": 931000 }, "geometry": { "type": "Point", "coordinates": [ 32.572221, -25.965360 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Maseru", "COUNTRY": "LESOTHO", "CAP_POP": 109382 }, "geometry": { "type": "Point", "coordinates": [ 27.489889, -29.311553 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Mbabane", "COUNTRY": "SWAZILAND", "CAP_POP": 46000 }, "geometry": { "type": "Point", "coordinates": [ 31.142197, -26.322029 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Mexico City", "COUNTRY": "MEXICO", "CAP_POP": 19479000 }, "geometry": { "type": "Point", "coordinates": [ -99.127183, 19.426326 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Minsk", "COUNTRY": "BELARUS", "CAP_POP": 1543000 }, "geometry": { "type": "Point", "coordinates": [ 27.573350, 53.901529 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Mogadishu", "COUNTRY": "SOMALIA", "CAP_POP": 700000 }, "geometry": { "type": "Point", "coordinates": [ 45.342827, 2.039718 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Monaco", "COUNTRY": "MONACO", "CAP_POP": 28138 }, "geometry": { "type": "Point", "coordinates": [ 7.422227, 43.746410 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Monrovia", "COUNTRY": "LIBERIA", "CAP_POP": 425000 }, "geometry": { "type": "Point", "coordinates": [ -10.798351, 6.299413 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Montevideo", "COUNTRY": "URUGUAY", "CAP_POP": 1325000 }, "geometry": { "type": "Point", "coordinates": [ -56.068127, -34.896486 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Moroni", "COUNTRY": "COMOROS", "CAP_POP": 30000 }, "geometry": { "type": "Point", "coordinates": [ 43.242214, -11.702864 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Moscow", "COUNTRY": "RUSSIAN FEDERATION", "CAP_POP": 8769000 }, "geometry": { "type": "Point", "coordinates": [ 37.936158, 55.766011 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Muscat", "COUNTRY": "OMAN", "CAP_POP": 85000 }, "geometry": { "type": "Point", "coordinates": [ 58.587172, 23.606985 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "N'djamena", "COUNTRY": "CHAD", "CAP_POP": 500000 }, "geometry": { "type": "Point", "coordinates": [ 15.108706, 12.068768 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Nairobi", "COUNTRY": "KENYA", "CAP_POP": 959000 }, "geometry": { "type": "Point", "coordinates": [ 36.802695, -1.271693 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Nassau", "COUNTRY": "BAHAMAS", "CAP_POP": 171542 }, "geometry": { "type": "Point", "coordinates": [ -77.340271, 25.066551 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "New Delhi", "COUNTRY": "INDIA", "CAP_POP": 8778000 }, "geometry": { "type": "Point", "coordinates": [ 77.216225, 28.569680 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Niamey", "COUNTRY": "NIGER", "CAP_POP": 399100 }, "geometry": { "type": "Point", "coordinates": [ 2.118798, 13.513597 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Nicosia", "COUNTRY": "CYPRUS", "CAP_POP": 166000 }, "geometry": { "type": "Point", "coordinates": [ 33.367372, 35.171974 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Nouakchott", "COUNTRY": "MAURITANIA", "CAP_POP": 550000 }, "geometry": { "type": "Point", "coordinates": [ -15.979766, 18.083503 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Noumea", "COUNTRY": "NEW CALEDONIA", "CAP_POP": 60112 }, "geometry": { "type": "Point", "coordinates": [ 166.318410, -22.101348 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Nukualofa", "COUNTRY": "TONGA", "CAP_POP": 28899 }, "geometry": { "type": "Point", "coordinates": [ -174.926584, -21.386071 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Nuuk", "COUNTRY": "GREENLAND", "CAP_POP": 10000 }, "geometry": { "type": "Point", "coordinates": [ -50.335701, 64.201917 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Oranjestad", "COUNTRY": "ARUBA (NETH.)", "CAP_POP": 0 }, "geometry": { "type": "Point", "coordinates": [ -70.016166, 12.573833 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Oslo", "COUNTRY": "NORWAY", "CAP_POP": 457818 }, "geometry": { "type": "Point", "coordinates": [ 10.708157, 59.934669 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Ottawa", "COUNTRY": "CANADA", "CAP_POP": 920000 }, "geometry": { "type": "Point", "coordinates": [ -75.651157, 45.374245 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Ouagadougou", "COUNTRY": "BURKINA FASO", "CAP_POP": 500000 }, "geometry": { "type": "Point", "coordinates": [ -1.529525, 12.363215 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "P'yongyang", "COUNTRY": "KOREA DEM.PEOPLE'S REP.", "CAP_POP": 2355000 }, "geometry": { "type": "Point", "coordinates": [ 125.758228, 39.029957 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Pago Pago", "COUNTRY": "AMERICAN SAMOA", "CAP_POP": 0 }, "geometry": { "type": "Point", "coordinates": [ -170.000000, -14.333333 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Palikar", "COUNTRY": "MICRONESIA, FED STAT", "CAP_POP": 0 }, "geometry": { "type": "Point", "coordinates": [ 162.975567, 5.314449 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Panama City", "COUNTRY": "PANAMA", "CAP_POP": 440000 }, "geometry": { "type": "Point", "coordinates": [ -79.322321, 9.032422 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Papeete", "COUNTRY": "FRENCH POLYNESIA", "CAP_POP": 2000000 }, "geometry": { "type": "Point", "coordinates": [ -149.568106, -17.537535 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Paramaribo", "COUNTRY": "SURINAME", "CAP_POP": 192000 }, "geometry": { "type": "Point", "coordinates": [ -55.171044, 5.824568 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Paris", "COUNTRY": "FRANCE", "CAP_POP": 2150000 }, "geometry": { "type": "Point", "coordinates": [ 2.430645, 48.882620 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Phnom Penh", "COUNTRY": "CAMBODIA", "CAP_POP": 800000 }, "geometry": { "type": "Point", "coordinates": [ 104.913363, 11.564295 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Plymouth", "COUNTRY": "MONTSERRAT", "CAP_POP": 0 }, "geometry": { "type": "Point", "coordinates": [ -62.232733, 16.704248 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Ponta Delgada", "COUNTRY": "AZORES (PORT.)", "CAP_POP": 0 }, "geometry": { "type": "Point", "coordinates": [ -25.647936, 37.768335 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Port Louis", "COUNTRY": "MAURITIUS", "CAP_POP": 142000 }, "geometry": { "type": "Point", "coordinates": [ 57.495224, -20.168550 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Port Moresby", "COUNTRY": "PAPUA NEW GUINEA", "CAP_POP": 193000 }, "geometry": { "type": "Point", "coordinates": [ 147.184796, -9.484059 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Port-Au-Prince", "COUNTRY": "HAITI", "CAP_POP": 752000 }, "geometry": { "type": "Point", "coordinates": [ -72.343444, 18.542125 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Port-of-Spain", "COUNTRY": "TRINIDAD & TOBAGO", "CAP_POP": 300000 }, "geometry": { "type": "Point", "coordinates": [ -61.483967, 10.655927 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Port-Vila", "COUNTRY": "VANUATU", "CAP_POP": 19000 }, "geometry": { "type": "Point", "coordinates": [ 168.322296, -17.743134 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Porto-Novo", "COUNTRY": "BENIN", "CAP_POP": 208000 }, "geometry": { "type": "Point", "coordinates": [ 2.631052, 6.477241 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Prague", "COUNTRY": "CZECH REPUBLIC", "CAP_POP": 1206098 }, "geometry": { "type": "Point", "coordinates": [ 14.454322, 50.107211 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Praia", "COUNTRY": "CAPE VERDE", "CAP_POP": 61000 }, "geometry": { "type": "Point", "coordinates": [ -23.522445, 14.922427 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Pretoria", "COUNTRY": "SOUTH AFRICA", "CAP_POP": 822900 }, "geometry": { "type": "Point", "coordinates": [ 28.216889, -25.734475 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Quito", "COUNTRY": "ECUADOR", "CAP_POP": 1500000 }, "geometry": { "type": "Point", "coordinates": [ -78.524382, -0.231036 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Rabat", "COUNTRY": "MOROCCO", "CAP_POP": 556000 }, "geometry": { "type": "Point", "coordinates": [ -6.834211, 34.015536 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Rangoon", "COUNTRY": "MYANMAR", "CAP_POP": 2458712 }, "geometry": { "type": "Point", "coordinates": [ 96.124808, 16.872035 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Reykjavik", "COUNTRY": "ICELAND", "CAP_POP": 95799 }, "geometry": { "type": "Point", "coordinates": [ -21.856498, 64.052632 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Riga", "COUNTRY": "LATVIA", "CAP_POP": 915000 }, "geometry": { "type": "Point", "coordinates": [ 24.063664, 56.890738 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Riyadh", "COUNTRY": "SAUDI ARABIA", "CAP_POP": 1380000 }, "geometry": { "type": "Point", "coordinates": [ 46.875250, 24.635043 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Road Town", "COUNTRY": "BRITISH VIRGIN ISLANDS", "CAP_POP": 0 }, "geometry": { "type": "Point", "coordinates": [ -64.636411, 18.430490 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Rome", "COUNTRY": "ITALY", "CAP_POP": 2826733 }, "geometry": { "type": "Point", "coordinates": [ 12.488644, 41.896646 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Roseau", "COUNTRY": "DOMINICA", "CAP_POP": 22000 }, "geometry": { "type": "Point", "coordinates": [ -61.394815, 15.297832 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Saint George's", "COUNTRY": "GRENADA", "CAP_POP": 30000 }, "geometry": { "type": "Point", "coordinates": [ -61.745353, 12.064056 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Saint-Denis", "COUNTRY": "REUNION", "CAP_POP": 109072 }, "geometry": { "type": "Point", "coordinates": [ 55.455731, -20.870251 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "San Jose", "COUNTRY": "COSTA RICA", "CAP_POP": 890000 }, "geometry": { "type": "Point", "coordinates": [ -84.078689, 9.929199 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "San Juan", "COUNTRY": "PUERTO RICO", "CAP_POP": 437745 }, "geometry": { "type": "Point", "coordinates": [ -66.068878, 18.397967 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "San Marino", "COUNTRY": "SAN MARINO", "CAP_POP": 4643 }, "geometry": { "type": "Point", "coordinates": [ 12.463682, 43.953584 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "San Salvador", "COUNTRY": "EL SALVADOR", "CAP_POP": 1400000 }, "geometry": { "type": "Point", "coordinates": [ -89.199947, 13.700496 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Sanaa", "COUNTRY": "YEMEN", "CAP_POP": 427185 }, "geometry": { "type": "Point", "coordinates": [ 44.208323, 15.361208 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Santiago", "COUNTRY": "CHILE", "CAP_POP": 5300000 }, "geometry": { "type": "Point", "coordinates": [ -70.647990, -33.477524 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Santo Domingo", "COUNTRY": "DOMINICAN REPUBLIC", "CAP_POP": 2400000 }, "geometry": { "type": "Point", "coordinates": [ -69.899617, 18.488517 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Sao Tome", "COUNTRY": "SAO TOME & PRINCIPE", "CAP_POP": 40000 }, "geometry": { "type": "Point", "coordinates": [ 6.722595, 0.292141 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Sarajevo", "COUNTRY": "BOSNIA AND HERZEGOVINA", "CAP_POP": 400000 }, "geometry": { "type": "Point", "coordinates": [ 18.411497, 43.857693 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Seoul", "COUNTRY": "KOREA, REPUBLIC OF", "CAP_POP": 10500000 }, "geometry": { "type": "Point", "coordinates": [ 126.936017, 37.543760 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Singapore", "COUNTRY": "SINGAPORE", "CAP_POP": 2600000 }, "geometry": { "type": "Point", "coordinates": [ 103.804177, 1.348697 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Skopje", "COUNTRY": "FMR YUG REP MACEDONIA", "CAP_POP": 563000 }, "geometry": { "type": "Point", "coordinates": [ 21.258162, 42.021255 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Sofia", "COUNTRY": "BULGARIA", "CAP_POP": 1200000 }, "geometry": { "type": "Point", "coordinates": [ 23.330034, 42.708570 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "St. Helier", "COUNTRY": "JERSEY", "CAP_POP": 0 }, "geometry": { "type": "Point", "coordinates": [ -2.136708, 49.191020 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "St. Johns", "COUNTRY": "ANTIGUA & BARBUDA", "CAP_POP": 27000 }, "geometry": { "type": "Point", "coordinates": [ -61.824119, 17.100824 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "St. Peter Port", "COUNTRY": "GUERNESY", "CAP_POP": 0 }, "geometry": { "type": "Point", "coordinates": [ -2.505614, 49.476392 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Stanley", "COUNTRY": "FALKLAND ISLANDS", "CAP_POP": 1943 }, "geometry": { "type": "Point", "coordinates": [ -57.850303, -51.702907 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Stockholm", "COUNTRY": "SWEDEN", "CAP_POP": 679000 }, "geometry": { "type": "Point", "coordinates": [ 17.778845, 59.229933 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Suva", "COUNTRY": "FIJI", "CAP_POP": 69000 }, "geometry": { "type": "Point", "coordinates": [ 178.432343, -18.145302 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Taipei", "COUNTRY": "TAIWAN", "CAP_POP": 2724829 }, "geometry": { "type": "Point", "coordinates": [ 121.381109, 24.901851 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Tallinn", "COUNTRY": "ESTONIA", "CAP_POP": 506000 }, "geometry": { "type": "Point", "coordinates": [ 24.730614, 59.407633 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Tashkent", "COUNTRY": "UZBEKISTAN", "CAP_POP": 2124000 }, "geometry": { "type": "Point", "coordinates": [ 69.268201, 41.307031 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Tbilisi", "COUNTRY": "GEORGIA", "CAP_POP": 1194000 }, "geometry": { "type": "Point", "coordinates": [ 44.781696, 41.723392 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Tegucigalpa", "COUNTRY": "HONDURAS", "CAP_POP": 571400 }, "geometry": { "type": "Point", "coordinates": [ -87.203054, 14.098015 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Tehran", "COUNTRY": "IRAN", "CAP_POP": 6037658 }, "geometry": { "type": "Point", "coordinates": [ 51.446327, 35.775819 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "The Settlement", "COUNTRY": "CHRISTMAS ISLAND", "CAP_POP": 0 }, "geometry": { "type": "Point", "coordinates": [ 105.737795, -10.437788 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "The Valley", "COUNTRY": "ANGUILLA", "CAP_POP": 7000 }, "geometry": { "type": "Point", "coordinates": [ -63.052284, 18.233075 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Thimphu", "COUNTRY": "BHUTAN", "CAP_POP": 20000 }, "geometry": { "type": "Point", "coordinates": [ 89.667238, 27.443617 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Tirane", "COUNTRY": "ALBANIA", "CAP_POP": 243000 }, "geometry": { "type": "Point", "coordinates": [ 19.829967, 41.332860 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Tokyo", "COUNTRY": "JAPAN", "CAP_POP": 8163000 }, "geometry": { "type": "Point", "coordinates": [ 139.810461, 35.684370 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Tripoli", "COUNTRY": "LIBYA ARAB JAMAHIRIY", "CAP_POP": 591000 }, "geometry": { "type": "Point", "coordinates": [ 13.128556, 32.762098 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Tunis", "COUNTRY": "TUNISIA", "CAP_POP": 1000000 }, "geometry": { "type": "Point", "coordinates": [ 10.164050, 36.819506 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Ulaanbaatar", "COUNTRY": "MONGOLIA", "CAP_POP": 575000 }, "geometry": { "type": "Point", "coordinates": [ 106.912921, 47.930703 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Vaduz", "COUNTRY": "LIECHTENSTEIN", "CAP_POP": 4920 }, "geometry": { "type": "Point", "coordinates": [ 9.519378, 47.144229 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Valletta", "COUNTRY": "MALTA", "CAP_POP": 16000 }, "geometry": { "type": "Point", "coordinates": [ 14.502360, 35.913781 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Vatican City", "COUNTRY": "VATICAN CITY (HOLY SEE)", "CAP_POP": 802 }, "geometry": { "type": "Point", "coordinates": [ 12.488644, 41.896646 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Victoria", "COUNTRY": "SEYCHELLES", "CAP_POP": 23000 }, "geometry": { "type": "Point", "coordinates": [ 55.444123, -4.619233 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Vienna", "COUNTRY": "AUSTRIA", "CAP_POP": 1500000 }, "geometry": { "type": "Point", "coordinates": [ 16.318890, 48.203442 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Vientiane", "COUNTRY": "LAOS", "CAP_POP": 377000 }, "geometry": { "type": "Point", "coordinates": [ 102.690562, 18.037442 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Vilnius", "COUNTRY": "LITHUANIA", "CAP_POP": 597000 }, "geometry": { "type": "Point", "coordinates": [ 25.256523, 54.672649 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Warsaw", "COUNTRY": "POLAND", "CAP_POP": 1659400 }, "geometry": { "type": "Point", "coordinates": [ 21.009647, 52.246405 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Washington, D.C.", "COUNTRY": "UNITED STATES", "CAP_POP": 606900 }, "geometry": { "type": "Point", "coordinates": [ -76.954154, 38.890880 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Wellington", "COUNTRY": "NEW ZEALAND", "CAP_POP": 148000 }, "geometry": { "type": "Point", "coordinates": [ 174.808842, -41.338162 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "West Island", "COUNTRY": "COCOS (KEELING) ISLANDS", "CAP_POP": 0 }, "geometry": { "type": "Point", "coordinates": [ 96.884159, -12.500000 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Windhoek", "COUNTRY": "NAMIBIA", "CAP_POP": 114000 }, "geometry": { "type": "Point", "coordinates": [ 17.075434, -22.562554 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Yaounde", "COUNTRY": "CAMEROON", "CAP_POP": 700000 }, "geometry": { "type": "Point", "coordinates": [ 11.512185, 3.863725 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Yaren District", "COUNTRY": "NAURU", "CAP_POP": 9053 }, "geometry": { "type": "Point", "coordinates": [ 166.929124, -0.535689 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Yerevan", "COUNTRY": "ARMENIA", "CAP_POP": 1168000 }, "geometry": { "type": "Point", "coordinates": [ 44.531261, 40.209537 ] } }
+,
+{ "type": "Feature", "properties": { "LAYER": "Unknown Point Feature", "CAPITAL": "Zagreb", "COUNTRY": "CROATIA", "CAP_POP": 700000 }, "geometry": { "type": "Point", "coordinates": [ 15.962380, 45.808347 ] } }
+
+]
+}

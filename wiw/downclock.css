@@ -1,0 +1,135 @@
+.question {
+        overflow: hidden;
+        position:relative;        
+        margin-top:-200px;
+        background-color:white;
+        width:auto;
+        font-size:4em;
+        height:3em;
+        line-height: 1;
+        color: #000;        
+        font-weight: bold;     
+        text-indent:-5em;
+        text-align:center;
+        font-family: "Helvetica Neue", Arial, sans-serif;
+        z-index:9999;
+      }
+.crappy-plastic-part-made-in-china {
+        background-color: #222;
+        height: 1.8em;
+        font-size: 6em;
+        overflow: hidden;
+        position:relative;
+        left: 600px;
+        top:-163px;
+        margin-top:30px;
+        width: 3em;        
+      }
+      .pad {
+        width: 6.8em;
+        margin: 0 auto;
+        height: 1.8em;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: -2.15em -20px 0 0;
+        width: 0.85em;
+        height: 6em;
+        float: left;
+      }
+      li {        
+        height: 2em;
+        width: 0.7em;
+        line-height: 1.4;
+        background-color: #222;
+        color: #fff;
+        text-align: center;
+        cursor: pointer;
+        font-weight: bold;
+        font-family: "Helvetica Neue", Arial, sans-serif;
+      }
+        li.roundabout-in-focus {
+          cursor: default;
+        }
+      #ampm, #ampm li {
+        width: 1.8em;
+      }
+        #ampm {
+          margin-left: 0.2em;
+        }
+      .delimiter, .delimiter li {
+        width: 0.5em;
+        text-align: center;
+      }
+        .delimiter {
+          margin-left: 6px;
+          margin-right: -12px;
+        }
+      li span {
+        display: block;
+        padding-top: 6em;
+      }
+      
+      #carbonads-container {
+        clear: both;
+        margin-top: 1em;
+      }
+      #carbonads-container .carbonad {
+        margin: 0 auto;
+      }
+
+      html { padding: 0; margin: 0; }
+body {
+  font-family: Palatino, Georgia, "Times New Roman", serif;
+  padding: 0;
+  margin: 0;
+  font-size: 1em;
+}
+
+h1 {
+  font-size: 4em;
+  letter-spacing: -1px;
+  margin: 1em 0 0.5em;
+  text-align: center;
+}
+
+.interact {
+  border-top: 1px solid #ccc;
+  margin-top: 3em;
+  margin-bottom: 4em;
+  padding-top: 1.5em;
+  text-align: center;
+}
+
+.interact a {
+  background-color: #2179b6;
+  border-bottom: 1px solid #084d7d;
+  color: #eee;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", "Helvetica Neue", Arial, sans-serif;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
+  text-decoration: none;
+  padding: 8px 14px;
+  margin: 0 1em;
+}
+
+  .interact p {
+    font-style: italic;
+    color: #666;
+  }
+
+.return {
+  font-size: 1.5em;
+  text-align: center;
+}
+  .return a {
+    color: #2179b6;
+    text-decoration: none;
+  }
+  .return a:hover {
+    text-decoration: underline;
+  }

@@ -1,0 +1,29 @@
+.crappy-plastic-part-made-in-china2 {
+        background-color: #222;
+        height: 1.8em;
+        font-size: 4em;
+        overflow: hidden;
+        position:relative;
+        left: -300px;
+        margin-top:70px;
+        width:4em;
+        left:100px;
+      }
+
+      .crappy-plastic-part-made-in-china2 ul {
+        list-style: none;
+        padding: 0;
+        margin: -2.15em -20px 0 0;
+        width: 0.95em;
+        height: 6em;
+        float: left;
+      }
+
+      .gameback {
+        position:absolute;
+        background-color: #222;
+        height: 16.8em;        
+        overflow: hidden;                        
+        width:100%;    
+        margin-top:1em;    
+      }
