@@ -36,8 +36,10 @@ var WW = es.alrocar.WW = {
         map : null,
         mapController : null,
         question: null,
+        _lastQuestion: null,
 
         start: function() {
+            this.ui.iniGameBar();
             this.nextQuestion();
         },
 
@@ -50,39 +52,75 @@ var WW = es.alrocar.WW = {
         },
 
         nextQuestion: function() {
+            if (this.question)
+                this._lastQuestion = $.extend({}, this.question);
             this.question = this.gameModel.nextQuestion();
-            $("#q").parent().animate({opacity: 1,height: 'toggle'}, 1000, function() {$("#q").hide();});
-            var q = this.question;
-            $("#q").parent().animate({opacity: 1,height: 'toggle'}, 1000, function() {$("#q").show();$("#q").text(q.name);});
+            this.ui.setQuestion(this.question);
+            this._iniTime = new Date().getTime();    
+            this._timeForNextQuestion = this.timeForNextQuestion();
+            console.log("timeForNextQuestion: " + this._timeForNextQuestion);                 
             return this.question;
         },
 
         timeForNextQuestion: function() {
+            var lastLocation = new MM.Location(0, 0);
+            if (this._lastQuestion) {
+                lastLocation = new MM.Location(this._lastQuestion.lat, this._lastQuestion.lon);
+            } 
+            var lastPoint = this.map.locationPoint(lastLocation);
 
+            var nextLocation = new MM.Location(this.question.lat, this.question.lon);
+            var nextPoint = this.map.locationPoint(nextLocation);
+
+            var distancePx = MM.Point.distance(lastPoint, nextPoint);
+
+            //Average speed is 412,3 pixels/second
+            var estimatedTime = distancePx / 412.3;
+
+            //min time for a question 2 seconds, max time the double of the time to run to the destination
+            return Math.max(6 * 1000, estimatedTime * 4 * 1000);
+        },
+
+        updateTime: function() {            
+            if (this.getRemainingTime() <= 0) {
+                // console.log("No more time");
+                this.nextQuestion();
+            }
         },
 
         getElapsedTime: function() {
-
+            var currentTime = new Date().getTime();            
+            var elapsed = currentTime - this._iniTime;
+            // console.log("elapsed time: " + elapsed);
+            return elapsed;
         },
 
         getRemainingTime: function() {
-
+            var currentTime = new Date().getTime();
+            var remaining = this._timeForNextQuestion - this.getElapsedTime();
+            // console.log("remaining time: " + remaining);
+            return remaining;
         },
 
         calcScore: function() {
-
+            var elapsedTime = this.getElapsedTime();
+            // console.log("Correct answer in: " + elapsedTime);
+            return this.getRemainingTime();
         },
 
         isAnswerCorrect: function(answer) {
             var correct = this.gameModel.isAnswerCorrect(answer);
             if (correct) {
-                this._addMarker(this.question);
+                var questionScore = Math.floor(this.calcScore()/100);
+                this.ui.addPoints(questionScore);
+                this.ui.addTime(Math.floor(questionScore/1000));
+                this._addMarker(this.question, questionScore);
                 this.nextQuestion();                
             }
             return correct;
         },
 
-        _addMarker: function(question) {
+        _addMarker: function(question, score) {
             var marker = { 
                 "type": "Feature",
                 "geometry": { 
@@ -90,7 +128,7 @@ var WW = es.alrocar.WW = {
                     "coordinates": [question.lon, question.lat]
                 },
                 "properties": {                    
-                    "text":  question.name
+                    "text":  question.name  + "  +" +score
                 }
             };
 

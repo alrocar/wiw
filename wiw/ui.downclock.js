@@ -82,6 +82,7 @@
             
             setInterval(function() {
                 var c = methods.getCurrentClock();
+                elem.trigger("secondpassed");
                 if (c == 0) {
                     elem.trigger("clockzero");                    
                 }

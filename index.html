@@ -28,6 +28,7 @@
     <script src="keyboard.js"></script>
     <script src="site.js"></script>
     <script src="wiw/wiw.js"></script>
+    <script src="wiw/ui.js"></script>
     <script src="g.mapcontroller.js"></script>    
     <script src="wiw/wcapitals.json"></script>
     <script src="wiw/gcapitals.js"></script>
@@ -43,12 +44,7 @@
 
     <script>
       $(document).ready(function() {
-        $("#gamebar").hide();
-        $("#gamebar").addClass("gameback");        
-        $("#gamebar").pointcounter({initialValue: 5});
-        $("#gamebar").downclock({initialValue: 5});
-        $("#gamebar").append($("<div class='question'><label id='q'></label></div>"));
-        $("#gamebar").animate({opacity: 1,width: 'toggle'}, 1000, function() {});
+        
       });
     </script>
 <div id="gamebar">

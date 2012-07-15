@@ -158,7 +158,9 @@ window.onload = function() {
   var th = new MM.ThrowableHandler();
   
   var map = new MM.Map('back-map', osm, null, [th]);
-  var game = new WW.Game(new WW.gcapitals(WW.wcapitals), null, null, null, map, new WW.ModestMapsController(map));
+  var ui = new UI.ui();
+  var game = new WW.Game(new WW.gcapitals(WW.wcapitals), null, ui, null, map, new WW.ModestMapsController(map));
+  ui.setGame(game);
   var markers = mmg().map(map).factory(function(x) {
       var elem = document.createElement('div');
       elem.className = 'mapplace ' + (x.properties.klass || '');
@@ -168,8 +170,7 @@ window.onload = function() {
   map.addLayer(markers);
   window.map = map;
   window.geojson = gj;
-  window.game = game;
-  game.start();
+  window.game = game;  
 
   var hintshown = true;
 
@@ -229,7 +230,7 @@ window.onload = function() {
     }
 
     // Euclidean distance, normalize
-    var spd = Math.round(Math.sqrt(Math.pow(speed.x, 2) + Math.pow(speed.y, 2)) / 5);
+    var spd = Math.round(Math.sqrt(Math.pow(speed.x, 2) + Math.pow(speed.y, 2)) / 5);    
 
     if ((+new Date() - lastdate) > (110 / spd)) {
         frame++;
@@ -274,6 +275,7 @@ window.onload = function() {
   MM.getFrame(drawidle);
 
   map.zoom(5).center({ lat: 0, lon: 0 });
+  game.start();
 
 
   // Non map related
@@ -370,11 +372,16 @@ var guycenter = {
   }
 
   function goisland() {
-      var island = islands[0];
-      map.center(island);
-      document.getElementById('status-message').innerHTML = island.content;
-      document.getElementById('status-message').className = 'blinktag';
-  }
+      // var island = islands[0];
+      // map.center(island);
+      // document.getElementById('status-message').innerHTML = island.content;
+      // document.getElementById('status-message').className = 'blinktag';
+      var t1 = new Date().getTime();  
+      for (var i = 0; i<1000; i++) {
+        map.panBy(1, 0);
+      }
+      console.log("elapsed time: " + (new Date().getTime() - t1));
+      }
 
   var keymap = {
       32: [throwBall],

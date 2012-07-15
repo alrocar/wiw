@@ -54,7 +54,7 @@ WW.gcapitals.prototype = {
 
   		this.iBlock = WW.randomFromTo(0, this.block.length - 1);
   		var question = this.block[this.iBlock];
-  		console.log("City " + this.iBlock + ": " + JSON.stringify(question));
+  		// console.log("City " + this.iBlock + ": " + JSON.stringify(question));
 
   		return question;
   		

@@ -40,6 +40,11 @@ MM.ThrowableHandler = function() {
             if (keysPressed[39]) { dir.x -= 1; }
             if (keysPressed[40]) { dir.y -= 1; }
 
+            // if (dir.x && dir.y) {
+            //   dir.x /= 2;
+            //   dir.y /= 2;
+            // }
+
             var dt = Math.max(0.001,(t - prevT) / 1000.0);
             if (dir.x || dir.y) {
                 var len = Math.sqrt(dir.x*dir.x + dir.y*dir.y);
@@ -87,6 +92,13 @@ MM.ThrowableHandler = function() {
           }
 
           function keyDown(e) {
+            // if (keyup) {              
+            //   t1 = new Date().getTime();
+            //   console.log("init: " + t1);                
+            //   keyup = false;
+            //   total = 0;
+            // }
+            // total++;
               if (!(e.keyCode in keysPressed)) {
                   keysPressed[e.keyCode] = true;
                   keyCount++;
@@ -97,6 +109,10 @@ MM.ThrowableHandler = function() {
           }
 
           function keyUp(e) {
+            // keyup = true;
+            // t2 = new Date().getTime();
+            // console.log("elapsed: " + (t2 - t1));
+            // console.log("total: " + total);  
               keyCount--;
               delete keysPressed[e.keyCode];
               if (e.keyCode in trappedKeys) {
