@@ -153,7 +153,7 @@ window.onload = function() {
           content: '<marquee>welcome to <a href="http://en.wikipedia.org/wiki/Nauru">Nauru</a>!</marquee>' }
   ];
 
-  osm = new modLayer(new MM.Template('http://localhost/sotmus/STAMEN_TONER_flatx/{Z}/{X}/{Y}.jpg'), sepia);
+  osm = new modLayer(new MM.Template('http://localhost/sotmus/LOCAL_flatx/{Z}/{X}/{Y}.png'), {});
    //osm = new MM.TemplatedLayer('http://c.tiles.mapbox.com/v3/tmcw.map-5vaivzxq/{Z}/{X}/{Y}.png');
   var th = new MM.ThrowableHandler();
   

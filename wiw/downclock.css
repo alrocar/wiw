@@ -14,6 +14,41 @@
         font-family: "Helvetica Neue", Arial, sans-serif;
         z-index:9999;
       }
+      .question-label {        
+        z-index:10001;
+      }
+
+.question_time {
+        overflow: hidden;
+        position:relative;        
+        margin-top:-205px;
+        background-image: linear-gradient(right , rgb(111,37,34) 22%, rgb(145,63,62) 61%, rgb(174,95,93) 81%);
+        background-image: -o-linear-gradient(right , rgb(111,37,34) 22%, rgb(145,63,62) 61%, rgb(174,95,93) 81%);
+        background-image: -moz-linear-gradient(right , rgb(111,37,34) 22%, rgb(145,63,62) 61%, rgb(174,95,93) 81%);
+        background-image: -webkit-linear-gradient(right , rgb(111,37,34) 22%, rgb(145,63,62) 61%, rgb(174,95,93) 81%);
+        background-image: -ms-linear-gradient(right , rgb(111,37,34) 22%, rgb(145,63,62) 61%, rgb(174,95,93) 81%);
+
+        background-image: -webkit-gradient(
+          linear,
+          right top,
+          left top,
+          color-stop(0.22, rgb(111,37,34)),
+          color-stop(0.61, rgb(145,63,62)),
+          color-stop(0.81, rgb(174,95,93))
+        );
+  
+        width:auto;
+        font-size:4em;
+        height:3em;
+        line-height: 1;
+        color: #000;        
+        font-weight: bold;     
+        text-indent:-5em;
+        text-align:center;
+        font-family: "Helvetica Neue", Arial, sans-serif;
+        z-index:9998;
+      }
+
 .crappy-plastic-part-made-in-china {
         background-color: #222;
         height: 1.8em;

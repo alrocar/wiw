@@ -37,6 +37,7 @@ var WW = es.alrocar.WW = {
         mapController : null,
         question: null,
         _lastQuestion: null,
+        _timeForNextQuestion: null,
 
         start: function() {
             this.ui.iniGameBar();
@@ -52,12 +53,13 @@ var WW = es.alrocar.WW = {
         },
 
         nextQuestion: function() {
+            this._wait = false;
             if (this.question)
                 this._lastQuestion = $.extend({}, this.question);
-            this.question = this.gameModel.nextQuestion();
-            this.ui.setQuestion(this.question);
+            this.question = this.gameModel.nextQuestion();            
             this._iniTime = new Date().getTime();    
             this._timeForNextQuestion = this.timeForNextQuestion();
+            this.ui.setQuestion(this.question, this._timeForNextQuestion);
             console.log("timeForNextQuestion: " + this._timeForNextQuestion);                 
             return this.question;
         },
@@ -65,7 +67,7 @@ var WW = es.alrocar.WW = {
         timeForNextQuestion: function() {
             var lastLocation = new MM.Location(0, 0);
             if (this._lastQuestion) {
-                lastLocation = new MM.Location(this._lastQuestion.lat, this._lastQuestion.lon);
+                lastLocation = new MM.Location(this.map.getCenter().lat, this.map.getCenter().lon);
             } 
             var lastPoint = this.map.locationPoint(lastLocation);
 
@@ -78,14 +80,31 @@ var WW = es.alrocar.WW = {
             var estimatedTime = distancePx / 412.3;
 
             //min time for a question 2 seconds, max time the double of the time to run to the destination
-            return Math.max(6 * 1000, estimatedTime * 4 * 1000);
+            return Math.max(6 * 1000, estimatedTime * 3 * 1000);
         },
 
-        updateTime: function() {            
+        updateTime: function() {
             if (this.getRemainingTime() <= 0) {
-                // console.log("No more time");
-                this.nextQuestion();
+                // console.log("No more time");                
+                this._performBadAnswer();    
+            } else if (this.getRemainingTime() * 3 < this._timeForNextQuestion) {
+                this.ui.blinkQuestion();
             }
+        },
+
+        _performBadAnswer: function() {
+            this._wait = true;
+            this.ui.badAnswer(this.nextQuestion, this);                
+            // this.ui.removePoints(Math.floor(this._timeForNextQuestion/10000));
+        },
+
+        _performCorrectAnswer: function() {
+            this._wait = true;
+            var questionScore = Math.floor(this.calcScore()/100);
+            this.ui.addPoints(questionScore);
+            this.ui.addTime(Math.floor(questionScore/10));
+            this._addMarker(this.question, questionScore);
+            this.ui.correctAnswer(this.nextQuestion, this);                
         },
 
         getElapsedTime: function() {
@@ -109,13 +128,10 @@ var WW = es.alrocar.WW = {
         },
 
         isAnswerCorrect: function(answer) {
+            if (this._wait) return;            
             var correct = this.gameModel.isAnswerCorrect(answer);
             if (correct) {
-                var questionScore = Math.floor(this.calcScore()/100);
-                this.ui.addPoints(questionScore);
-                this.ui.addTime(Math.floor(questionScore/1000));
-                this._addMarker(this.question, questionScore);
-                this.nextQuestion();                
+                this._performCorrectAnswer();
             }
             return correct;
         },
