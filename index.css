@@ -108,7 +108,7 @@ input, select, textarea, body { font: 13px/20px "Helvetica Neue",Helvetica,Arial
 
 body { background: none repeat scroll 0% 0% rgb(187, 187, 187); color: rgb(23, 35, 57); font: 14px/20px 'OpenSansRegular',Arial,sans-serif; }
 h1, h2 { font: 36px/36px 'OstrichSansMedium',Arial,sans-serif; text-align: center; margin-top: 20px; }
-h1.main-title { font: 36px/48px 'OstrichSansMedium',Arial,sans-serif; margin-top: 0px; }
+h1.main-title { font: 46px/58px 'OstrichSansMedium',Arial,sans-serif; margin-top: 0px; }
 h3 { font: 18px/20px 'OpenSansBold',Arial,sans-serif; text-align: center; margin-bottom: 10px; }
 h4 { font: 14px/21px 'OpenSansSemiBold',Arial,sans-serif; }
 p { font: 14px/21px 'OpenSansItalic',Arial,sans-serif; text-align: center; margin-top: 10px; }
@@ -116,8 +116,8 @@ a { text-decoration: none; font-family: 'OpenSansSemiBoldItalic',Arial,sans-seri
 a:hover { color: rgb(23, 35, 57); }
 hr { border-width: 0px 0px 1px; border-style: none none solid; border-color: -moz-use-text-color -moz-use-text-color rgb(255, 255, 255); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; -moz-border-image: none; }
 #back-map { z-index: -1; }
-.limiter { z-index:9999999;position: absolute; top: 0pt; bottom: 0pt; right: 0pt; width: 400px; background: url('green.png') repeat scroll 0% 0% transparent; overflow-y: scroll; overflow-x: hidden; }
-.saw { z-index:9999999;position: absolute; top: 0pt; bottom: 0pt; right: 300pt; width: 20px; background: url('saw.png') repeat scroll 0% 0% transparent; overflow-y: scroll; overflow: hidden; }
+.limiter { z-index:9999;position: absolute; top: 0pt; bottom: 0pt; right: 0pt; width: 400px; background: url('green.png') repeat scroll 0% 0% transparent; overflow-y: scroll; overflow-x: hidden; }
+.saw { z-index:9999;position: absolute; top: 0pt; bottom: 0pt; right: 300pt; width: 20px; background: url('saw.png') repeat scroll 0% 0% transparent; overflow-y: scroll; overflow: hidden; }
 
 #home, #venue { position: absolute; left: 0px; top: 20px; width: 400px; }
 #venue { display: none; }
@@ -136,9 +136,9 @@ a.venue { background-position: 83px -295px; margin-top: 10px; }
 #keyboard-shortcuts { position: absolute; top: 40px; left: -440px; margin-bottom: 10px; color: rgb(23, 35, 57); padding: 10px; right: 0px; width: 200px; background: none repeat scroll 0% 0% rgba(144, 223, 74, 0.9); font: 14px/17px 'OpenSansRegular',Arial,sans-serif; border-radius: 3px 3px 3px 3px; }
 #keyboard-shortcuts:after { position: absolute; bottom: -5px; left: 105px; display: inline-block; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 5px solid rgba(144, 223, 74, 0.9); content: ""; }
 #person-marker { position: relative; top: 100px; left: -350px; width: 40px; height: 60px; background-image: url('walk-cycle.png'); }
-.sprite { display: block; background-image: url('sprite.png'); background-repeat: no-repeat; }
-.logo { width: 121px; height: 121px; background-position: -479px 0pt; margin: 0pt auto; }
-.main-title { background-position: -260px -225px; margin: 0pt auto; height: 150px; width: 330px; padding: 40px 10px 0px; }
+.sprite { display: block; background-image: url('img/wiw.png'); background-repeat: no-repeat; }
+.logo { width: 121px; height: 121px; margin: 0pt auto; }
+.main-title { margin: 0pt auto; width: 330px;}
 .mountains { width: 320px; height: 100px; background-position: 20px -470px; }
 .clear { clear: both; }
 #twitter a { font-family: 'OpenSansSemiBold'; }

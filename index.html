@@ -51,20 +51,11 @@
 
     <script>
       $(document).ready(function() {
-        $('h3').grumble(
-  {
-    text: '1. Elige un mapa',
-    angle: 310,
-    distance: 50,
-    showAfter: 300,
-    hideAfter: false,
-    hasHideButton: false
-  }
-);
+        
         //NORMAL
-        $('ul').roundabout({easing: "jswing" ,shape: "tearDrop", enableDrag: true});
+        $('ul').roundabout({easing: "jswing" ,shape: "waterWheel", enableDrag: true});
 
-        //3DCUBE
+         //3DCUBE
         // $('li')
         //   .bind({
         //     "reposition": function() {
@@ -85,6 +76,31 @@
         //   easing: 'easeOutElastic',
         //   duration: 1600
         // });
+
+        $('.roundabout-holder').grumble(
+  {
+    text: '<h4>1. Elige un mapa y haz click aquí para continuar</h4>',
+    angle: 310,
+    distance: 30,
+    showAfter: 300,
+    hideAfter: false,
+    hasHideButton: false,
+    hideOnClick: true,
+    onHide: function() { },
+    onBeginHide: function() { },
+    onShow: function() { }
+  }
+);
+
+        var $grum = $(".grumble, .grumble-text");
+        $grum.css("top", $grum.offset().top - $(".test").outerHeight() / 3);
+        $('ul').bind("childrenUpdated", function(){
+            var a = $(".roundabout-in-focus");
+            if (a.length != 0) {
+                var prov = a.find("img").attr("alt");
+                window.map.getLayerAt(0).setProvider(new MM.Template(prov, {}));
+            }            
+        });
 
 
       });
@@ -112,21 +128,23 @@
       <div id="home">
         <a href="#" class="sprite logo"></a>
         
-        <h1 class="sprite main-title">Where in the world!</h1>
+        <h1 class="main-title">Where in the world!</h1>
+        <h3 class="main-title">The mapping game</h3>
         
         <div class="section">         
-          <h3 >Elige un mapa</h3>
+          <h3 ></h3>
           <style>
       ul.test {
         list-style: none;
         padding: 0;
-        margin: 0 auto;
-        width: 220px;
-        height: 160px;
+        margin: -100px auto;
+        width: 320px;
+        height: 600px;
+        left: -100px;
       }
       li.test {
-        height: 128px;
-        width: 128px;
+        height: 200px;
+        width: 200px;
         text-align: center;
         cursor: pointer;
       }
@@ -143,29 +161,31 @@
         margin: 0 auto;
       }
     </style>
-        <ul class="test">
-          <li>
-            <img src="img/blue.png" width="128"/>
+        <div id="mapselector">
+        <ul  class="test">
+            <li>
+            <img src="img/geography-class.png" width="196" alt="http://localhost/sotmus/MAPBOX_GEO_flatx/{Z}/{X}/{Y}.png"/>
           </li>
           <li>
-            <img src="img/blue8.png" width="128"/>
+            <img src="img/blue.png" width="196" alt="http://localhost/sotmus/MAPBOX_BLUE_flatx/{Z}/{X}/{Y}.png"/>
           </li>
           <li>
-            <img src="img/fire.png" width="128"/>
+            <img src="img/blue8.png" width="196" alt="http://localhost/sotmus/MAPBOX_BLUE8_flatx/{Z}/{X}/{Y}.png"/>
           </li>
           <li>
-            <img src="img/geography-class.png" width="128"/>
+            <img src="img/fire.png" width="196" alt="http://localhost/sotmus/MAPBOX_FIRE_flatx/{Z}/{X}/{Y}.png"/>
+          </li>          
+          <li>
+            <img src="img/natural.png" width="196" alt="http://localhost/sotmus/MAPBOX_NATURAL_flatx/{Z}/{X}/{Y}.png"/>
           </li>
           <li>
-            <img src="img/natural.png" width="128"/>
+            <img src="img/toner.png" width="196" alt="http://localhost/sotmus/STAMEN_TONER_flatx/{Z}/{X}/{Y}.jpg"/>
           </li>
           <li>
-            <img src="img/toner.png" width="128"/>
-          </li>
-          <li>
-            <img src="img/watercolor.png" width="128"/>
+            <img src="img/watercolor.png" width="196" alt="http://localhost/sotmus/STAMEN_flatx/{Z}/{X}/{Y}.jpg"/>
           </li>          
         </ul>
+        </div>           
         </div>           
       </div>           
     </div>           
