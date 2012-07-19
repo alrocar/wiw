@@ -36,12 +36,17 @@ var WW = es.alrocar.WW = {
         map : null,
         mapController : null,
         question: null,
+        isStarted: false,
         _lastQuestion: null,
         _timeForNextQuestion: null,
 
         start: function() {
-            this.ui.iniGameBar();
-            this.nextQuestion();
+            //reiniciar todas las variables, hacer un init en toda regla
+            this.question = null;            
+            this._lastQuestion = null;
+            this._timeForNextQuestion = null;
+            this.ui.iniGameBar();       
+            this.isStarted = true;     
         },
 
         pause: function() {
@@ -49,7 +54,12 @@ var WW = es.alrocar.WW = {
         },
 
         finish: function() {
+            this.isStarted = false;
+            this.ui.stop();
+        },
 
+        onGameBarInited: function() {
+            this.nextQuestion();
         },
 
         nextQuestion: function() {
@@ -60,7 +70,7 @@ var WW = es.alrocar.WW = {
             this._iniTime = new Date().getTime();    
             this._timeForNextQuestion = this.timeForNextQuestion();
             this.ui.setQuestion(this.question, this._timeForNextQuestion);
-            console.log("timeForNextQuestion: " + this._timeForNextQuestion);                 
+            // console.log("timeForNextQuestion: " + this._timeForNextQuestion);                 
             return this.question;
         },
 

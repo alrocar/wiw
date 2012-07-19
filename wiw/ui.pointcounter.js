@@ -84,6 +84,11 @@
             });
         },
 
+        reset: function() {
+          total = "00000";
+          methods._applyCount(total);
+        },
+
         addPoints: function(points) {
           total += points;
           methods._applyCount(total);

@@ -153,7 +153,7 @@ window.onload = function() {
           content: '<marquee>welcome to <a href="http://en.wikipedia.org/wiki/Nauru">Nauru</a>!</marquee>' }
   ];
 
-  osm = new modLayer(new MM.Template('http://localhost/sotmus/LOCAL_flatx/{Z}/{X}/{Y}.png'), {});
+  osm = new modLayer(new MM.Template('http://localhost/sotmus/MAPBOX_GEO_flatx/{Z}/{X}/{Y}.png'), {});
    //osm = new MM.TemplatedLayer('http://c.tiles.mapbox.com/v3/tmcw.map-5vaivzxq/{Z}/{X}/{Y}.png');
   var th = new MM.ThrowableHandler();
   
@@ -275,32 +275,24 @@ window.onload = function() {
   MM.getFrame(drawidle);
 
   map.zoom(5).center({ lat: 0, lon: 0 });
-  game.start();
+  $(document).ready(function() {
+    $(".logo").click(function() {
+      $("ul").roundabout();
+      if (game.isStarted) {
+        game.finish();
+      } else {
+        game.start();
+      }
+    });    
+  });
+  
 
 
   // Non map related
   // --------------------------------------------------------------------------
 
-  var home_page = document.getElementById('home');
-  var venue_page = document.getElementById('venue');
-
-  function go_venue() {
-    home_page.style.display = 'none';
-    venue_page.style.display = 'block';
-  }
-
-  function go_home() {
-    home_page.style.display = 'block';
-    venue_page.style.display = 'none';
-  }
-
-  document.getElementById('go-venue').onclick = go_venue;
-  document.getElementById('go-home').onclick = go_home;
-
-  if (window.location.hash) {
-    if (window.location.hash == '#home') return;
-    if (window.location.hash == '#venue') go_venue();
-  }
+  
+  
 
   // Extras
   // ----------------------------------------------------------------

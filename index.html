@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
 
 
@@ -9,11 +10,13 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     
     
+    <link rel="stylesheet" type="text/css" href="grumble/css/grumble.css" media="all">
     
-    
-    <script src="track.js" data-site-id="4fa92e80613f5d30700000eb" id="gauges-tracker" async="" type="text/javascript"></script><script src="ga.js" async="" type="text/javascript"></script><script src="underscore.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js"></script>    
+    <!-- <script src="track.js" data-site-id="4fa92e80613f5d30700000eb" id="gauges-tracker" async="" type="text/javascript"></script>
+    <script src="ga.js" async="" type="text/javascript"></script> -->
+    <script src="underscore.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>    
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js"></script>        
     <script src="jquery.event.drag-2.2.js"></script>
     <script src="jquery.event.drag.live-2.2.js"></script>
     <script src="jquery.event.drop-2.2.js"></script>
@@ -21,7 +24,7 @@
     <script src="jquery.roundabout.js"></script>
     <script src="jquery.roundabout-shapes.js"></script>    
     <script src="jquery.easing.1.3.js"></script>
-    <script src="jquery.easing.compatibility.js"></script>
+    <script src="jquery.easing.compatibility.js"></script>    
     <script src="filters.js"></script>
     <script src="modestmaps.js"></script>
     <script src="mmg.js"></script>
@@ -35,6 +38,9 @@
     <script src="wiw/gcapitals.js"></script>
     <script src="wiw/ui.downclock.js"></script>
     <script src="wiw/ui.pointcounter.js"></script>
+
+    
+  
   
 <link rel="stylesheet" type="text/css" href="index.css" media="all">
 <link rel="stylesheet" type="text/css" href="wiw/downclock.css" media="all">
@@ -45,133 +51,151 @@
 
     <script>
       $(document).ready(function() {
+        $('h3').grumble(
+  {
+    text: '1. Elige un mapa',
+    angle: 310,
+    distance: 50,
+    showAfter: 300,
+    hideAfter: false,
+    hasHideButton: false
+  }
+);
+        //NORMAL
+        $('ul').roundabout({easing: "jswing" ,shape: "tearDrop", enableDrag: true});
+
+        //3DCUBE
+        // $('li')
+        //   .bind({
+        //     "reposition": function() {
+        //       var degrees = $(this).data('roundabout').degrees,
+        //           roundaboutBearing = $(this).parent().data('roundabout').bearing,
+        //           rotateY = Math.round(roundaboutBearing - degrees);
+              
+        //       $(this).css({
+        //         "-webkit-transform": "perspective(2000) rotateY(" + rotateY + "deg)",
+        //         "-moz-transform": "perspective(2000) rotateY(" + rotateY + "deg)",
+        //         "transform": "perspective(2000) rotateY(" + rotateY + "deg)"
+        //       });
+        //     }
+        //   })
         
+        // $('ul').roundabout({
+        //   minScale: 0.7,
+        //   easing: 'easeOutElastic',
+        //   duration: 1600
+        // });
+
+
       });
     </script>
+<div id="gamebar-container">
 <div id="gamebar">
     
+  </div>    
   </div>    
     <div style="padding: 0pt; overflow: hidden;" id="back-map"><!--<div style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; margin: 0pt; padding: 0pt; z-index: 0;"><div style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; margin: 0pt; padding: 0pt; z-index: 15; display: block; -moz-transform: scale(1, 1) translate(-1335200px, -2999280px);" id="-zoom-15"><canvas class="map-tile-loaded" style="position: absolute; -moz-transform: scale(1, 1) translate(1335810px, 2999810px);" id="15,11718,5218" height="256" width="256"></canvas><canvas class="map-tile-loaded" style="position: absolute; -moz-transform: scale(1, 1) translate(1335550px, 2999810px);" id="15,11718,5217" height="256" width="256"></canvas><canvas class="map-tile-loaded" style="position: absolute; -moz-transform: scale(1, 1) translate(1335810px, 2999550px);" id="15,11717,5218" height="256" width="256"></canvas><canvas class="map-tile-loaded" style="position: absolute; -moz-transform: scale(1, 1) translate(1335550px, 2999550px);" id="15,11717,5217" height="256" width="256"></canvas><canvas class="map-tile-loaded" style="position: absolute; -moz-transform: scale(1, 1) translate(1336060px, 2999810px);" id="15,11718,5219" height="256" width="256"></canvas><canvas class="map-tile-loaded" style="position: absolute; -moz-transform: scale(1, 1) translate(1335810px, 3000060px);" id="15,11719,5218" height="256" width="256"></canvas><canvas class="map-tile-loaded" style="position: absolute; -moz-transform: scale(1, 1) translate(1335300px, 2999810px);" id="15,11718,5216" height="256" width="256"></canvas><canvas class="map-tile-loaded" style="position: absolute; -moz-transform: scale(1, 1) translate(1335550px, 3000060px);" id="15,11719,5217" height="256" width="256"></canvas><canvas class="map-tile-loaded" style="position: absolute; -moz-transform: scale(1, 1) translate(1336060px, 2999550px);" id="15,11717,5219" height="256" width="256"></canvas><canvas class="map-tile-loaded" style="position: absolute; -moz-transform: scale(1, 1) translate(1335810px, 2999300px);" id="15,11716,5218" height="256" width="256"></canvas><canvas class="map-tile-loaded" style="position: absolute; -moz-transform: scale(1, 1) translate(1335550px, 2999300px);" id="15,11716,5217" height="256" width="256"></canvas><canvas class="map-tile-loaded" style="position: absolute; -moz-transform: scale(1, 1) translate(1335300px, 2999550px);" id="15,11717,5216" height="256" width="256"></canvas><canvas class="map-tile-loaded" style="position: absolute; -moz-transform: scale(1, 1) translate(1336320px, 2999810px);" id="15,11718,5220" height="256" width="256"></canvas><canvas class="map-tile-loaded" style="position: absolute; -moz-transform: scale(1, 1) translate(1336060px, 3000060px);" id="15,11719,5219" height="256" width="256"></canvas><canvas class="map-tile-loaded" style="position: absolute; -moz-transform: scale(1, 1) translate(1335810px, 3000320px);" id="15,11720,5218" height="256" width="256"></canvas><canvas class="map-tile-loaded" style="position: absolute; -moz-transform: scale(1, 1) translate(1335550px, 3000320px);" id="15,11720,5217" height="256" width="256"></canvas><canvas class="map-tile-loaded" style="position: absolute; -moz-transform: scale(1, 1) translate(1335300px, 3000060px);" id="15,11719,5216" height="256" width="256"></canvas><canvas class="map-tile-loaded" style="position: absolute; -moz-transform: scale(1, 1) translate(1336320px, 2999550px);" id="15,11717,5220" height="256" width="256"></canvas><canvas class="map-tile-loaded" style="position: absolute; -moz-transform: scale(1, 1) translate(1335040px, 2999810px);" id="15,11718,5215" height="256" width="256"></canvas><canvas class="map-tile-loaded" style="position: absolute; -moz-transform: scale(1, 1) translate(1336060px, 2999300px);" id="15,11716,5219" height="256" width="256"></canvas><canvas class="map-tile-loaded" style="position: absolute; -moz-transform: scale(1, 1) translate(1335810px, 2999040px);" id="15,11715,5218" height="256" width="256"></canvas><canvas class="map-tile-loaded" style="position: absolute; -moz-transform: scale(1, 1) translate(1335550px, 2999040px);" id="15,11715,5217" height="256" width="256"></canvas><canvas class="map-tile-loaded" style="position: absolute; -moz-transform: scale(1, 1) translate(1335300px, 2999300px);" id="15,11716,5216" height="256" width="256"></canvas><canvas class="map-tile-loaded" style="position: absolute; -moz-transform: scale(1, 1) translate(1335040px, 2999550px);" id="15,11717,5215" height="256" width="256"></canvas><canvas class="map-tile-loaded" style="position: absolute; -moz-transform: scale(1, 1) translate(1336580px, 2999810px);" id="15,11718,5221" height="256" width="256"></canvas><canvas class="map-tile-loaded" style="position: absolute; -moz-transform: scale(1, 1) translate(1336320px, 3000060px);" id="15,11719,5220" height="256" width="256"></canvas><canvas class="map-tile-loaded" style="position: absolute; -moz-transform: scale(1, 1) translate(1335810px, 3000580px);" id="15,11721,5218" height="256" width="256"></canvas><canvas class="map-tile-loaded" style="position: absolute; -moz-transform: scale(1, 1) translate(1336060px, 3000320px);" id="15,11720,5219" height="256" width="256"></canvas><canvas class="map-tile-loaded" style="position: absolute; -moz-transform: scale(1, 1) translate(1335550px, 3000580px);" id="15,11721,5217" height="256" width="256"></canvas><canvas class="map-tile-loaded" style="position: absolute; -moz-transform: scale(1, 1) translate(1335300px, 3000320px);" id="15,11720,5216" height="256" width="256"></canvas><canvas class="map-tile-loaded" style="position: absolute; -moz-transform: scale(1, 1) translate(1335040px, 3000060px);" id="15,11719,5215" height="256" width="256"></canvas><canvas class="map-tile-loaded" style="position: absolute; -moz-transform: scale(1, 1) translate(1336580px, 2999550px);" id="15,11717,5221" height="256" width="256"></canvas><canvas class="map-tile-loaded" style="position: absolute; -moz-transform: scale(1, 1) translate(1336320px, 2999300px);" id="15,11716,5220" height="256" width="256"></canvas><canvas class="map-tile-loaded" style="position: absolute; -moz-transform: scale(1, 1) translate(1336060px, 2999040px);" id="15,11715,5219" height="256" width="256"></canvas><canvas class="map-tile-loaded" style="position: absolute; -moz-transform: scale(1, 1) translate(1335300px, 2999040px);" id="15,11715,5216" height="256" width="256"></canvas><canvas class="map-tile-loaded" style="position: absolute; -moz-transform: scale(1, 1) translate(1335040px, 2999300px);" id="15,11716,5215" height="256" width="256"></canvas><canvas class="map-tile-loaded" style="position: absolute; -moz-transform: scale(1, 1) translate(1336580px, 3000060px);" id="15,11719,5221" height="256" width="256"></canvas><canvas class="map-tile-loaded" style="position: absolute; -moz-transform: scale(1, 1) translate(1336320px, 3000320px);" id="15,11720,5220" height="256" width="256"></canvas><canvas class="map-tile-loaded" style="position: absolute; -moz-transform: scale(1, 1) translate(1335040px, 3000320px);" id="15,11720,5215" height="256" width="256"></canvas><canvas class="map-tile-loaded" style="position: absolute; -moz-transform: scale(1, 1) translate(1336060px, 3000580px);" id="15,11721,5219" height="256" width="256"></canvas><canvas class="map-tile-loaded" style="position: absolute; -moz-transform: scale(1, 1) translate(1335300px, 3000580px);" id="15,11721,5216" height="256" width="256"></canvas><canvas class="map-tile-loaded" style="position: absolute; -moz-transform: scale(1, 1) translate(1336580px, 2999300px);" id="15,11716,5221" height="256" width="256"></canvas><canvas class="map-tile-loaded" style="position: absolute; -moz-transform: scale(1, 1) translate(1336320px, 2999040px);" id="15,11715,5220" height="256" width="256"></canvas><canvas class="map-tile-loaded" style="position: absolute; -moz-transform: scale(1, 1) translate(1336580px, 3000320px);" id="15,11720,5221" height="256" width="256"></canvas><canvas class="map-tile-loaded" style="position: absolute; -moz-transform: scale(1, 1) translate(1335040px, 2999040px);" id="15,11715,5215" height="256" width="256"></canvas><canvas class="map-tile-loaded" style="position: absolute; -moz-transform: scale(1, 1) translate(1335040px, 3000580px);" id="15,11721,5215" height="256" width="256"></canvas><canvas class="map-tile-loaded" style="position: absolute; -moz-transform: scale(1, 1) translate(1336320px, 3000580px);" id="15,11721,5220" height="256" width="256"></canvas><canvas class="map-tile-loaded" style="position: absolute; -moz-transform: scale(1, 1) translate(1336580px, 2999040px);" id="15,11715,5221" height="256" width="256"></canvas><canvas class="map-tile-loaded" style="position: absolute; -moz-transform: scale(1, 1) translate(1336580px, 3000580px);" id="15,11721,5221" height="256" width="256"></canvas></div></div><div style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; margin: 0pt; padding: 0pt; z-index: 0;"><div style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; margin: 0pt; padding: 0pt; z-index: 0; -moz-transform: scale(1, 1) translate(-1335200px, -2999280px);"><div style="-moz-transform: scale(1, 1) translate(1335760px, 3000490px);" class="mapplace ">Portland is <a href="http://www.portlandblog.com/bridges">known for its bridges</a> and the Hawthorne Bridge is the nicest walk or bike ride of them all.</div><div style="-moz-transform: scale(1, 1) translate(1334010px, 2999720px);" class="mapplace pirate"></div><div style="-moz-transform: scale(1, 1) translate(1336940px, 3000700px);" class="mapplace birdbutton"><a id="bird-on-it" href="#" onclick="putbird(this);">put a bird on it</a></div><div style="-moz-transform: scale(1, 1) translate(1335200px, 2999340px);" class="mapplace fish"></div><div style="-moz-transform: scale(1, 1) translate(1335240px, 2999320px);" class="mapplace fish_slow"></div><div style="-moz-transform: scale(1, 1) translate(1336060px, 3001450px);" class="mapplace fish_slow"></div><div style="-moz-transform: scale(1, 1) translate(1336190px, 3001930px);" class="mapplace fish"></div><div style="-moz-transform: scale(1, 1) translate(1336010px, 3000700px);" class="mapplace right-side">The awesome <a href="http://www.omsi.edu/">OMSI Science Museum</a> would make a perfect stop on a Portland bike tour. <hr> 1945 SE Water Ave</div><div style="-moz-transform: scale(1, 1) translate(1335540px, 3000110px);" class="mapplace "><a href="http://www.powells.com/locations/powells-city-of-books/">Powell's City of Books</a> is the largest independent bookseller in the world and this store occupies an entire city block. They have everything. <hr> 1005 W Burnside Ave  </div><div style="-moz-transform: scale(1, 1) translate(1335850px, 3000280px);" class="mapplace right-side"><a href="http://stumptowncoffee.com/location/downtown/">Stumptown</a> makes some of the best and most well-known coffee in town. <hr> 128 SW 3rd Ave</div><div style="-moz-transform: scale(1, 1) translate(1335390px, 3000290px);" class="mapplace left-side">Portland is <a href="http://www.foodcartsportland.com/">home to hundreds of food carts</a> and this is one of the largest pods where they gather, with dozens to choose from. <hr>SW Alder Street between 9th and 11th Aves</div><div style="-moz-transform: scale(1, 1) translate(1335570px, 3000580px);" class="mapplace left-side"><a href="http://en.wikipedia.org/wiki/Tom_McCall_Waterfront_Park">Tom McCall Waterfront Park</a> runs along the Willamette River and has great views of the city and surrounding mountains.</div><div style="-moz-transform: scale(1, 1) translate(1335950px, 2999940px);" class="mapplace ">We picked the <a href="http://www.oregoncc.org/">Oregon Convention Center</a> because it is modern, green, and tech friendly.<hr>777 NE ML King Blvd.</div><div style="-moz-transform: scale(1, 1) translate(1336260px, 2999950px);" class="mapplace right-side"><a href="http://www.nacis.org/">NACIS</a> is right nearby and held from October 17-19th.<hr>The DoubleTree by Hilton <br>1000 NE Multnomah Street</div><div style="-moz-transform: scale(1, 1) translate(1336110px, 3000090px);" class="mapplace right-side"><a href="http://wherecamppdx.org/">WhereCamp PDX</a> is a mapping unconference happening on October 13-14.<hr> Metro Regional Center <br>600 NE Grand Ave</div><div style="-moz-transform: scale(1, 1) translate(1336330px, 2999600px);" class="mapplace big tokyo"><p>Looking for <a href="http://www.stateofthemap.org/">State of the Map Tokyo?</a></p></div></div></div>--></div> 
     <div class="notice" id="status-message"></div>
     <div class="attribution">
-      <a href="http://openstreetmap.org/">© OpenStreetMap contributors</a>,
+        <a href="http://openstreetmap.org/">© OpenStreetMap contributors</a>,
         <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA</a>
     </div>
-      <div id="person-wrapper">
+    <div id="person-wrapper">
       <div id="keyboard-shortcuts">
-      Use the arrow keys <strong>↑ ← ↓ →</strong> to navigate.
+        Use the arrow keys <strong>↑ ← ↓ →</strong> to navigate.
       </div>
       <div style="background-image: url('idle-cycle.png'); background-position: 0px -180px;" id="person-marker"></div>
     </div>
     <div class="saw">
     </div>
     <div class="limiter">
-      <img id="bird" src="zeich.png">
       <div id="home">
-        <a href="http://stateofthemap.us/" class="sprite logo"></a>
-        <h1 class="sprite main-title">Where in the world!
-        <br>Portland, Oregon</h1>
-        <h3>October 13-14</h3>
-        <p>The <a href="http://openstreetmap.org/">OpenStreetMap</a> conference brings together people
-            who care about OpenStreetMap to advance the world's free community map.</p>
-        <div class="section">
-          <h3>Sign up for the Newsletter</h3>
-          <p>Be the first to know when registration opens.</p>
+        <a href="#" class="sprite logo"></a>
+        
+        <h1 class="sprite main-title">Where in the world!</h1>
+        
+        <div class="section">         
+          <h3 >Elige un mapa</h3>
+          <style>
+      ul.test {
+        list-style: none;
+        padding: 0;
+        margin: 0 auto;
+        width: 220px;
+        height: 160px;
+      }
+      li.test {
+        height: 128px;
+        width: 128px;
+        text-align: center;
+        cursor: pointer;
+      }
+        
+         li.roundabout-in-focus {
+          cursor: default;
+        }
+       .test li span {
+        display: block;
+        padding-top: 6em;
+      }
 
-          <!-- Begin MailChimp Signup Form -->
-          <div id="mc_embed_signup">
-          <form action="http://mapbox.us2.list-manage.com/subscribe/post?u=1b29ad842d113cece02035883&amp;id=b04a3debb8" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
-            <input placeholder="Email address" value="" name="EMAIL" id="mce-EMAIL" type="email"><input value="Sign Up" name="subscribe" id="mc-embedded-subscribe" type="submit">
-            <div class="response" id="mce-error-response" style="display: none;"></div>
-            <div class="response" id="mce-success-response" style="display: none;"></div>
-          </form>
-          </div>
-          <!--End mc_embed_signup-->
-        </div>        
-        <div class="section">
-        <div id="twitter"><p class="tweet">Sign up to find out when registration opens for State of the Map PDX, Oct 13-14 <a href="http://t.co/x5PCBCUo">http://t.co/x5PCBCUo</a> #sotmpdx #osm #openstreetmap</p> <a class="timestamp" "="" href="http://twitter.com/sotmus/statuses/200251765076144128">24 days ago</a></div>
-      <p>Latest Tweet from <a href="https://twitter.com/#%21/sotmus">@SOTMUS</a></p><p>
-        </p></div>
-        <div class="section">
-          <ul class="navigation">
-            <li><a class="button submit-session" href="http://stateofthemap.us/form">Submit a Session</a></li>
-            <li><a id="go-venue" class="button venue" href="#venue">About the Venue</a></li>
-          </ul>
-        </div>
-        <div class="section">
-          <h3>Sponsors</h3>
-          <p> Would you like to be a sponsor? <a href="mailto:bonnie@mapbox.com">Contact us.</a></p>
-        </div>
-        <div class="section sprite mountains">
-        </div>
-      </div>
+      #carbonads-container .carbonad {
+        margin: 0 auto;
+      }
+    </style>
+        <ul class="test">
+          <li>
+            <img src="img/blue.png" width="128"/>
+          </li>
+          <li>
+            <img src="img/blue8.png" width="128"/>
+          </li>
+          <li>
+            <img src="img/fire.png" width="128"/>
+          </li>
+          <li>
+            <img src="img/geography-class.png" width="128"/>
+          </li>
+          <li>
+            <img src="img/natural.png" width="128"/>
+          </li>
+          <li>
+            <img src="img/toner.png" width="128"/>
+          </li>
+          <li>
+            <img src="img/watercolor.png" width="128"/>
+          </li>          
+        </ul>
+        </div>           
+      </div>           
+    </div>           
+   
 
-      <div id="venue">
-        <a href="http://stateofthemap.us/" class="sprite logo"></a>
-        <h1>Venue Information</h1>
-        <div class="section">
-          <div class="address">
-            <h4>Oregon Convention Center</h4>
-            <p>777 NE MLK, Jr. Blvd.<br>Portland, OR 97232
-            </p>
-          </div>
-          <p class="clear location-spot spot"> The <a href="http://www.oregoncc.org/">Oregon Convention Center</a> is known for being modern, green, and tech friendly. We have a cozy corner of the facility for breakout sessions, birds of a feather talks, code sprints, and a large space for us all to gather together.</p>
-          <p class="cafe-spot spot">Hotels, happy hours, and restaurants are just a short free train ride (or slightly longer walk or bike ride) away, and post-conference events will take advantage of the independent local coffee shops, breweries, and restaurants Portland is known for. You can even use OpenStreetMap to plan how you get around. <a href="http://trimet.org/">TriMet</a>, Portland's public transit agency, uses OSM as the basemap in <a href="http://rtp.trimet.org/#/">its trip planner</a> showing walking, biking, and public transit routes.</p>
-          <p class="open-spot spot"> Portland is a leader in openness. In 2009 Mayor Sam Adams pledged that the city would consider open source over proprietary products and would open their data to the public, much of which has been contributed back to improve OpenStreetMap data in the region.</p>
-        </div>
-        <div class="section">
-          <h3>Other Mapping Events</h3>
-          <div class="otherevent">
-            <div class="address">
-              <h4>NACIS</h4>
-              <p>The DoubleTree by Hilton<br>1000 NE Multnomah Street
-              </p>
-            </div>
-            <p class="clear">NACIS brings together some of the best cartographers in the world to share tips and tricks and move the field forward. Expect to see sessions and workshops on interactive web mapping and cartography with OpenStreetMap.</p>
-          </div>
-          <div class="otherevent">
-            <div class="address">
-              <h4>WherecampPDX</h4>
-              <p>Metro Regional Center<br>600 NE Grand Ave.</p>
-            </div>
-            <p class="clear">Run unconference style, WhereCampPDX brings out developers, designers, map makers, and open source enthusiasts to learn from each other, demo technology, and make solutions.</p>
-          </div>
-        </div>
-        <div class="section">
-          <a href="#home" id="go-home" class="button home">Return to Homepage</a>
-        </div>
-        <div class="section sprite mountains">
-        </div>
-        </div>
-      </div>
-    
-<script type="text/javascript" src="twitter.js"></script>
-<script type="text/javascript" src="sotmus.json"></script>    
+<script src="grumble/js/jquery.grumble.min.js"></script>
 <script type="text/javascript">
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-12158002-5']);
-_gaq.push(['_trackPageview']);
+// var _gaq = _gaq || [];
+// _gaq.push(['_setAccount', 'UA-12158002-5']);
+// _gaq.push(['_trackPageview']);
 
-(function() {
-  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
+// (function() {
+//   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+//   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+//   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+// })();
 </script>
 <script type="text/javascript">
-  var _gauges = _gauges || [];
-  (function() {
-    var t   = document.createElement('script');
-    t.type  = 'text/javascript';
-    t.async = true;
-    t.id    = 'gauges-tracker';
-    t.setAttribute('data-site-id', '4fa92e80613f5d30700000eb');
-    t.src = '//secure.gaug.es/track.js';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(t, s);
-  })();
-</script>
-  
+  // var _gauges = _gauges || [];
+  // (function() {
+  //   var t   = document.createElement('script');
+  //   t.type  = 'text/javascript';
+  //   t.async = true;
+  //   t.id    = 'gauges-tracker';
+  //   t.setAttribute('data-site-id', '4fa92e80613f5d30700000eb');
+  //   t.src = '//secure.gaug.es/track.js';
+  //   var s = document.getElementsByTagName('script')[0];
+  //   s.parentNode.insertBefore(t, s);
+  // })();
+</script>  
 
-<script src="dfi823hs.js"></script></body>
+</body>
 </html>

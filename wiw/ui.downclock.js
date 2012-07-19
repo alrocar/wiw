@@ -43,10 +43,12 @@
 
     var clock = 101;
     var elem;
+    var isStoped = false;
+    var conf;
 
     var methods = {
         init : function( options ) { 
-             var conf = {};
+            conf = {};
             $.extend(conf, options);
             return this.each(function() {
                 elem = $(this);
@@ -54,9 +56,19 @@
                 if (conf.initialValue) {
                     clock = conf.initialValue;
                 }
+                isStoped = false;
                 elem.append($(template));
                 methods.updateClock();
             });
+        },
+
+        stop: function() {
+          isStoped = true;
+        },
+
+        start: function() {
+          isStoped = false;
+          clock = conf.initialValue || 60;
         },
 
         updateClock: function() {
@@ -81,6 +93,7 @@
             });
             
             setInterval(function() {
+                if (isStoped) return;
                 var c = methods.getCurrentClock();
                 elem.trigger("secondpassed");
                 if (c == 0) {

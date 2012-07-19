@@ -77,7 +77,10 @@ MM.ThrowableHandler = function() {
                   if (callback) callback({
                     x: speed.x,
                     y: speed.y});
-                  map.panBy(speed.x,speed.y);
+                  // if (map.getCenter().lon > 170 || map.getCenter().lon < -170 || map.getCenter().lat > 80 || map.getCenter().lat < -80)
+                  //   map.panBy(-speed.x,-speed.y);
+                  // else
+                    map.panBy(speed.x,speed.y);
               }
               if (zoomSpeed && zoomPoint) {
                   map.zoomByAbout(zoomSpeed * dt, zoomPoint);

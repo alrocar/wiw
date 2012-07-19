@@ -1998,8 +1998,8 @@ var MM = com.modestmaps = {
         // default 0-18 zoom level
         // with infinite horizontal pan and clamped vertical pan
         this.coordLimits = [
-            new MM.Coordinate(0,-Infinity,0),           // top left outer
-            new MM.Coordinate(1,Infinity,0).zoomTo(18) // bottom right inner
+            new MM.Coordinate(0,0,0),           // top left outer
+            new MM.Coordinate(1,1.2,0).zoomTo(18) // bottom right inner
         ];
 
         // eyes towards null island
