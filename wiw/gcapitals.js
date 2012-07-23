@@ -89,6 +89,7 @@ WW.gcapitals.prototype = {
     		return true; 		
     	} else {
     		// console.log("answer incorrect");
+        this.block.splice(this.iBlock, 1);
     		return false;
     	}
 		

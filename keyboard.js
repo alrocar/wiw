@@ -146,9 +146,9 @@ MM.ThrowableHandler = function() {
 
           MM.addEvent(document, 'keydown', keyDown);
           MM.addEvent(document, 'keyup', keyUp);
-          MM.addEvent(map.parent, 'mousedown', mouseDown);
-          MM.addEvent(map.parent, 'mousemove', mouseMove);
-          MM.addEvent(map.parent, 'mouseup', mouseUp);
+          // MM.addEvent(map.parent, 'mousedown', mouseDown);
+          // MM.addEvent(map.parent, 'mousemove', mouseMove);
+          // MM.addEvent(map.parent, 'mouseup', mouseUp);
 
           function isTouchable () {
                var el = document.createElement('div');
@@ -157,9 +157,9 @@ MM.ThrowableHandler = function() {
           }
 
           if (isTouchable()) {
-              MM.addEvent(map.parent, 'touchmove', mouseMove);
-              MM.addEvent(map.parent, 'touchstart', mouseDown);
-              MM.addEvent(map.parent, 'touchup', mouseDown);
+              // MM.addEvent(map.parent, 'touchmove', mouseMove);
+              // MM.addEvent(map.parent, 'touchstart', mouseDown);
+              // MM.addEvent(map.parent, 'touchup', mouseDown);
           }
 
           // tick every frame for time-based anim

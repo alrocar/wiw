@@ -16,7 +16,16 @@ var UI = es.alrocar.UI = {
 
 (function(UI) {
     
-    UI.ui = function() {       
+    UI.ui = function() {
+        var self = this;
+        $(".logo").click(function() {
+          // $("ul").roundabout();
+          if (self.game.isStarted) {
+            self.game.finish();
+          } else {
+            self.game.start();
+          }
+        });
 
         return this;
     };
