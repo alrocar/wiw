@@ -4,4 +4,4 @@ WiW is a mapping game to locate geospatial information on a map (city names, cou
 
 It's currently under development (almost abandoned :P)
 
-[![](http://github.com/alrocar/wiw/wiw_web.png)](http://github.com/alrocar/wiw)
+[![](https://raw.github.com/alrocar/wiw/master/wiw_web.png)](http://github.com/alrocar/wiw)
