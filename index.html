@@ -53,7 +53,7 @@
       $(document).ready(function() {
         
         //NORMAL
-        $('ul').roundabout({easing: "jswing" ,shape: "waterWheel", enableDrag: true});
+        // $('ul').roundabout({easing: "jswing" ,shape: "waterWheel", enableDrag: true});
 
          //3DCUBE
         // $('li')
@@ -77,30 +77,30 @@
         //   duration: 1600
         // });
 
-        $('.roundabout-holder').grumble(
-  {
-    text: '<h4>1. Elige un mapa y haz click aquí para continuar</h4>',
-    angle: 310,
-    distance: 30,
-    showAfter: 300,
-    hideAfter: false,
-    hasHideButton: false,
-    hideOnClick: true,
-    onHide: function() { },
-    onBeginHide: function() { },
-    onShow: function() { }
-  }
-);
+//         $('.roundabout-holder').grumble(
+//   {
+//     text: '<h4>1. Elige un mapa y haz click aquí para continuar</h4>',
+//     angle: 310,
+//     distance: 30,
+//     showAfter: 300,
+//     hideAfter: false,
+//     hasHideButton: false,
+//     hideOnClick: true,
+//     onHide: function() { },
+//     onBeginHide: function() { },
+//     onShow: function() { }
+//   }
+// );
 
-        var $grum = $(".grumble, .grumble-text");
-        $grum.css("top", $grum.offset().top - $(".test").outerHeight() / 3);
-        $('ul').bind("childrenUpdated", function(){
-            var a = $(".roundabout-in-focus");
-            if (a.length != 0) {
-                var prov = a.find("img").attr("alt");
-                window.map.getLayerAt(0).setProvider(new MM.Template(prov, {}));
-            }            
-        });
+        // var $grum = $(".grumble, .grumble-text");
+        // $grum.css("top", $grum.offset().top - $(".test").outerHeight() / 3);
+        // $('ul').bind("childrenUpdated", function(){
+        //     var a = $(".roundabout-in-focus");
+        //     if (a.length != 0) {
+        //         var prov = a.find("img").attr("alt");
+        //         window.map.getLayerAt(0).setProvider(new MM.Template(prov, {}));
+        //     }            
+        // });
 
 
       });
@@ -161,7 +161,7 @@
         margin: 0 auto;
       }
     </style>
-        <div id="mapselector">
+        <!-- <div id="mapselector">
         <ul  class="test">
             <li>
             <img src="img/geography-class.png" width="196" alt="/wiw/MAPBOX_GEO_flatx/{Z}/{X}/{Y}.png"/>
@@ -188,7 +188,7 @@
             <img src="img/watercolor.png" width="196" alt="http://a.tile.openstreetmap.org/{Z}/{X}/{Y}.png"/>
           </li> 
         </ul>
-        </div>           
+        </div>            -->
         </div>           
       </div>           
     </div>           
