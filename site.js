@@ -142,7 +142,7 @@ var gj = {
     ]
   };
 
-  osm = new modLayer(new MM.Template('/wiw/LOCAL_flatx/{Z}/{X}/{Y}.png'), sepia);
+  osm = new modLayer(new MM.Template('/wiw/MAPBOX_GEO_flatx/{Z}/{X}/{Y}.png'), sepia);
    //osm = new MM.TemplatedLayer('http://c.tiles.mapbox.com/v3/tmcw.map-5vaivzxq/{Z}/{X}/{Y}.png');
   var th = new MM.ThrowableHandler();
   var handlers = [th, easey_handlers.DragHandler(),
@@ -155,7 +155,7 @@ var gj = {
   var map = new MM.Map('back-map', osm, null, handlers);
   var ui = new UI.ui();
   var game = new WW.Game(new WW.gcapitals(WW.wcapitals), new WW.User('alrocar', 'void', 'void'), ui, null, map, new WW.ModestMapsController(map));
-  var character = new WW.Character(game, th, players.sotmus);
+  var character = new WW.Character(game, th, players.alone);
   ui.setGame(game);
   var markers = mmg().map(map).factory(function(x) {
       var elem = document.createElement('div');
