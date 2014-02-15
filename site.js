@@ -154,7 +154,7 @@ var gj = {
   
   var map = new MM.Map('back-map', osm, null, handlers);
   var ui = new UI.ui();
-  var game = new WW.Game(new WW.gcapitals(WW.wcapitals), null, ui, null, map, new WW.ModestMapsController(map));
+  var game = new WW.Game(new WW.gcapitals(WW.wcapitals), new WW.User('alrocar', 'void', 'void'), ui, null, map, new WW.ModestMapsController(map));
   var character = new WW.Character(game, th, players.alone);
   ui.setGame(game);
   var markers = mmg().map(map).factory(function(x) {

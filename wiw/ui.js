@@ -47,7 +47,7 @@ var UI = es.alrocar.UI = {
                 $gamebar.parent().append("<div class='saw-white saww'></div>");
                 $gamebar.addClass("gameback");
                 $gamebar.pointcounter({initialValue: 5});
-                $gamebar.downclock({initialValue: 62});
+                $gamebar.downclock({initialValue: 12});
                 $gamebar.append($("<div class='question'><label class='question-label' id='q'></label></div>"));
                 $gamebar.append($("<div class='question_time'></div>"));
                 $gamebar.css("width", 0);
@@ -63,7 +63,9 @@ var UI = es.alrocar.UI = {
                     self.game.updateTime();
                 });
                 $gamebar.bind("clockzero", function() {
-                    alert("se acabó");
+                    setTimeout(function() {
+                        self.game.gameOver();
+                    }, 1000);
                 });
                 this.firstGame = false;
             } else {
@@ -77,6 +79,10 @@ var UI = es.alrocar.UI = {
             $gamebar.downclock("stop");
             $(".question_time").stop();            
             // $gamebar.empty();
+        },
+
+        showScoreBoard: function(user) {
+            alert("Your score: " + user.getCurrentScore());
         },
 
         setQuestion: function(question, timeForNextQuestion) {

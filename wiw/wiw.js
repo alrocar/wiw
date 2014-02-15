@@ -53,9 +53,14 @@ var WW = es.alrocar.WW = {
 
         },
 
-        finish: function() {
+        gameOver: function() {
+            if (!this.isStarted) {
+                return;
+            }
+            
             this.isStarted = false;
             this.ui.stop();
+            this.ui.showScoreBoard(this.user);
         },
 
         onGameBarInited: function() {
@@ -111,6 +116,7 @@ var WW = es.alrocar.WW = {
         _performCorrectAnswer: function() {
             this._wait = true;
             var questionScore = Math.floor(this.calcScore()/100);
+            this.user.setCurrentScore(questionScore);
             this.ui.addPoints(questionScore);
             this.ui.addTime(Math.floor(questionScore/10));
             this._addMarker(this.question, questionScore);
@@ -199,7 +205,7 @@ var WW = es.alrocar.WW = {
         userName: null,
         mail: null,
         pass: null,
-        currentScore: null,
+        currentScore: 0,
         allScores: null,
         badges: null,
         status: null,
@@ -217,6 +223,14 @@ var WW = es.alrocar.WW = {
         //go to server and get the user status
         retrueveStatus: function() {
 
+        },
+
+        setCurrentScore: function(score) {
+            this.currentScore = score;
+        },
+
+        getCurrentScore: function() {
+            return this.currentScore;
         }
     };
 
