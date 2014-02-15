@@ -108,7 +108,7 @@ input, select, textarea, body { font: 13px/20px "Helvetica Neue",Helvetica,Arial
 
 body { background: none repeat scroll 0% 0% rgb(187, 187, 187); color: rgb(23, 35, 57); font: 14px/20px 'OpenSansRegular',Arial,sans-serif; }
 h1, h2 { font: 36px/36px 'OstrichSansMedium',Arial,sans-serif; text-align: center; margin-top: 20px; }
-h1.main-title { font: 32px/58px 'OstrichSansMedium',Arial,sans-serif; margin-top: 0px; }
+h1.main-title { font: 32px/58px 'OstrichSansMedium',Arial,sans-serif; margin-top: -25px; margin-bottom: -15px;}
 h3 { font: 14px/20px 'OpenSansBold',Arial,sans-serif; text-align: center; margin-bottom: 10px; }
 h4 { font: 14px/21px 'OpenSansSemiBold',Arial,sans-serif; }
 p { font: 14px/21px 'OpenSansItalic',Arial,sans-serif; text-align: center; margin-top: 10px; }
@@ -138,7 +138,7 @@ a.venue { background-position: 83px -295px; margin-top: 10px; }
 #person-marker { position: relative; top: 100px; left: -350px; width: 40px; height: 60px; background-image: url('walk-cycle.png'); }
 .sprite { display: block; background-image: url('img/wiw.png'); background-repeat: no-repeat; }
 .logo { width: 121px; height: 121px; margin: 0pt auto; }
-.main-title { margin: 0pt auto; width: 230px;}
+.main-title { margin: 0pt auto; color: white; width: 230px; margin-bottom: -15px;}
 .mountains { width: 320px; height: 100px; background-position: 20px -470px; }
 .clear { clear: both; }
 #twitter a { font-family: 'OpenSansSemiBold'; }

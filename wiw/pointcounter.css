@@ -26,7 +26,27 @@
         width:100%;    
         margin-top:1.25em;  
         z-index: 100;  
-      }
+      
+        opacity: 0;
+}
+
+      .saw-finish { 
+            z-index:99;
+            position: absolute; 
+            top: 0pt; 
+            bottom: 0pt; 
+            right: 300pt; 
+            width: 20px; 
+            background: url('../saw.png') repeat scroll 0% 0% transparent; 
+            overflow-y: scroll; overflow: hidden; 
+            margin-top: 1.25em; 
+            height: 12.5em;           
+            
+            -webkit-transform: rotate(180deg);
+            -moz-transform: rotate(180deg);
+            -o-transform: rotate(180deg);
+            transform: rotate(180deg);
+        }
 
       .saw-black { 
             z-index:98;
