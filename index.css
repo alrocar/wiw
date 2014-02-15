@@ -106,10 +106,10 @@ input, select, textarea, body { font: 13px/20px "Helvetica Neue",Helvetica,Arial
 }
 /* ::::: http://stateofthemap.us/css/style.css ::::: */
 
-body { background: none repeat scroll 0% 0% rgb(187, 187, 187); color: rgb(23, 35, 57); font: 14px/20px 'OpenSansRegular',Arial,sans-serif; }
+body { background: none repeat scroll 0% 0% rgb(187, 187, 187); color: #2c3e50; font: 14px/20px 'OpenSansRegular',Arial,sans-serif; }
 h1, h2 { font: 36px/36px 'OstrichSansMedium',Arial,sans-serif; text-align: center; margin-top: 20px; }
 h1.main-title { font: 32px/58px 'OstrichSansMedium',Arial,sans-serif; margin-top: -25px; margin-bottom: -15px;}
-h3 { font: 14px/20px 'OpenSansBold',Arial,sans-serif; text-align: center; margin-bottom: 10px; }
+h3 { font: 14px/20px 'OpenSansLight',Arial,sans-serif; text-align: center; margin-bottom: 10px; color: white;}
 h4 { font: 14px/21px 'OpenSansSemiBold',Arial,sans-serif; }
 p { font: 14px/21px 'OpenSansItalic',Arial,sans-serif; text-align: center; margin-top: 10px; }
 a { text-decoration: none; font-family: 'OpenSansSemiBoldItalic',Arial,sans-serif; color: rgb(12, 55, 136); }

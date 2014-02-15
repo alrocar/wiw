@@ -39,6 +39,10 @@ var WW = es.alrocar.WW = {
         isStarted: false,
         _lastQuestion: null,
         _timeForNextQuestion: null,
+        currentScore: 0,
+        correctAnswers: 0,
+        badAnswers: 0,
+        timePlaying: 0,
 
         start: function() {
             //reiniciar todas las variables, hacer un init en toda regla
@@ -46,7 +50,11 @@ var WW = es.alrocar.WW = {
             this._lastQuestion = null;
             this._timeForNextQuestion = null;
             this.ui.iniGameBar();       
-            this.isStarted = true;     
+            this.isStarted = true;
+            this.currentScore = 0;
+            this.correctAnswers = 0;
+            this.badAnswers = 0;
+            this.timePlaying = 0;
         },
 
         pause: function() {
@@ -110,14 +118,16 @@ var WW = es.alrocar.WW = {
 
         _performBadAnswer: function() {
             this._wait = true;
-            this.ui.badAnswer(this.nextQuestion, this);                
+            this.ui.badAnswer(this.nextQuestion, this);
+            this._addBadAnswer();
             // this.ui.removePoints(Math.floor(this._timeForNextQuestion/10000));
         },
 
         _performCorrectAnswer: function() {
             this._wait = true;
             var questionScore = Math.floor(this.calcScore()/100);
-            this.user.addPoints(questionScore);
+            this._addCorrectAnswer();
+            this._addPoints(questionScore);
             this.ui.addPoints(questionScore);
             this.ui.addTime(Math.floor(questionScore/10));
             this._addMarker(this.question, questionScore);
@@ -140,6 +150,7 @@ var WW = es.alrocar.WW = {
 
         calcScore: function() {
             var elapsedTime = this.getElapsedTime();
+            this._addTimePlaying(elapsedTime);
             // console.log("Correct answer in: " + elapsedTime);
             return this.getRemainingTime();
         },
@@ -151,6 +162,30 @@ var WW = es.alrocar.WW = {
                 this._performCorrectAnswer();
             }
             return correct;
+        },
+
+        setCurrentScore: function(score) {
+            this.currentScore = score;
+        },
+
+        getCurrentScore: function() {
+            return this.currentScore;
+        },
+
+        _addPoints: function(points) {
+            this.currentScore += points;
+        },
+
+        _addCorrectAnswer: function() {
+            this.correctAnswers++;
+        },
+
+        _addBadAnswer: function() {
+            this.badAnswers++;
+        },
+
+        _addTimePlaying: function(time) {
+            this.timePlaying += time;
         },
 
         _addMarker: function(question, score) {
@@ -206,7 +241,6 @@ var WW = es.alrocar.WW = {
         userName: null,
         mail: null,
         pass: null,
-        currentScore: 0,
         allScores: null,
         badges: null,
         status: null,
@@ -222,20 +256,8 @@ var WW = es.alrocar.WW = {
         },
 
         //go to server and get the user status
-        retrueveStatus: function() {
+        retruiveStatus: function() {
 
-        },
-
-        setCurrentScore: function(score) {
-            this.currentScore = score;
-        },
-
-        getCurrentScore: function() {
-            return this.currentScore;
-        },
-
-        addPoints: function(points) {
-            this.currentScore += points;
         }
     };
 

@@ -20,9 +20,25 @@ var UI = es.alrocar.UI = {
             '<h1 class="main-title">Game Finished!</h1>' +
             '<h3 class="sub-title">Thanks for playing this beta version. More games coming soon...</h3>' +
             '<div class="section">' +
-              '<h3></h3>' +
+              '<h3>Correct answers <span class="correct-answers semi-bold"></span></h3>' + 
+              '<h3>Incorrect answers <span class="bad-answers semi-bold"></span></h3>' +
+              '<h3>Time playing <span class="time-playing semi-bold"></span></h3>' +
+            '</div>' +
+            '<div class="score-content">' +
+                '<h1>Your score <span class="score semi-bold"></span></h1>' +
             '</div>' +
         '</div>';
+
+    var socialTemplate = 
+        '<div class="social container">' +
+              '<div class="row">' +
+                  '<div class="col-md-12">' +
+                    '<a class="icon-google" target="_blank" href="https://plusone.google.com/_/+1/confirm?hl=en&url=http://alrocar.github.com/wiw"></a>' +
+                    '<a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://alrocar.github.com/wiw" target="_blank"></a>' +
+                    '<a class="icon-twitter" href="https://twitter.com/share?source=tweetbutton&text=WiW&url=http://alrocar.github.com/wiw" target="_blank"></a>' +
+                   '</div>' +
+              '</div>' +
+          '</div>';
     
     UI.ui = function() {
         var self = this;
@@ -64,7 +80,7 @@ var UI = es.alrocar.UI = {
                 $(".saww").css("left", -50);
                 var gamebarPos = $('body').outerWidth() - $(".limiter").outerWidth() - $(".saw").outerWidth();
                 $(".saww").animate({"left":  gamebarPos}, 1000, function(){});
-                $gamebar.animate({opacity: 1,"width": gamebarPos}, 1000, 
+                $gamebar.animate({opacity: 1,"width": gamebarPos + 1}, 1000, 
                     function() {
                         self.game.onGameBarInited();                    
                     });
@@ -94,7 +110,6 @@ var UI = es.alrocar.UI = {
 
         showScoreBoard: function(user) {
             this.showFinishGameBar(user);
-            this.showScoreBoardDialog(user);
         },
 
         showFinishGameBar: function(user) {
@@ -134,16 +149,27 @@ var UI = es.alrocar.UI = {
             }, animationDuration);
 
             $(".saww.finish").animate({"left":  gamebarPos}, animationDuration, function(){});
-            $gamebar.animate({opacity: 1,"width": gamebarPos}, animationDuration, 
+            $gamebar.animate({opacity: 1,"width": gamebarPos + 1}, animationDuration, 
             function() {
                 self.$gamebar.fadeOut();
                 var $finishTemplate = $(finishTemplate).clone();
+                var $socialTemplate = $(socialTemplate).clone();
                 self.$finishbar.append($finishTemplate);
+                self.$finishbar.append($socialTemplate);
+                self.showScoreBoardDialog(user);
             });
         },
 
         showScoreBoardDialog: function(user) {
-            console.log("IMPLEMENT THIS!!!");
+            var correctAnswers = this.game.correctAnswers;
+            var badAnswers = this.game.badAnswers;
+            var timePlaying = Math.round(this.game.timePlaying / 1000);
+            var score = this.game.getCurrentScore();
+
+            this.$finishbar.find('.correct-answers').text(correctAnswers);
+            this.$finishbar.find('.bad-answers').text(badAnswers);
+            this.$finishbar.find('.time-playing').text(timePlaying);
+            this.$finishbar.find('.score').text(score);
         },
 
         setQuestion: function(question, timeForNextQuestion) {
