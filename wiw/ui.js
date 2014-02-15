@@ -95,6 +95,8 @@ var UI = es.alrocar.UI = {
 
                 this.firstGame = false;
             } else {
+                $('#q2').remove();
+                $('.knob').hide();
                 if (this.firstGame) {                
                     $gamebar.parent().append("<div class='saw-black saww'></div>");
                     $gamebar.parent().append("<div class='saw-white saww'></div>");
