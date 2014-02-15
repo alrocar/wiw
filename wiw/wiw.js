@@ -67,10 +67,11 @@ var WW = es.alrocar.WW = {
             this.correctAnswers = 0;
             this.badAnswers = 0;
             this.timePlaying = 0;
+            this.passCounter = 3;
             this.gameModel.reset();
             this.mapController.reset();
             this.ui.iniGameBar();
-            this.character.showHint("Use the arrow keys ↑ ← ↓ → to move to the city");
+            this.character.showHint("Use the arrow keys ↑ ← ↓ → to move over the map to the first city");
         },
 
         pause: function() {
@@ -139,7 +140,7 @@ var WW = es.alrocar.WW = {
             this._addBadAnswer();
             this._addPoints(-penaltyTime);
             this.ui.removePoints(penaltyTime);
-            this.character.showHint("Ouch!! You can pass " + this.passCounter-- + " more questions", this.hintDuration);
+            this.character.showHint("Ouch!! You can pass " + --this.passCounter + " more questions", this.hintDuration);
             this.ui.correctAnswer(this.nextQuestion, this);
         },
 
@@ -203,7 +204,7 @@ var WW = es.alrocar.WW = {
             this.ui.addTime(Math.floor(questionScore/10));
             this._addMarker(this.question, questionScore);
             this.ui.correctAnswer(this.nextQuestion, this);                
-            this.character.showHint("Well done!!", this.hintDuration);
+            this.character.showHint("Well done!! Go for the next city", this.hintDuration);
         },
 
         getElapsedTime: function() {

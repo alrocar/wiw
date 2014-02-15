@@ -1,7 +1,6 @@
-WW.Character = function(wiw, th, character) {
+WW.Character = function(th, character) {
     var self = this;
     this.th = th;
-    this.wiw = wiw;
     this.setCharacter(character);
     window.ch = this;
     th.callback(function(speed) {
@@ -65,7 +64,6 @@ WW.Character.prototype = {
    frt: 80,
    lastIdle: +new Date(),
    th: null,
-   wiw: null,
    width: 40,
     height: 60,
     heightPx: 60,

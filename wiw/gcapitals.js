@@ -84,6 +84,7 @@ WW.gcapitals.prototype = {
       this.cBlock = 0;
       this.iBlock = -1;
       this.block = null;
+      this._buildData();
     },
 
     isAnswerCorrect: function(answer) {

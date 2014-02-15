@@ -146,18 +146,19 @@ var gj = {
    //osm = new MM.TemplatedLayer('http://c.tiles.mapbox.com/v3/tmcw.map-5vaivzxq/{Z}/{X}/{Y}.png');
   var th = new MM.ThrowableHandler();
   var handlers = [th, easey_handlers.DragHandler(),
-                easey_handlers.TouchHandler()/*,
+                easey_handlers.TouchHandler(),
                 easey_handlers.MouseWheelHandler(),
-                easey_handlers.DoubleClickHandler()*/];
+                easey_handlers.DoubleClickHandler()];
   
   // var handlers = [th, new MM.DragHandler(), new MM.TouchHandler()];
   
   var map = new MM.Map('back-map', osm, null, handlers);
   var ui = new UI.ui();
-  var character = new WW.Character(game, th, players.alone);
+
+  var character = new WW.Character(th, players.alone);
   
   var game = new WW.Game(new WW.gcapitals(WW.wcapitals), new WW.User('alrocar', 'void', 'void'), ui, null, map, new WW.ModestMapsController(map), character);
-  
+
   ui.setGame(game);
   var markers = mmg().map(map).factory(function(x) {
       var elem = document.createElement('div');
