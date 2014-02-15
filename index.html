@@ -143,11 +143,27 @@
       <div id="home">
         <button class="start-button btn btn-2 btn-2j">Play</button>
         
-        <h1 class="main-title">Where in the world!</h1>
-        <h3 class="main-title">The mapping game</h3>
+        <!-- <h1 class="main-title">Where in the world!</h1>
+        <h3 class="main-title">The mapping game</h3> -->
         
-        <div class="section">         
-          <h3 ></h3>
+        <div class="section no-border">         
+          <h3 class="question-label" id="q2"></h3>
+
+          <div class="counter-mobile" style="height:160px;width:160px;margin-left:-25px;margin-top:10px">
+            <div style="position:relative;width:160px;margin:auto">
+                <div style="position:absolute;left:0px;top:0px">
+                    <div style="display:inline;width:160px;height:160px">
+                        <input style="color:white !important;" class="knob hour" data-min="0" data-bgcolor="#905ba1" data-fgcolor="#3498db" data-displayinput="true" data-width="160" data-height="160" data-thickness=".4" data-max="60" data-readOnly=true/>
+                    </div>
+                </div>
+                <div style="position:absolute;left:25px;top:25px">
+                    <div style="display:inline;width:110px;height:110px;">
+                        <input class="knob minute" data-min="0" data-bgcolor="#905ba1" data-fgcolor="#fff" data-displayinput="false" data-width="110" data-height="110" data-thickness=".2" data-readOnly=true/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h3 class="total-points"></h3>
           <style>
       ul.test {
         list-style: none;

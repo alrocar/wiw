@@ -21,6 +21,7 @@
       
         display: inline; opacity: 1; 
         font-size: 0.7em;
+        width: 100px;
 }
 
 .question_time {

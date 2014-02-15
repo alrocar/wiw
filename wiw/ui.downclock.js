@@ -69,6 +69,11 @@
         start: function() {
           isStoped = false;
           clock = conf.initialValue || 60;
+          $('.knob.hour').trigger('configure',
+          {
+              min: 0,
+              max: clock
+          });
         },
 
         updateClock: function() {
@@ -95,6 +100,8 @@
             setInterval(function() {
                 if (isStoped) return;
                 var c = methods.getCurrentClock();
+                $('.knob.hour').val(c).trigger('change');
+                $('.knob.minute').val($('.knob.minute').val() -1).trigger('change');
                 elem.trigger("secondpassed");
                 if (c == 0) {
                     elem.trigger("clockzero");                    

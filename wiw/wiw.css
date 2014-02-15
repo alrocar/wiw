@@ -517,7 +517,6 @@
     text-decoration: none;
     cursor: pointer;
     color: #3498db;
-    
 }
 
 a {
@@ -529,5 +528,26 @@ a {
   height:121px;
   margin:0 auto;
   display: block;
-  margin-bottom: 30px;
+  margin-bottom: -40px;
+}
+
+.no-border {
+  border: none;
+}
+
+#q2 {
+  /* height: 100px; */
+  width: 100%;
+  font-size: 30px;
+  /* margin: auto; */
+  /* margin-top: -15px !important; */
+  /* margin-bottom: 50px; */
+  /* text-align: center; */
+  /* margin-left: -30px; */
+  /* align-content: center; */
+}
+
+.total-points {
+  font: 60px/20px 'OpenSansBold',Arial,sans-serif;
+  margin-top: 20px;
 }

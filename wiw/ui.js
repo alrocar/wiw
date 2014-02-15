@@ -58,31 +58,30 @@ var UI = es.alrocar.UI = {
 
         game: null,
         firstGame: true,
+        time: 62,
 
         setGame: function(wiw) {
             this.game = wiw;
         },
 
         iniGameBar: function() {
-            // $("#gamebar").hide();
-            if (this.game.isMobile) {
-                this.afterFirstGameBarInited();
-                this.firstGame = false;
-                return;
-            }
+            var self = this;
             this._removeFinishbar();
             var $gamebar = $("#gamebar");
             this.$gamebar = $gamebar;
-            if (this.firstGame) {                
-                $gamebar.parent().append("<div class='saw-black saww'></div>");
-                $gamebar.parent().append("<div class='saw-white saww'></div>");
-                $gamebar.addClass("gameback");
+
+            if (this.game.isMobile) {
+                this.$questionLabel = $('.question-label');
+                this.$questionTime = $('.question_time');
+
                 $gamebar.pointcounter({initialValue: 5});
-                $gamebar.downclock({initialValue: 5});
-                $gamebar.append($("<div class='question'><label class='question-label' id='q'></label></div>"));
-                $gamebar.append($("<div class='question_time'></div>"));
-                
-                var self = this;
+                $gamebar.downclock({initialValue: this.time});
+
+                $('#pointcounter').hide();
+                $('#downclock').hide();
+
+                $('.knob').knob();
+
                 $gamebar.bind("secondpassed", function() {
                     self.game.updateTime();
                 });
@@ -92,19 +91,44 @@ var UI = es.alrocar.UI = {
                     }, 1000);
                 });
 
-                this.animateGameBar(function() {
-                    self.afterFirstGameBarInited();
-                });
-                
+                this.afterFirstGameBarInited();
+
                 this.firstGame = false;
             } else {
-                this.animateGameBar(function() {
-                    window.game.ui.afterGameBarInited();
-                }); 
-            }
+                if (this.firstGame) {                
+                    $gamebar.parent().append("<div class='saw-black saww'></div>");
+                    $gamebar.parent().append("<div class='saw-white saww'></div>");
+                    $gamebar.addClass("gameback");
+                    
+                    $gamebar.pointcounter({initialValue: 5});
+                    $gamebar.downclock({initialValue: this.time});
+                    
+                    $gamebar.append($("<div class='question'><label class='question-label' id='q'></label></div>"));
+                    $gamebar.append($("<div class='question_time'></div>"));
 
-            this.$questionLabel = $('.question-label');
-            this.$questionTime = $('.question_time');
+                    this.$questionLabel = $('.question-label');
+                    this.$questionTime = $('.question_time');
+                    
+                    $gamebar.bind("secondpassed", function() {
+                        self.game.updateTime();
+                    });
+                    $gamebar.bind("clockzero", function() {
+                        setTimeout(function() {
+                            self.game.gameOver();
+                        }, 1000);
+                    });
+
+                    this.animateGameBar(function() {
+                        self.afterFirstGameBarInited();
+                    });
+                    
+                    this.firstGame = false;
+                } else {
+                    this.animateGameBar(function() {
+                        window.game.ui.afterGameBarInited();
+                    }); 
+                }
+            }
 
             $('.start-button').text('RESTART');
         },
@@ -226,9 +250,21 @@ var UI = es.alrocar.UI = {
             this.$questionLabel.fadeTo(50, 1);
             this.$questionTime.css({"right" : "0px"}).stop().animate({"right" : this.$gamebar.outerWidth() + "px"}, timeForNextQuestion);
             // $(".question_time").show();
-            $("#q").hide();
+            $('.knob.minute').trigger('configure', 
+            {
+                min: 0,
+                max: Math.round(timeForNextQuestion/1000)
+            }).val(Math.round(timeForNextQuestion/1000)).trigger('change');
+            
             var q = question;
-            $("#q").show();$("#q").text(q.name);
+
+            $("#q").hide();
+            $("#q").show();
+            $("#q").text(q.name);
+
+            $("#q2").hide();
+            $("#q2").show();
+            $("#q2").text(q.name);
         },
 
         correctAnswer: function(callback, scope) {
@@ -254,10 +290,12 @@ var UI = es.alrocar.UI = {
 
         addPoints: function(points) {
             this.$gamebar.pointcounter("addPoints", points);
+            $('.total-points').text(this.game.currentScore);
         },
 
         removePoints: function(points) {
             this.$gamebar.pointcounter("removePoints", points);
+            $('.total-points').text(this.game.currentScore);
         },
 
         addTime: function(seconds) {

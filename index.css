@@ -126,7 +126,7 @@ form { margin: 20px; }
 input[type="email"] { font: 14px/20px 'OpenSansRegular',Arial,sans-serif; border-radius: 3px 0pt 0pt 3px; height: 20px; width: 185px; padding: 5px; background: none repeat scroll 0% 0% rgb(255, 255, 255); border-right: 5px solid rgba(0, 65, 185, 0.15); }
 input[type="submit"] { background: none repeat scroll 0% 0% rgb(23, 35, 57); font: 10px/20px 'OpenSansBold',Arial,sans-serif; text-transform: uppercase; color: rgb(255, 255, 255); border: 0pt none; margin: 0pt; height: 30px; width: 80px; padding: 6px 10px; cursor: pointer; border-radius: 0pt 3px 3px 0pt; }
 input[type="submit"]:hover { background: none repeat scroll 0% 0% rgb(34, 34, 34); }
-.section { margin: 30px 40px 0pt; padding: 30px 0px 0pt; border-top: 1px solid rgb(255, 255, 255); }
+.section { margin: 30px 40px 0pt; padding: 30px 0px 0pt; border-top: 1px solid rgb(255, 255, 255);}
 .button { background: url('sprite.png') no-repeat scroll 0% 0% rgb(23, 35, 57); font: 10px/40px 'OpenSansBold',Arial,sans-serif; text-transform: uppercase; text-decoration: none; color: rgb(255, 255, 255); border: 0pt none; margin: 0pt 20px; border-radius: 3px 3px 3px 3px; display: block; text-align: center; height: 40px; padding: 10px; }
 .button:hover { background-color: rgb(34, 34, 34); color: rgb(255, 255, 255); }
 ul.navigation li a { padding: 10px; height: 40px; text-indent: 20px; }
