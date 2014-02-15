@@ -142,7 +142,7 @@ var gj = {
     ]
   };
 
-  osm = new modLayer(new MM.Template('/wiw/MAPBOX_GEO_flatx/{Z}/{X}/{Y}.png'), sepia);
+  osm = new modLayer(new MM.Template('/wiw/LOCAL_flatx/{Z}/{X}/{Y}.png'), sepia);
    //osm = new MM.TemplatedLayer('http://c.tiles.mapbox.com/v3/tmcw.map-5vaivzxq/{Z}/{X}/{Y}.png');
   var th = new MM.ThrowableHandler();
   var handlers = [th, easey_handlers.DragHandler(),
