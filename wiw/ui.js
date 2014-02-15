@@ -52,14 +52,18 @@ var UI = es.alrocar.UI = {
                 $gamebar.append($("<div class='question_time'></div>"));
                 $gamebar.css("width", 0);
                 $(".saww").css("left", -50);
-                $gamebar.animate({opacity: 1,"width": document.width - $(".limiter").outerWidth() - $(".saw").outerWidth()}, 1000, 
-                    function() {                    
-                        $(".saww").animate({"left": $gamebar.outerWidth()+"px"}, 1000, function(){});
+                var gamebarPos = $('body').outerWidth() - $(".limiter").outerWidth() - $(".saw").outerWidth();
+                $(".saww").animate({"left":  gamebarPos}, 1000, function(){});
+                $gamebar.animate({opacity: 1,"width": gamebarPos}, 1000, 
+                    function() {
                         self.game.onGameBarInited();                    
                     });
                 var self = this;
-                $gamebar.bind("secondpassed", function() {                
+                $gamebar.bind("secondpassed", function() {
                     self.game.updateTime();
+                });
+                $gamebar.bind("clockzero", function() {
+                    alert("se acabó");
                 });
                 this.firstGame = false;
             } else {

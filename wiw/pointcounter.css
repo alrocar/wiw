@@ -4,7 +4,7 @@
         font-size: 4em;
         overflow: hidden;
         position:relative;        
-        margin-top:70px;
+        margin-top: 10px;
         width:4em;
         left:1em;
       }
@@ -12,7 +12,7 @@
       .crappy-plastic-part-made-in-china2 ul {
         list-style: none;
         padding: 0;
-        margin: -2.15em -20px 0 0;
+        margin: -2em -20px 0 0;
         width: 0.95em;
         height: 6em;
         float: left;
@@ -21,7 +21,7 @@
       .gameback {
         position:absolute;
         background-color: #222;
-        height: 17.5em;        
+        height: 11.5em;        
         overflow: hidden;                        
         width:100%;    
         margin-top:1.25em;  
@@ -38,7 +38,7 @@
             background: url('../saw-black.png') repeat scroll 0% 0% transparent; 
             overflow-y: scroll; overflow: hidden; 
             margin-top:1.25em; 
-            height: 16.8em;           
+            height: 7.8em;           
         }
       .saw-white { 
             z-index:98;
@@ -49,6 +49,6 @@
             width: 20px; 
             background: url('../saw-white.png') repeat scroll 0% 0% transparent; 
             overflow-y: scroll; overflow: hidden; 
-            margin-top:13.75em;    
-            height: 5em;        
+            margin-top: 8.75em;    
+            height: 4em;        
         }

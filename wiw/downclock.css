@@ -1,12 +1,12 @@
 .question {
         overflow: hidden;
         position:relative;        
-        margin-top:-2.92em;
+        margin-top: -3.25em;
         background-color:white;
         width:auto;
         font-size:4em;
-        height:3em;
-        line-height: 1.3;
+        height: 1.0em;
+        line-height: 0.8;
         color: #000;        
         font-weight: bold;     
         /*text-indent:-1em;*/
@@ -16,12 +16,15 @@
       }
       .question-label {        
         z-index:1001;
-      }
+      
+        display: inline; opacity: 1; 
+        font-size: 0.7em;
+}
 
 .question_time {
         overflow: hidden;
         position:relative;        
-        margin-top:-205px;
+        margin-top: -78px;
         background-image: linear-gradient(right , rgb(111,37,34) 22%, rgb(145,63,62) 61%, rgb(174,95,93) 81%);
         background-image: -o-linear-gradient(right , rgb(111,37,34) 22%, rgb(145,63,62) 61%, rgb(174,95,93) 81%);
         background-image: -moz-linear-gradient(right , rgb(111,37,34) 22%, rgb(145,63,62) 61%, rgb(174,95,93) 81%);
@@ -39,7 +42,7 @@
   
         width:auto;
         font-size:4em;
-        height:3em;
+        height: 1em;
         line-height: 1;
         color: #000;        
         font-weight: bold;     
@@ -68,7 +71,7 @@
       ul {
         list-style: none;
         padding: 0;
-        margin: -2.15em -20px 0 0;
+        margin: -2.00em -20px 0 0;
         width: 0.85em;
         height: 6em;
         float: left;

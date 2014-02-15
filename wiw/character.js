@@ -67,7 +67,7 @@ WW.Character.prototype = {
    },
    dir: "down",
    guydir: 'down',
-   hintshown: false,
+   hintshown: true,
    frt: 80,
    lastIdle: +new Date(),
    th: null,

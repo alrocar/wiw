@@ -145,7 +145,12 @@ var gj = {
   osm = new modLayer(new MM.Template('/wiw/MAPBOX_GEO_flatx/{Z}/{X}/{Y}.png'), sepia);
    //osm = new MM.TemplatedLayer('http://c.tiles.mapbox.com/v3/tmcw.map-5vaivzxq/{Z}/{X}/{Y}.png');
   var th = new MM.ThrowableHandler();
-  var handlers = [th, new MM.DragHandler(), new MM.TouchHandler()];  
+  var handlers = [th, easey_handlers.DragHandler(),
+                easey_handlers.TouchHandler()/*,
+                easey_handlers.MouseWheelHandler(),
+                easey_handlers.DoubleClickHandler()*/];
+  
+  // var handlers = [th, new MM.DragHandler(), new MM.TouchHandler()];
   
   var map = new MM.Map('back-map', osm, null, handlers);
   var ui = new UI.ui();
