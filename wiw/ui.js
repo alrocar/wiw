@@ -42,7 +42,7 @@ var UI = es.alrocar.UI = {
     
     UI.ui = function() {
         var self = this;
-        $(".logo").click(function() {
+        $(".start-button").click(function() {
           // $("ul").roundabout();
           if (self.game.isStarted) {
             self.game.finish();

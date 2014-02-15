@@ -515,9 +515,18 @@
 .social a:hover{
     text-decoration: none;
     cursor: pointer;
+    color: #3498db;
     
 }
 
 a {
     color: #8e44ad;
+}
+
+.start-button {
+  width:121px;
+  height:121px;
+  margin:0 auto;
+  display: block;
+  margin-bottom: 30px;
 }
