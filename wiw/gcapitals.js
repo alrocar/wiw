@@ -78,6 +78,14 @@ WW.gcapitals.prototype = {
 
     },
 
+    reset: function() {
+      this.qBlock = 10;
+      this.sBlock = 5;
+      this.cBlock = 0;
+      this.iBlock = -1;
+      this.block = null;
+    },
+
     isAnswerCorrect: function(answer) {
     	//implement the logic
     	if (answer && answer.distance < 50) {

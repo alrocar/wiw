@@ -33,12 +33,6 @@ WW.Character = function(wiw, th, character) {
             self.frame = 0;
         }
 
-        if (self.hintshown) {
-            var ks = document.getElementById('keyboard-shortcuts');
-            ks.parentNode.removeChild(ks);
-            self.hintshown = false;
-        }
-
         if (self.vertical)
          document.getElementById('person-marker').style.backgroundPosition = self.spritetypes[self.guydir] + 'px ' + self.f2y(self.frame) + 'px';
         else
@@ -111,6 +105,27 @@ WW.Character.prototype = {
     if (window.ch.vertical)
      return y * -window.ch.height;
     return y * -window.ch.width;
+   },
+
+   showHint: function(text, duration) {
+      this.hintshown = true;
+      var ks = $('#keyboard-shortcuts');
+      if (text) {
+        ks.text(text);
+      }
+      ks.fadeIn();
+
+      if (duration) {
+        setTimeout(function() {
+          ks.fadeOut();
+        }, duration);
+      }
+   },
+
+   hideHint: function() {
+      var ks = $('#keyboard-shortcuts');
+      ks.fadeOut();
+      this.hintshown = false;
    },
 
   drawidle: function() {

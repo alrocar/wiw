@@ -15,6 +15,9 @@ WW.ModestMapsController.prototype = {
 
     registerForMapAnswers: function() {
         this.map.addCallback('drawn', _.throttle(function() {
+            if (!game || !game.question) {
+                return;
+            }
             var destinationPixel = map.locationPoint(new MM.Location(game.question.lat, game.question.lon));
             var distance = MM.Point.distance(game.mapController.offset, destinationPixel);
             // console.log(distance);
@@ -30,5 +33,13 @@ WW.ModestMapsController.prototype = {
         var geoJSON = markersLayer.geojson();
         geoJSON.features.push(point);
         markersLayer.geojson(geoJSON);
+    },
+
+    reset: function() {
+        this.map.zoom(5).center({ lat: 0, lon: 0 });
+        this.offset = {
+            x: (map.dimensions.x * 0.75) - 500 - 50,
+            y: (map.dimensions.y * 0.3) + 100 + 60     
+        };
     }
 };

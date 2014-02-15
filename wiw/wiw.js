@@ -16,13 +16,24 @@ var WW = es.alrocar.WW = {
 
 (function(WW) {
     
-    WW.Game = function(gameModel, user, ui, scoreBoard, map, mapController) {
+    WW.Game = function(gameModel, user, ui, scoreBoard, map, mapController, character) {
+        var self = this;
         this.gameModel = gameModel;
         this.user = user;
         this.ui = ui;
         this.scoreBoard = scoreBoard;
         this.map = map;
         this.mapController = mapController;
+        this.character = character;
+
+        MM.addEvent(document, 'keydown', function(e) {
+            //z
+            if (e.keyCode == 90) {
+                if (self.isStarted) {
+                    self.passQuestion();
+                }
+            }
+        });
 
         return this;
     };
@@ -43,22 +54,33 @@ var WW = es.alrocar.WW = {
         correctAnswers: 0,
         badAnswers: 0,
         timePlaying: 0,
+        hintDuration: 3000,
+        passCounter: 3,
 
         start: function() {
             //reiniciar todas las variables, hacer un init en toda regla
             this.question = null;            
             this._lastQuestion = null;
             this._timeForNextQuestion = null;
-            this.ui.iniGameBar();       
             this.isStarted = true;
             this.currentScore = 0;
             this.correctAnswers = 0;
             this.badAnswers = 0;
             this.timePlaying = 0;
+            this.gameModel.reset();
+            this.mapController.reset();
+            this.ui.iniGameBar();
+            this.character.showHint("Use the arrow keys ↑ ← ↓ → to move to the city");
         },
 
         pause: function() {
 
+        },
+
+        restart: function() {
+            this.isStarted = false;
+            this.ui.stop();
+            this.start();
         },
 
         gameOver: function() {
@@ -70,6 +92,7 @@ var WW = es.alrocar.WW = {
             this.isStarted = false;
             this.ui.stop();
             this.ui.showScoreBoard(this.user);
+            this.character.showHint("Game over. Eres un paquete!!");
         },
 
         onGameBarInited: function() {
@@ -77,15 +100,47 @@ var WW = es.alrocar.WW = {
         },
 
         nextQuestion: function() {
+            if (!this.isStarted) {
+                return;
+            }
+
             this._wait = false;
             if (this.question)
                 this._lastQuestion = $.extend({}, this.question);
-            this.question = this.gameModel.nextQuestion();            
+            this.question = this.gameModel.nextQuestion();
+            
+            if (!this.question) {
+                this.gameOver();
+                if (this.correctAnswers > 10) {
+                    this.character.showHint("You are the f*cking master!! No more questions left!");
+                } else if (this.correctAnswers <= 5) {
+                    this.character.showHint("No more questions left... You are a cheater or this is a bug, I bet for the first thing ¬¬u");
+                }
+                return;
+            }
+
             this._iniTime = new Date().getTime();    
             this._timeForNextQuestion = this.timeForNextQuestion();
             this.ui.setQuestion(this.question, this._timeForNextQuestion);
             // console.log("timeForNextQuestion: " + this._timeForNextQuestion);                 
             return this.question;
+        },
+
+        passQuestion: function() {
+            if (this.passCounter <= 0) {
+                this.character.showHint("You cannot pass more questions... Please study geography", this.hintDuration);
+                return;
+            }
+
+            this._wait = true;
+            
+            var penaltyTime = this._getPenalty();
+
+            this._addBadAnswer();
+            this._addPoints(-penaltyTime);
+            this.ui.removePoints(penaltyTime);
+            this.character.showHint("Ouch!! You can pass " + this.passCounter-- + " more questions", this.hintDuration);
+            this.ui.correctAnswer(this.nextQuestion, this);
         },
 
         timeForNextQuestion: function() {
@@ -116,10 +171,26 @@ var WW = es.alrocar.WW = {
             }
         },
 
+        _getPenalty: function() {
+            var penaltyTime = this.getRemainingTime() || 0 / 1000;
+            if (penaltyTime < 0) {
+                penaltyTime = 0;
+            }
+
+            penaltyTime = Math.round(penaltyTime);
+
+            if (this.currentScore - penaltyTime < 0) {
+                penaltyTime = 0;
+            }
+
+            return penaltyTime;
+        },
+
         _performBadAnswer: function() {
             this._wait = true;
             this.ui.badAnswer(this.nextQuestion, this);
             this._addBadAnswer();
+            this.character.showHint("Uppss!!", this.hintDuration);
             // this.ui.removePoints(Math.floor(this._timeForNextQuestion/10000));
         },
 
@@ -132,6 +203,7 @@ var WW = es.alrocar.WW = {
             this.ui.addTime(Math.floor(questionScore/10));
             this._addMarker(this.question, questionScore);
             this.ui.correctAnswer(this.nextQuestion, this);                
+            this.character.showHint("Well done!!", this.hintDuration);
         },
 
         getElapsedTime: function() {
@@ -142,7 +214,6 @@ var WW = es.alrocar.WW = {
         },
 
         getRemainingTime: function() {
-            var currentTime = new Date().getTime();
             var remaining = this._timeForNextQuestion - this.getElapsedTime();
             // console.log("remaining time: " + remaining);
             return remaining;
@@ -150,7 +221,7 @@ var WW = es.alrocar.WW = {
 
         calcScore: function() {
             var elapsedTime = this.getElapsedTime();
-            this._addTimePlaying(elapsedTime);
+            this._addTimePlaying(10/elapsedTime);
             // console.log("Correct answer in: " + elapsedTime);
             return this.getRemainingTime();
         },

@@ -154,8 +154,10 @@ var gj = {
   
   var map = new MM.Map('back-map', osm, null, handlers);
   var ui = new UI.ui();
-  var game = new WW.Game(new WW.gcapitals(WW.wcapitals), new WW.User('alrocar', 'void', 'void'), ui, null, map, new WW.ModestMapsController(map));
   var character = new WW.Character(game, th, players.alone);
+  
+  var game = new WW.Game(new WW.gcapitals(WW.wcapitals), new WW.User('alrocar', 'void', 'void'), ui, null, map, new WW.ModestMapsController(map), character);
+  
   ui.setGame(game);
   var markers = mmg().map(map).factory(function(x) {
       var elem = document.createElement('div');

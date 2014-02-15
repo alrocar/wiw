@@ -22,7 +22,7 @@ var UI = es.alrocar.UI = {
             '<div class="section">' +
               '<h3>Correct answers <span class="correct-answers semi-bold"></span></h3>' + 
               '<h3>Incorrect answers <span class="bad-answers semi-bold"></span></h3>' +
-              '<h3>Time playing <span class="time-playing semi-bold"></span></h3>' +
+              '<h3>Seconds playing <span class="time-playing semi-bold"></span></h3>' +
             '</div>' +
             '<div class="score-content">' +
                 '<h1>Your score <span class="score semi-bold"></span></h1>' +
@@ -45,7 +45,7 @@ var UI = es.alrocar.UI = {
         $(".start-button").click(function() {
           // $("ul").roundabout();
           if (self.game.isStarted) {
-            self.game.finish();
+            self.game.restart();
           } else {
             self.game.start();
           }
@@ -73,17 +73,11 @@ var UI = es.alrocar.UI = {
                 $gamebar.parent().append("<div class='saw-white saww'></div>");
                 $gamebar.addClass("gameback");
                 $gamebar.pointcounter({initialValue: 5});
-                $gamebar.downclock({initialValue: 5});
+                $gamebar.downclock({initialValue: 55});
                 $gamebar.append($("<div class='question'><label class='question-label' id='q'></label></div>"));
                 $gamebar.append($("<div class='question_time'></div>"));
-                $gamebar.css("width", 0);
-                $(".saww").css("left", -50);
-                var gamebarPos = $('body').outerWidth() - $(".limiter").outerWidth() - $(".saw").outerWidth();
-                $(".saww").animate({"left":  gamebarPos}, 1000, function(){});
-                $gamebar.animate({opacity: 1,"width": gamebarPos + 1}, 1000, 
-                    function() {
-                        self.game.onGameBarInited();                    
-                    });
+                this.animateGameBar();
+                
                 var self = this;
                 $gamebar.bind("secondpassed", function() {
                     self.game.updateTime();
@@ -95,17 +89,48 @@ var UI = es.alrocar.UI = {
                 });
                 this.firstGame = false;
             } else {
+                this.animateGameBar();
                 $gamebar.downclock("start");
                 $gamebar.pointcounter("reset");
             }
 
             this.$questionLabel = $('.question-label');
             this.$questionTime = $('.question_time');
+
+            $('.start-button').text('RESTART');
         },
 
         stop: function() {
+            $('.start-button').text('PLAY');
             this.$gamebar.downclock("stop");
             this.$questionTime.stop();
+        },
+
+        animateGameBar: function() {
+            var self = this;
+            
+            this.$gamebar.css({
+                "width": 0,
+                "left": 0,
+                "display": 'block'
+            });
+
+            self.$gamebar.find('#downclock').show();
+            self.$gamebar.find('#pointcounter').show();
+            self.$gamebar.find('.question').show();
+            self.$gamebar.find('.question_time').show();
+
+            $(".saww").css("left", -50);
+            
+            self.$gamebar.parent().find('.saw-black').show();
+            self.$gamebar.parent().find('.saw-white').show();
+            
+            var gamebarPos = $('body').outerWidth() - $(".limiter").outerWidth() - $(".saw").outerWidth();
+            $(".saww").animate({"left":  gamebarPos}, 1000, function(){});
+            this.$gamebar.animate({opacity: 1,"width": gamebarPos + 1}, 1000, 
+            function() {
+                self.game.onGameBarInited();
+            });
         },
 
         showScoreBoard: function(user) {
@@ -123,7 +148,12 @@ var UI = es.alrocar.UI = {
             
             this.$finishbar = $gamebar;
             
-            $gamebar.css("width", 0);
+            $gamebar.css({
+                "width": 0,
+                "left": 0,
+                "display": 'block'
+            });
+
             $('#gamebar-container').prepend($gamebar);
 
             $gamebar.parent().append("<div class='saw-finish saww finish'></div>");
@@ -222,6 +252,9 @@ var UI = es.alrocar.UI = {
 
         _removeFinishbar: function() {
             if (this.$finishbar) {
+                $('.saw-finish').fadeOut(200, function() {
+                    $(this).remove();
+                });
                 this.$finishbar.fadeOut(200, function() {
                     $(this).remove();
                 });
