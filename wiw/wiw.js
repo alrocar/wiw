@@ -55,9 +55,10 @@ var WW = es.alrocar.WW = {
 
         gameOver: function() {
             if (!this.isStarted) {
+                this.ui.stop();
                 return;
             }
-            
+
             this.isStarted = false;
             this.ui.stop();
             this.ui.showScoreBoard(this.user);
@@ -116,7 +117,7 @@ var WW = es.alrocar.WW = {
         _performCorrectAnswer: function() {
             this._wait = true;
             var questionScore = Math.floor(this.calcScore()/100);
-            this.user.setCurrentScore(questionScore);
+            this.user.addPoints(questionScore);
             this.ui.addPoints(questionScore);
             this.ui.addTime(Math.floor(questionScore/10));
             this._addMarker(this.question, questionScore);
@@ -231,6 +232,10 @@ var WW = es.alrocar.WW = {
 
         getCurrentScore: function() {
             return this.currentScore;
+        },
+
+        addPoints: function(points) {
+            this.currentScore += points;
         }
     };
 
