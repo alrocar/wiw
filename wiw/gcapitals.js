@@ -14,7 +14,7 @@ WW.gcapitals.prototype = {
 	qBlock: 10,
 
 	//selected questions per block. When sBlock questions are correct (or the qBlock array is over) pass to the next block.
-	sBlock: 5,
+	sBlock: 3,
 
 	//current question correct answered in block, this should be a number between 0 and sBlock
 	cBlock: 0,
@@ -87,9 +87,13 @@ WW.gcapitals.prototype = {
       this._buildData();
     },
 
-    isAnswerCorrect: function(answer) {
+    isAnswerCorrect: function(answer, isMobile) {
     	//implement the logic
-    	if (answer && answer.distance < 50) {
+      var offset = 50;
+      if (isMobile) {
+        offset = 100;
+      }
+    	if (answer && answer.distance < offset) {
     		//correct answer counter increase
     		this.cBlock++;   
     		// console.log("ANSWER CORRECT");

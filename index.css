@@ -116,10 +116,10 @@ a { text-decoration: none; font-family: 'OpenSansSemiBoldItalic',Arial,sans-seri
 a:hover { color: rgb(23, 35, 57); }
 hr { border-width: 0px 0px 1px; border-style: none none solid; border-color: -moz-use-text-color -moz-use-text-color rgb(255, 255, 255); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; -moz-border-image: none; }
 #back-map { z-index: -1; }
-.limiter { z-index:9999;position: absolute; top: 0pt; bottom: 0pt; right: 0pt; width: 240px; background: url('green.png') repeat scroll 0% 0% transparent; overflow-y: scroll; overflow-x: hidden; }
-.saw { z-index:9999;position: absolute; top: 0pt; bottom: 0pt; right: 180pt; width: 20px; background: url('saw.png') repeat scroll 0% 0% transparent; overflow-y: scroll; overflow: hidden; }
+.limiter { z-index:9999;position: absolute; top: 0pt; bottom: 0pt; right: 0pt; width: 189px; background: url('green.png') repeat scroll 0% 0% transparent; overflow-y: scroll; overflow-x: hidden; }
+.saw { z-index:9999;position: absolute; top: 0pt; bottom: 0pt; right: 142pt; width: 20px; background: url('saw.png') repeat scroll 0% 0% transparent; overflow-y: scroll; overflow: hidden; }
 
-#home, #venue { position: absolute; left: 0px; top: 20px; width: 230px; }
+#home, #venue { position: absolute; left: 0px; top: 20px; width: 189px; }
 #venue { display: none; }
 #back-map { position: absolute; top: 0pt; left: 0pt; right: 0pt; bottom: 0pt; }
 form { margin: 20px; }
@@ -138,7 +138,7 @@ a.venue { background-position: 83px -295px; margin-top: 10px; }
 #person-marker { position: relative; top: 100px; left: -350px; width: 40px; height: 60px; background-image: url('walk-cycle.png'); }
 .sprite { display: block; background-image: url('img/wiw.png'); background-repeat: no-repeat; }
 .logo { width: 121px; height: 121px; margin: 0pt auto; }
-.main-title { margin: 0pt auto; color: white; width: 230px; margin-bottom: -15px;}
+.main-title { margin: 0pt auto; color: white; width: 190px; margin-bottom: -15px;}
 .mountains { width: 320px; height: 100px; background-position: 20px -470px; }
 .clear { clear: both; }
 #twitter a { font-family: 'OpenSansSemiBold'; }
@@ -164,11 +164,11 @@ a.venue { background-position: 83px -295px; margin-top: 10px; }
 .fish { background: url('fish.gif') no-repeat scroll 0% 0% transparent; }
 .fish_slow { background: url('fish_slow.gif') no-repeat scroll 0% 0% transparent; }
 #status-message { z-index: 999; position: absolute; top: 25px; right: 25px; background: none repeat scroll 0% 0% transparent; font-size: 30px; line-height: 40px; padding: 20px; display: none; }
-.attribution { position: absolute; bottom: 0px; left: 0px; padding: 5px 10px; right: 0px; z-index: 999; background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.7); }
+.attribution { position: absolute; bottom: 0px; /* left: 0px; */ padding: 5px 10px; right: 0px; z-index: 9999999; color: white;}
 .tokyo { background: none repeat scroll 0% 0% rgba(23, 35, 57, 0.9); }
 .tokyo p { background: url('spots.png') no-repeat scroll -720px 0px transparent; padding-top: 180px; }
 .mapplace.tokyo:after { border: medium none; }
-.attribution a { font-size: 10px; font-family: 'OpenSansRegular',Arial,sans-serif; }
+.attribution a { font-size: 10px; font-family: 'OpenSansRegular',Arial,sans-serif; color: white;}
 .spot { padding-top: 90px; background: url('spots.png') no-repeat scroll 0% 0% transparent; }
 .location-spot { background-position: 100px -5px; }
 .cafe-spot { background-position: -150px 0px; }

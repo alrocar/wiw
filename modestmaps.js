@@ -127,7 +127,8 @@ var MM = com.modestmaps = {
         // there's more than one way to skin this cat
         e.cancelBubble = true;
         e.cancel = true;
-        e.returnValue = false;
+        //deprecated
+        // e.returnValue = false;
         if (e.stopPropagation) { e.stopPropagation(); }
         if (e.preventDefault) { e.preventDefault(); }
         return false;

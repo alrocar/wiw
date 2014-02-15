@@ -16,7 +16,7 @@ var WW = es.alrocar.WW = {
 
 (function(WW) {
     
-    WW.Game = function(gameModel, user, ui, scoreBoard, map, mapController, character) {
+    WW.Game = function(gameModel, user, ui, scoreBoard, map, mapController, character, isMobile) {
         var self = this;
         this.gameModel = gameModel;
         this.user = user;
@@ -25,6 +25,8 @@ var WW = es.alrocar.WW = {
         this.map = map;
         this.mapController = mapController;
         this.character = character;
+        this.mapController.game = this;
+        this.isMobile = isMobile;
 
         MM.addEvent(document, 'keydown', function(e) {
             //z
@@ -229,7 +231,7 @@ var WW = es.alrocar.WW = {
 
         isAnswerCorrect: function(answer) {
             if (this._wait) return;            
-            var correct = this.gameModel.isAnswerCorrect(answer);
+            var correct = this.gameModel.isAnswerCorrect(answer, this.isMobile);
             if (correct) {
                 this._performCorrectAnswer();
             }

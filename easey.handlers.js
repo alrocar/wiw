@@ -105,6 +105,7 @@
 
         // Handle a tap event - mainly watch for a doubleTap
         function onTap(tap) {
+            $('body').trigger('map-tap', pos);
             if (taps.length &&
                 (tap.time - taps[0].time) < maxDoubleTapDelay) {
                 onDoubleTap(tap);
@@ -423,6 +424,7 @@
         p.down = function(e) {
             nowPoint = oldPoint = MM.getMousePoint(e, map);
             moveTime = prevMoveTime = +new Date();
+            $('body').trigger('map-tap', oldPoint);
         };
 
         p.move = function(e) {

@@ -147,9 +147,14 @@ var gj = {
   var th = new MM.ThrowableHandler();
   var handlers = [th, easey_handlers.DragHandler(),
                 easey_handlers.TouchHandler(),
-                easey_handlers.MouseWheelHandler(),
-                easey_handlers.DoubleClickHandler()];
-  
+                /*easey_handlers.MouseWheelHandler(),
+                easey_handlers.DoubleClickHandler()*/];
+
+  var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  isMobile = false;
+  if(!isMobile) {
+      handlers = [th];
+  }
   // var handlers = [th, new MM.DragHandler(), new MM.TouchHandler()];
   
   var map = new MM.Map('back-map', osm, null, handlers);
@@ -157,7 +162,7 @@ var gj = {
 
   var character = new WW.Character(th, players.alone);
   
-  var game = new WW.Game(new WW.gcapitals(WW.wcapitals), new WW.User('alrocar', 'void', 'void'), ui, null, map, new WW.ModestMapsController(map), character);
+  var game = new WW.Game(new WW.gcapitals(WW.wcapitals), new WW.User('alrocar', 'void', 'void'), ui, null, map, new WW.ModestMapsController(map, isMobile), character, isMobile);
 
   ui.setGame(game);
   var markers = mmg().map(map).factory(function(x) {

@@ -65,6 +65,11 @@ var UI = es.alrocar.UI = {
 
         iniGameBar: function() {
             // $("#gamebar").hide();
+            if (this.game.isMobile) {
+                this.afterFirstGameBarInited();
+                this.firstGame = false;
+                return;
+            }
             this._removeFinishbar();
             var $gamebar = $("#gamebar");
             this.$gamebar = $gamebar;
@@ -73,10 +78,9 @@ var UI = es.alrocar.UI = {
                 $gamebar.parent().append("<div class='saw-white saww'></div>");
                 $gamebar.addClass("gameback");
                 $gamebar.pointcounter({initialValue: 5});
-                $gamebar.downclock({initialValue: 55});
+                $gamebar.downclock({initialValue: 5});
                 $gamebar.append($("<div class='question'><label class='question-label' id='q'></label></div>"));
                 $gamebar.append($("<div class='question_time'></div>"));
-                this.animateGameBar();
                 
                 var self = this;
                 $gamebar.bind("secondpassed", function() {
@@ -87,11 +91,16 @@ var UI = es.alrocar.UI = {
                         self.game.gameOver();
                     }, 1000);
                 });
+
+                this.animateGameBar(function() {
+                    self.afterFirstGameBarInited();
+                });
+                
                 this.firstGame = false;
             } else {
-                this.animateGameBar();
-                $gamebar.downclock("start");
-                $gamebar.pointcounter("reset");
+                this.animateGameBar(function() {
+                    window.game.ui.afterGameBarInited();
+                }); 
             }
 
             this.$questionLabel = $('.question-label');
@@ -106,7 +115,16 @@ var UI = es.alrocar.UI = {
             this.$questionTime.stop();
         },
 
-        animateGameBar: function() {
+        afterFirstGameBarInited: function() {
+            this.game.onGameBarInited();
+        },
+
+        afterGameBarInited: function() {
+            this.$gamebar.downclock("start");
+            this.$gamebar.pointcounter("reset");
+        },
+
+        animateGameBar: function(fn) {
             var self = this;
             
             this.$gamebar.css({
@@ -125,11 +143,11 @@ var UI = es.alrocar.UI = {
             self.$gamebar.parent().find('.saw-black').show();
             self.$gamebar.parent().find('.saw-white').show();
             
-            var gamebarPos = $('body').outerWidth() - $(".limiter").outerWidth() - $(".saw").outerWidth();
+            var gamebarPos = $('body').outerWidth() - $(".limiter").outerWidth() - $(".saw").outerWidth() -20;
             $(".saww").animate({"left":  gamebarPos}, 1000, function(){});
             this.$gamebar.animate({opacity: 1,"width": gamebarPos + 1}, 1000, 
             function() {
-                self.game.onGameBarInited();
+                fn.call();
             });
         },
 
@@ -170,7 +188,7 @@ var UI = es.alrocar.UI = {
             self.$gamebar.parent().find('.saw-black').fadeOut(fadeOutTime);
             self.$gamebar.parent().find('.saw-white').fadeOut(fadeOutTime);
 
-            var gamebarPos = $('body').outerWidth() - $(".limiter").outerWidth() - $(".saw").outerWidth();
+            var gamebarPos = $('body').outerWidth() - $(".limiter").outerWidth() - $(".saw").outerWidth() - 20;
             var animationDuration = 1000;
             
             self.$gamebar.animate({
