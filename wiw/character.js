@@ -3,6 +3,7 @@ WW.Character = function(th, character) {
     this.th = th;
     this.setCharacter(character);
     window.ch = this;
+    document.getElementById('person-marker').style.backgroundPosition = '0px ' + '0px';
     th.callback(function(speed) {
         self.dir = Math.atan2(speed.y, speed.x) / (Math.PI / 4);
 

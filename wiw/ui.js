@@ -25,7 +25,7 @@ var UI = es.alrocar.UI = {
               '<h3>Seconds playing <span class="time-playing semi-bold"></span></h3>' +
             '</div>' +
             '<div class="score-content">' +
-                '<h1>Your score <span class="score semi-bold"></span></h1>' +
+                '<h1>Your score <span class="score semi-bold"></span> - Rank <span class="rank semi-bold"></span></h1>' +
             '</div>' +
         '</div>';
 
@@ -33,9 +33,8 @@ var UI = es.alrocar.UI = {
         '<div class="social container">' +
               '<div class="row">' +
                   '<div class="col-md-12">' +
-                    '<a class="icon-google" target="_blank" href="https://plusone.google.com/_/+1/confirm?hl=en&url=http://alrocar.github.com/wiw"></a>' +
-                    '<a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://alrocar.github.com/wiw" target="_blank"></a>' +
-                    '<a class="icon-twitter" href="https://twitter.com/share?source=tweetbutton&text=WiW&url=http://alrocar.github.com/wiw" target="_blank"></a>' +
+                    '<a class="share-button icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://alrocar.github.com/wiw&t=I reached a rank of {0} playing WiW. Try to beat me" target="_blank"></a>' +
+                    '<a class="share-button icon-twitter" href="https://twitter.com/share?source=tweetbutton&text=I reached a rank of {0} playing WiW. Try to beat me&url=http://alrocar.github.com/wiw" target="_blank"></a>' +
                    '</div>' +
               '</div>' +
           '</div>';
@@ -79,7 +78,6 @@ var UI = es.alrocar.UI = {
                 this.$totalPoints.text(0);
 
                 if (this.firstGame) {
-                    $('#person-wrapper').addClass('mobile');
                     this.firstGame = false;
 
                     $gamebar.pointcounter({initialValue: 5});
@@ -254,6 +252,10 @@ var UI = es.alrocar.UI = {
                 var $socialTemplate = $(socialTemplate).clone();
                 self.$finishbar.append($finishTemplate);
                 self.$finishbar.append($socialTemplate);
+                $(".share-button").click(function() {
+                  $(this).attr('href',
+                    $(this).attr('href').format(self.game.getRank()));
+                });
                 self.showScoreBoardDialog(user);
             });
         },
@@ -268,6 +270,7 @@ var UI = es.alrocar.UI = {
             this.$finishbar.find('.bad-answers').text(badAnswers);
             this.$finishbar.find('.time-playing').text(timePlaying);
             this.$finishbar.find('.score').text(score);
+            this.$finishbar.find('.rank').text(this.game.getRank());
         },
 
         setQuestion: function(question, timeForNextQuestion) {

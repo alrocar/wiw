@@ -17,15 +17,50 @@ var WW = es.alrocar.WW = {
 (function(WW) {
 
     var hints = {
-        move: "Use the arrow keys ↑ ← ↓ → to move over the map to the first city",
-        gameover: "Game over. "
-
+        move: "Use the arrow keys ↑ ← ↓ → to move me on over {0}",
+        gameover: 'Game over. Click the "PLAY" button to try again',
+        nopass: "You cannot pass more questions... Please study geography ¬¬u",
+        master: "You are the f*cking master!! No more questions left!",
+        cheater: "No more questions left... You are a cheater or this is a bug, I bet for the first thing ¬¬u",
+        pass: "Ouch!! You can pass {0} more questions",
+        welldone: "Well done!! Go for the next city"
     };
 
     var hintsMobile = {
-        move: "Drag the map to the city location and tap over it"
+        move: "Drag the map to {0} and tap over the city location"
 
     };
+
+    var rank = {
+        100: 'Internet Explorer',
+        200: 'George Bush',
+        300: 'Oh my port!',
+        400: 'Monkey',
+        500: '4 Years Child',
+        600: 'Tom Cruise',
+        700: 'Robocop',
+        800: '10 Years Child',
+        900: 'Student',
+        1000: 'Mapper',
+        1100: 'Addams Family',
+        1200: 'Scribblenaut',
+        1300: 'Gaymer',
+        1400: 'Geek',
+        1500: 'Geo-Geek',
+        1600: 'Dr. Northing',
+        1700: 'Metacat',
+        1800: 'Bob Squarepants',
+        1900: 'Snoopy',
+        2000: 'Geographer',
+        2100: 'Cartographer',
+        2200: 'Scientist',
+        2300: 'Astronaut',
+        2400: 'L33t B4rn3r',
+        2500: 'H4ck3r',
+        2600: 'He-Man',
+        2700: 'Master of the Universe',
+        2800: 'Chuck Norris'
+    }
     
     WW.Game = function(gameModel, user, ui, scoreBoard, map, mapController, character, isMobile) {
         var self = this;
@@ -92,7 +127,6 @@ var WW = es.alrocar.WW = {
             this.gameModel.reset();
             this.mapController.reset();
             this.ui.iniGameBar();
-            this.character.showHint(this.hints.move);
         },
 
         pause: function() {
@@ -134,9 +168,9 @@ var WW = es.alrocar.WW = {
             if (!this.question) {
                 this.gameOver();
                 if (this.correctAnswers > 10) {
-                    this.character.showHint("You are the f*cking master!! No more questions left!");
+                    this.character.showHint(this.hints.master);
                 } else if (this.correctAnswers <= 5) {
-                    this.character.showHint("No more questions left... You are a cheater or this is a bug, I bet for the first thing ¬¬u");
+                    this.character.showHint(this.hints.cheater);
                 }
                 return;
             }
@@ -144,7 +178,11 @@ var WW = es.alrocar.WW = {
             this._iniTime = new Date().getTime();    
             this._timeForNextQuestion = this.timeForNextQuestion();
             this.ui.setQuestion(this.question, this._timeForNextQuestion);
-            // console.log("timeForNextQuestion: " + this._timeForNextQuestion);                 
+            // console.log("timeForNextQuestion: " + this._timeForNextQuestion); 
+            if (this.correctAnswers === 0) {
+                this.character.showHint(this.hints.move.format(this.question.name));
+            }
+            
             return this.question;
         },
 
@@ -154,7 +192,7 @@ var WW = es.alrocar.WW = {
             }
 
             if (this.passCounter <= 0) {
-                this.character.showHint("You cannot pass more questions... Please study geography", this.hintDuration);
+                this.character.showHint(this.hints.nopass, this.hintDuration);
                 return;
             }
 
@@ -165,7 +203,7 @@ var WW = es.alrocar.WW = {
             this._addBadAnswer();
             this._addPoints(-penaltyTime);
             this.ui.removePoints(penaltyTime);
-            this.character.showHint("Ouch!! You can pass " + --this.passCounter + " more questions", this.hintDuration);
+            this.character.showHint(this.hints.pass.format(--this.passCounter), this.hintDuration);
             this.ui.correctAnswer(this.nextQuestion, this);
         },
 
@@ -196,6 +234,16 @@ var WW = es.alrocar.WW = {
             } else if (this.getRemainingTime() * 3 < this._timeForNextQuestion) {
                 this.ui.blinkQuestion();
             }
+        },
+
+        getRank: function() {
+            for (var r in rank) {
+                if (r > this.currentScore) {
+                    return rank[r];
+                }
+            }
+
+            return "NULL :P";
         },
 
         _getPenalty: function() {
@@ -230,7 +278,7 @@ var WW = es.alrocar.WW = {
             this.ui.addTime(Math.floor(questionScore/10));
             this._addMarker(this.question, questionScore);
             this.ui.correctAnswer(this.nextQuestion, this);                
-            this.character.showHint("Well done!! Go for the next city", this.hintDuration);
+            this.character.showHint(this.hints.welldone, this.hintDuration);
         },
 
         getElapsedTime: function() {
@@ -256,7 +304,7 @@ var WW = es.alrocar.WW = {
             if (!this.isStarted) {
                 return;
             }
-            
+
             if (this._wait) return;            
             var correct = this.gameModel.isAnswerCorrect(answer, this.isMobile);
             if (correct) {

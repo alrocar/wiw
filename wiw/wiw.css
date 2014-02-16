@@ -43,11 +43,15 @@
 
 .score-content h1 {
     color: white;
-    font-size: 40px;
+    font-size: 30px;
 }
 
 .score-content .score {
-    font-size: 60px;
+    font-size: 50px;
+}
+
+.score-content .rank {
+   font-size: 20px; 
 }
 
 
@@ -555,6 +559,23 @@ a {
 
 #person-wrapper.mobile {
   bottom: 20%;
-  left: 35%;
-  background-position: 0px 0px;
+  left: 50%;
+}
+
+#person-wrapper.mobile #person-marker{
+  top: 0 !important;
+  /* left: 0 !important; */
+}
+
+#person-wrapper.mobile #keyboard-shortcuts{
+  top: -70px;
+  /* left: 0 !important; */
+}
+
+#wiw-logo {
+  background: url('../img/wiw.png') no-repeat scroll 0% 0% transparent;
+  top: 0; 
+  left: 0; z-index: 9999999999999; width: 50px; height: 63px; background-size: 50px;
+  margin-top: 5px;
+  margin-left: 5px;
 }

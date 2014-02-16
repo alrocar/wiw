@@ -1,3 +1,15 @@
+if (!String.prototype.format) {
+  String.prototype.format = function() {
+    var args = arguments;
+    return this.replace(/{(\d+)}/g, function(match, number) { 
+      return typeof args[number] != 'undefined'
+        ? args[number]
+        : match
+      ;
+    });
+  };
+}
+
 $(document).ready(function() {
   var osm = new modLayer(new MM.Template('/wiw/MAPBOX_GEO_flatx/{Z}/{X}/{Y}.png'), sepia);
 
@@ -11,6 +23,8 @@ $(document).ready(function() {
   isMobile = true;
   if(!isMobile) {
       handlers = [th];
+  } else {
+    $('#person-wrapper').addClass('mobile');
   }
   
   var map = new MM.Map('back-map', osm, null, handlers);
