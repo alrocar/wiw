@@ -58,7 +58,7 @@ var UI = es.alrocar.UI = {
 
         game: null,
         firstGame: true,
-        time: 62,
+        time: 10,
 
         setGame: function(wiw) {
             this.game = wiw;
@@ -261,7 +261,7 @@ var UI = es.alrocar.UI = {
         showScoreBoardDialog: function(user) {
             var correctAnswers = this.game.correctAnswers;
             var badAnswers = this.game.badAnswers;
-            var timePlaying = Math.round(this.game.timePlaying / 1000);
+            var timePlaying = Math.round(this.game.timePlaying);
             var score = this.game.getCurrentScore();
 
             this.$finishbar.find('.correct-answers').text(correctAnswers);

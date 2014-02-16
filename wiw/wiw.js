@@ -15,6 +15,14 @@ var WW = es.alrocar.WW = {
 };
 
 (function(WW) {
+
+    var hints = {
+
+    };
+
+    var hintsMobile = {
+
+    };
     
     WW.Game = function(gameModel, user, ui, scoreBoard, map, mapController, character, isMobile) {
         var self = this;
@@ -27,6 +35,12 @@ var WW = es.alrocar.WW = {
         this.character = character;
         this.mapController.game = this;
         this.isMobile = isMobile;
+
+        if (this.isMobile) {
+            this.hints = $.extend({}, hints, hintsMobile);
+        } else {
+            this.hints = hints;
+        }
 
         MM.addEvent(document, 'keydown', function(e) {
             //z
@@ -168,6 +182,7 @@ var WW = es.alrocar.WW = {
         },
 
         updateTime: function() {
+            this.timePlaying++;
             if (this.getRemainingTime() <= 0) {
                 // console.log("No more time");                
                 this._performBadAnswer();    
@@ -225,8 +240,7 @@ var WW = es.alrocar.WW = {
         },
 
         calcScore: function() {
-            var elapsedTime = this.getElapsedTime();
-            this._addTimePlaying(10/elapsedTime);
+            //var elapsedTime = this.getElapsedTime();
             // console.log("Correct answer in: " + elapsedTime);
             return this.getRemainingTime();
         },
