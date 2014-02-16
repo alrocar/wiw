@@ -85,7 +85,7 @@
         },
 
         reset: function() {
-          total = "00000";
+          total = 0;
           methods._applyCount(total);
         },
 
@@ -100,6 +100,13 @@
         }, 
 
         _applyCount: function(total) {
+          try {
+            if (total === "00000" || !total) {
+              total = "00000";
+            } else {
+              total = parseInt(total, 10);  
+            }
+
             var i, part, child, factor, distance,
             count = new String(total),
             parts = count.split("").reverse();
@@ -127,6 +134,9 @@
               }
               
             }
+          } catch (ignore) {
+            console.log(ignore);
+          }
       },
       
       tilt: function() {

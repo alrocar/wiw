@@ -17,8 +17,8 @@ var UI = es.alrocar.UI = {
 (function(UI) {
     var finishTemplate = 
         '<div id="finish-content">' +
-            '<h1 class="main-title">Game Finished!</h1>' +
-            '<h3 class="sub-title">Thanks for playing this beta version. More games coming soon...</h3>' +
+            '<h1 class="main-title">Game Over</h1>' +
+            '<h3 class="sub-title">Thanks for playing this beta version! More games coming soon...</h3>' +
             '<div class="section">' +
               '<h3>Correct answers <span class="correct-answers semi-bold"></span></h3>' + 
               '<h3>Incorrect answers <span class="bad-answers semi-bold"></span></h3>' +
@@ -71,32 +71,41 @@ var UI = es.alrocar.UI = {
             this.$gamebar = $gamebar;
 
             if (this.game.isMobile) {
+                this.$totalPoints = $('.total-points');
                 this.$questionLabel = $('.question-label');
                 this.$questionTime = $('.question_time');
 
-                $gamebar.pointcounter({initialValue: 5});
-                $gamebar.downclock({initialValue: this.time});
+                this.$totalPoints.text(0);
 
-                $('#pointcounter').hide();
-                $('#downclock').hide();
+                if (this.firstGame) {
+                    this.firstGame = false;
 
-                $('.knob').knob();
+                    $gamebar.pointcounter({initialValue: 5});
+                    $gamebar.downclock({initialValue: this.time});
 
-                $gamebar.bind("secondpassed", function() {
-                    self.game.updateTime();
-                });
-                $gamebar.bind("clockzero", function() {
-                    setTimeout(function() {
-                        self.game.gameOver();
-                    }, 1000);
-                });
+                    $('#pointcounter').hide();
+                    $('#downclock').hide();
 
-                this.afterFirstGameBarInited();
+                    $('.knob').knob();
 
-                this.firstGame = false;
+                    $gamebar.unbind("secondpassed").bind("secondpassed", function() {
+                        self.game.updateTime();
+                    });
+                    $gamebar.unbind("clockzero").bind("clockzero", function() {
+                        setTimeout(function() {
+                            self.game.gameOver();
+                        }, 1000);
+                    });
+
+                    this.afterFirstGameBarInited();
+                } else {
+                    window.game.ui.afterGameBarInited();
+                }
             } else {
+
                 $('#q2').remove();
                 $('.knob').hide();
+
                 if (this.firstGame) {                
                     $gamebar.parent().append("<div class='saw-black saww'></div>");
                     $gamebar.parent().append("<div class='saw-white saww'></div>");
@@ -108,13 +117,16 @@ var UI = es.alrocar.UI = {
                     $gamebar.append($("<div class='question'><label class='question-label' id='q'></label></div>"));
                     $gamebar.append($("<div class='question_time'></div>"));
 
+                    this.$totalPoints = $('.total-points');
                     this.$questionLabel = $('.question-label');
                     this.$questionTime = $('.question_time');
+
+                    this.$totalPoints.hide();
                     
-                    $gamebar.bind("secondpassed", function() {
+                    $gamebar.unbind("secondpassed").bind("secondpassed", function() {
                         self.game.updateTime();
                     });
-                    $gamebar.bind("clockzero", function() {
+                    $gamebar.unbind("clockzero").bind("clockzero", function() {
                         setTimeout(function() {
                             self.game.gameOver();
                         }, 1000);
@@ -148,6 +160,11 @@ var UI = es.alrocar.UI = {
         afterGameBarInited: function() {
             this.$gamebar.downclock("start");
             this.$gamebar.pointcounter("reset");
+            this.$totalPoints.hide();
+        },
+
+        clearMap: function() {
+            
         },
 
         animateGameBar: function(fn) {
@@ -292,12 +309,12 @@ var UI = es.alrocar.UI = {
 
         addPoints: function(points) {
             this.$gamebar.pointcounter("addPoints", points);
-            $('.total-points').text(this.game.currentScore);
+            this.$totalPoints.text(this.game.currentScore);
         },
 
         removePoints: function(points) {
             this.$gamebar.pointcounter("removePoints", points);
-            $('.total-points').text(this.game.currentScore);
+            this.$totalPoints.text(this.game.currentScore);
         },
 
         addTime: function(seconds) {

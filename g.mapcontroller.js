@@ -2,18 +2,42 @@ WW.ModestMapsController = function(map, isMobile) {
     this.map = map;
     this.game = null;
     this.isMobile = isMobile;
+    this.hasMarkerLayer = false;
     //pass this to the site.js as the guycenter var
     this.offset = {
             x: (map.dimensions.x * 0.75) - 500 - 50,
             y: (map.dimensions.y * 0.3) + 100 + 60     
     };  
 
+    this.initMarkerLayer();
     this.registerForMapAnswers();
 };
 
 WW.ModestMapsController.prototype = {
     map: null,
     offset: null,
+
+    initMarkerLayer: function() {
+        var gj = {
+            "type": "FeatureCollection",
+            "features": [
+            ]
+          };
+          window.geojson = gj;
+          var markers = mmg().map(this.map).factory(function(x) {
+              var elem = document.createElement('div');
+              elem.className = 'mapplace ' + (x.properties.klass || '');
+              elem.innerHTML = x.properties.text || '';
+              return elem;
+          }).geojson(gj);
+          
+          markers.destroy = function() {
+            $('.mapplace').remove();
+          }
+
+          this.map.addLayer(markers);
+          this.hasMarkerLayer = true;
+    },
 
     registerForMapAnswers: function() {
         var self = this;
@@ -59,8 +83,13 @@ WW.ModestMapsController.prototype = {
     reset: function() {
         this.map.zoom(5).center({ lat: 0, lon: 0 });
         this.offset = {
-            x: (map.dimensions.x * 0.75) - 500 - 50,
-            y: (map.dimensions.y * 0.3) + 100 + 60     
+            x: (this.map.dimensions.x * 0.75) - 500 - 50,
+            y: (this.map.dimensions.y * 0.3) + 100 + 60     
         };
+        if (this.hasMarkerLayer) {
+            this.map.removeLayerAt(1);
+            this.hasMarkerLayer = false;
+            this.initMarkerLayer();
+        }
     }
 };
