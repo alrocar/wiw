@@ -75,9 +75,11 @@ var UI = es.alrocar.UI = {
                 this.$questionLabel = $('.question-label');
                 this.$questionTime = $('.question_time');
 
+                this.$totalPoints.show();
                 this.$totalPoints.text(0);
 
                 if (this.firstGame) {
+                    $('#person-wrapper').addClass('mobile');
                     this.firstGame = false;
 
                     $gamebar.pointcounter({initialValue: 5});
@@ -99,7 +101,8 @@ var UI = es.alrocar.UI = {
 
                     this.afterFirstGameBarInited();
                 } else {
-                    window.game.ui.afterGameBarInited();
+                    this.$totalPoints.text(0);
+                    self.game.ui.afterGameBarInited();
                 }
             } else {
 
@@ -139,7 +142,7 @@ var UI = es.alrocar.UI = {
                     this.firstGame = false;
                 } else {
                     this.animateGameBar(function() {
-                        window.game.ui.afterGameBarInited();
+                        self.game.ui.afterGameBarInited();
                     }); 
                 }
             }
@@ -160,7 +163,11 @@ var UI = es.alrocar.UI = {
         afterGameBarInited: function() {
             this.$gamebar.downclock("start");
             this.$gamebar.pointcounter("reset");
-            this.$totalPoints.hide();
+            if (this.game.isMobile) {
+                this.$totalPoints.show();
+            } else {
+                this.$totalPoints.hide();
+            }
         },
 
         clearMap: function() {

@@ -100,43 +100,45 @@
         }, 
 
         _applyCount: function(total) {
-          try {
-            if (total === "00000" || !total) {
-              total = "00000";
-            } else {
-              total = parseInt(total, 10);  
-            }
-
-            var i, part, child, factor, distance,
-            count = new String(total),
-            parts = count.split("").reverse();
-
-            if (total > 9999999) {
-              methods.tilt();
-              return false;
-            }
-
-            for (i = parts.length - 1; i >= 0; i--) {
-              part = parseInt(parts[i], 10);
-
-              // get current position
-              child = $('ul#digit-' + i).data('roundabout').childInFocus;
-              factor = (part < child) ? (10 + part) - child : part - child;
-              distance = factor * 36;
-              
-              if (i) {
-                $('ul#digit-' + i).roundabout('animateToDelta', -distance);
+          setTimeout(function() {
+            try {
+              if (total === "00000" || !total) {
+                total = "00000";
               } else {
-                $('ul#digit-' + i).roundabout('animateToDelta', -distance, function() {
-                  $('.interact a').fadeTo(100, 1);
-                  clickable = true;
-                });
+                total = parseInt(total, 10);  
               }
-              
+
+              var i, part, child, factor, distance,
+              count = new String(total),
+              parts = count.split("").reverse();
+
+              if (total > 9999999) {
+                methods.tilt();
+                return false;
+              }
+
+              for (i = parts.length - 1; i >= 0; i--) {
+                part = parseInt(parts[i], 10);
+
+                // get current position
+                child = $('ul#digit-' + i).data('roundabout').childInFocus;
+                factor = (part < child) ? (10 + part) - child : part - child;
+                distance = factor * 36;
+                
+                if (i) {
+                  $('ul#digit-' + i).roundabout('animateToDelta', -distance);
+                } else {
+                  $('ul#digit-' + i).roundabout('animateToDelta', -distance, function() {
+                    $('.interact a').fadeTo(100, 1);
+                    clickable = true;
+                  });
+                }
+                
+              }
+            } catch (ignore) {
+              console.log(ignore);
             }
-          } catch (ignore) {
-            console.log(ignore);
-          }
+          }, 1000);
       },
       
       tilt: function() {

@@ -37,6 +37,8 @@ var WW = es.alrocar.WW = {
             }
         });
 
+        this.mapController.goToInitPosition();
+
         return this;
     };
 

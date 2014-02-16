@@ -436,19 +436,20 @@
 /* Button 2j */
 .btn-2j {
 	border-radius: 50%;
+	box-shadow: 0 2px #375777;
 	width: 90px;
 	height: 90px;
 	padding: 0;
 }
 
 .btn-2j:hover {
-	box-shadow: 0 8px #375777;
+	box-shadow: 0 3px #375777;
 	top: -2px;
 }
 
 .btn-2j:active {
 	box-shadow: 0 0 #3498db;
-	top: 6px;
+	top: 1px;
 }
 
 /* Button 3 */
