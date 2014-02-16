@@ -46,7 +46,7 @@ WW.ModestMapsController.prototype = {
             $('body').bind('map-tap', function(event, pos) {
                 var game = self.game;
                 // alert('tap');
-                if (!game || !game.question) {
+                if (!game || !game.question || !game.isStarted) {
                     return;
                 }
                 // alert('pass');
@@ -60,7 +60,7 @@ WW.ModestMapsController.prototype = {
             });
         } else {
             this.map.addCallback('drawn', _.throttle(function() {
-                if (!game || !game.question) {
+                if (!game || !game.question || !game.isStarted) {
                     return;
                 }
                 var destinationPixel = map.locationPoint(new MM.Location(game.question.lat, game.question.lon));
@@ -74,7 +74,11 @@ WW.ModestMapsController.prototype = {
         }
     },
 
-    addPointToGeoJSON: function(point) {        
+    addPointToGeoJSON: function(point) {
+        if (!this.game.isStarted) {
+            return;
+        }
+
         var markersLayer = this.map.getLayerAt(1);
         var geoJSON = markersLayer.geojson();
         geoJSON.features.push(point);

@@ -17,10 +17,13 @@ var WW = es.alrocar.WW = {
 (function(WW) {
 
     var hints = {
+        move: "Use the arrow keys ↑ ← ↓ → to move over the map to the first city",
+        gameover: "Game over. "
 
     };
 
     var hintsMobile = {
+        move: "Drag the map to the city location and tap over it"
 
     };
     
@@ -89,7 +92,7 @@ var WW = es.alrocar.WW = {
             this.gameModel.reset();
             this.mapController.reset();
             this.ui.iniGameBar();
-            this.character.showHint("Use the arrow keys ↑ ← ↓ → to move over the map to the first city");
+            this.character.showHint(this.hints.move);
         },
 
         pause: function() {
@@ -111,7 +114,7 @@ var WW = es.alrocar.WW = {
             this.isStarted = false;
             this.ui.stop();
             this.ui.showScoreBoard(this.user);
-            this.character.showHint("Game over. Eres un paquete!!");
+            this.character.showHint(this.hints.gameover);
         },
 
         onGameBarInited: function() {
@@ -146,6 +149,10 @@ var WW = es.alrocar.WW = {
         },
 
         passQuestion: function() {
+            if (!this.isStarted) {
+                return;
+            }
+
             if (this.passCounter <= 0) {
                 this.character.showHint("You cannot pass more questions... Please study geography", this.hintDuration);
                 return;
@@ -246,6 +253,10 @@ var WW = es.alrocar.WW = {
         },
 
         isAnswerCorrect: function(answer) {
+            if (!this.isStarted) {
+                return;
+            }
+            
             if (this._wait) return;            
             var correct = this.gameModel.isAnswerCorrect(answer, this.isMobile);
             if (correct) {
