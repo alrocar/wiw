@@ -530,28 +530,39 @@ a {
     color: #8e44ad;
 }
 
-.start-button {
+.wiw-button {
   width:121px;
   height: 61px;
   margin:0 auto;
   display: block;
   margin-bottom: -40px;
-  background-image: url("../img/wiw.png"); background-repeat: no-repeat; 
+  text-align: left;
+}
+
+#start-button {
+  background-image: url("../img/wiw.png"); 
+  background-repeat: no-repeat; 
   background-size: 30px; 
   background-position-x: 15px; 
   background-position-y: 13px;
-  text-align: left;
-  /* padding-right: 59px; */
+}
+
+#pass-button {
+  margin-left: -24px;
+  display: none;
+  margin-top: 10px;
+  margin-bottom: -20px;
 }
 
 .no-border {
   border: none;
+  margin-top: 20px;
 }
 
 #q2 {
   /* height: 100px; */
   width: 100%;
-  font-size: 30px;
+  font-size: 25px;
   /* margin: auto; */
   /* margin-top: -15px !important; */
   /* margin-bottom: 50px; */
@@ -561,14 +572,14 @@ a {
 }
 
 .total-points {
-  font: 60px/20px 'OpenSansBold',Arial,sans-serif;
+  font: 40px/20px 'OpenSansBold',Arial,sans-serif;
   margin-top: 20px;
   margin-left: -15px;
 }
 
 #person-wrapper.mobile {
-  bottom: 20%;
-  left: 50%;
+  bottom: 75%;
+  left: 100%;
 }
 
 #person-wrapper.mobile #person-marker{

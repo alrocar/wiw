@@ -19,11 +19,16 @@ $(document).ready(function() {
                 easey_handlers.TouchHandler()];
 
   var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+  if ($(document).height() < 700 || $(document).width() < 700) {
+    isMobile = true;
+  }
       
   if(!isMobile) {
       handlers = [th];
   } else {
     $('#person-wrapper').addClass('mobile');
+    $('#person-wrapper.mobile').css({left: $('.limiter').position().left + 180, top: $(document).height() - 100});
   }
   
   var map = new MM.Map('back-map', osm, null, handlers);

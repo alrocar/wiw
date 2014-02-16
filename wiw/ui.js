@@ -41,13 +41,20 @@ var UI = es.alrocar.UI = {
     
     UI.ui = function() {
         var self = this;
-        $(".start-button").click(function() {
+        $("#start-button").click(function() {
           // $("ul").roundabout();
           if (self.game.isStarted) {
             self.game.gameOver();
           } else {
             self.game.start();
           }
+        });
+
+        $("#pass-button").click(function() {
+          // $("ul").roundabout();
+          if (self.game.isStarted) {
+            self.game.passQuestion();
+          } 
         });
 
         return this;
@@ -145,13 +152,15 @@ var UI = es.alrocar.UI = {
                 }
             }
 
-            $('.start-button').text('STOP');
+            $('#start-button').text('STOP');
+            $('#pass-button').show();
         },
 
         stop: function() {
-            $('.start-button').text('PLAY');
+            $('#start-button').text('PLAY');
             this.$gamebar.downclock("stop");
             this.$questionTime.stop();
+            $('#pass-button').hide();
         },
 
         afterFirstGameBarInited: function() {
