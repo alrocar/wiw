@@ -592,6 +592,7 @@ a {
 .rotate-device {
   background: url('../img/rotate.jpg') no-repeat scroll 0% 0% transparent;
   margin: auto;
+  background-size: 50%;
   width: 440px;
   height: 440px;
 }
@@ -600,6 +601,7 @@ a {
   margin-top: 10px;
   margin-left: 20px;
   margin-right: 20px;
+  padding: 10px 10px 10px 10px;
   background-color: white;
   height: 100%;
   width: 100%;
