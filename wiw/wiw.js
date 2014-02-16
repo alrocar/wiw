@@ -116,7 +116,6 @@ var WW = es.alrocar.WW = {
         passCounter: 3,
 
         start: function() {
-            //reiniciar todas las variables, hacer un init en toda regla
             this.question = null;            
             this._lastQuestion = null;
             this._timeForNextQuestion = null;

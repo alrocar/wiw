@@ -50,7 +50,6 @@ var UI = es.alrocar.UI = {
 
         inited = true;
         $("#start-button").click(function() {
-            console.log('click');
           // $("ul").roundabout();
           if (self.game.isStarted) {
             self.game.gameOver();

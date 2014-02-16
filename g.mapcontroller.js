@@ -86,14 +86,14 @@ WW.ModestMapsController.prototype = {
     },
 
     goToInitPosition: function() {
-        easey().map(this.map)
-          .to(this.map.locationCoordinate({ lat: 0, lon: 0}))
+        // this.game.map.zoom(5).center({ lat: 0, lon: 0 });
+        easey().map(this.game.map)
+          .to(this.game.map.locationCoordinate({lat: 0, lon: 0}))
           .zoom(5).run(1000);
       },
 
     reset: function() {
         this.goToInitPosition();
-        // this.map.zoom(5).center({ lat: 0, lon: 0 });
         this.offset = {
             x: (this.map.dimensions.x * 0.75) - 500 - 50,
             y: (this.map.dimensions.y * 0.3) + 100 + 60     

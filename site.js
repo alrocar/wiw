@@ -40,12 +40,13 @@ $(document).ready(function() {
     var character = new WW.Character(th, players.alone);
     
     var game = new WW.Game(new WW.gcapitals(WW.wcapitals), new WW.User('alrocar', 'void', 'void'), ui, null, map, new WW.ModestMapsController(map, isMobile), character, isMobile);
+    window.game = game;
     
     ui.setGame(game);
   }
 
   if (!isMobile) {
-    createjs.Sound.addEventListener("fileload", window.loadHandler);
+    // createjs.Sound.addEventListener("fileload", window.loadHandler);
     createjs.Sound.registerSound("assets/M-GameBG.mp3", "background");
     createjs.Sound.registerSound("assets/NFF-choice-good.mp3", "correct");
     createjs.Sound.registerSound("assets/NFF-choice-bad.mp3", "error");
@@ -54,6 +55,7 @@ $(document).ready(function() {
     createjs.Sound.registerSound("assets/down.mp3", "pass");
     createjs.Sound.registerSound("assets/NFF-increase-02.mp3", "addpoints");
     createjs.Sound.registerSound("assets/NFF-gong.mp3", "gameover");
+    window.loadHandler();
   } else {
     window.loadHandler();
   }
