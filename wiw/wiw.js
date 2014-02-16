@@ -60,7 +60,9 @@ var WW = es.alrocar.WW = {
         2600: 'He-Man',
         2700: 'Master of the Universe',
         2800: 'Chuck Norris'
-    }
+    };
+
+    var sounds = {};
     
     WW.Game = function(gameModel, user, ui, scoreBoard, map, mapController, character, isMobile) {
         var self = this;
@@ -127,6 +129,7 @@ var WW = es.alrocar.WW = {
             this.gameModel.reset();
             this.mapController.reset();
             this.ui.iniGameBar();
+            this.playSound('background');
         },
 
         pause: function() {
@@ -146,6 +149,8 @@ var WW = es.alrocar.WW = {
             }
 
             this.isStarted = false;
+            this.stopSound('background');
+            this.playSound('gameover');
             this.ui.stop();
             this.ui.showScoreBoard(this.user);
             this.character.showHint(this.hints.gameover);
@@ -197,6 +202,8 @@ var WW = es.alrocar.WW = {
             }
 
             this._wait = true;
+
+            this.playSound('pass');
             
             var penaltyTime = this._getPenalty();
 
@@ -232,6 +239,7 @@ var WW = es.alrocar.WW = {
                 // console.log("No more time");                
                 this._performBadAnswer();    
             } else if (this._isBlinking()) {
+                this.playSound('blink');
                 this.ui.blinkQuestion();
             }
         },
@@ -267,6 +275,7 @@ var WW = es.alrocar.WW = {
 
         _performBadAnswer: function() {
             this._wait = true;
+            this.playSound('error');
             this.ui.badAnswer(this.nextQuestion, this);
             this._addBadAnswer();
             this.character.showHint("Uppss!!", this.hintDuration);
@@ -275,6 +284,7 @@ var WW = es.alrocar.WW = {
 
         _performCorrectAnswer: function() {
             this._wait = true;
+            this.playSound('correct');
             var questionScore = Math.floor(this.calcScore()/100);
             this._addCorrectAnswer();
             this._addPoints(questionScore);
@@ -329,6 +339,71 @@ var WW = es.alrocar.WW = {
 
         getCurrentScore: function() {
             return this.currentScore;
+        },
+
+        playSound: function(name) {
+            if (this.isMobile) {
+                return;
+            }
+            try {
+                var instance = sounds[name];
+                if (instance) {
+                    instance.play();
+                } else {
+                    instance = createjs.Sound.play(name);
+                    sounds[name] = instance;
+                }
+                instance.volume = 0.2;
+            } catch (e) {
+
+            }
+        },
+
+        stopSound: function(name) {
+            if (this.isMobile) {
+                return;
+            }
+            try {
+                if (sounds[name]) {
+                    sounds[name].removeAllEventListeners();
+                    sounds[name].stop();
+                    sounds[name].isInLoop = false;
+                }
+            } catch (e) {
+
+            }
+        },
+
+        loopSound: function(name) {
+            if (this.isMobile) {
+                return;
+            }
+            try {
+                var instance = sounds[name];
+                if (!instance) {
+                    instance = createjs.Sound.play(name);
+                    instance.addEventListener('complete', function() {
+                        if (instance.isInLoop) {
+                            instance.play();
+                        }
+                    });
+                    sounds[name] = instance;
+                    sounds[name].isInLoop = true;
+                } else {
+                    if (instance.isInLoop) {
+                        return;
+                    } else {
+                        instance.play();
+                        instance.addEventListener('complete', function() {
+                            if (instance.isInLoop) {
+                                instance.play();
+                            }
+                        });
+                    }
+                }
+            } catch (e) {
+
+            }
         },
 
         _addPoints: function(points) {

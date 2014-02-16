@@ -1,6 +1,12 @@
+body, #wraper, #warning-message, #gamebar, #gamebar-container {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
 body {
   background-color: white;
 }
+
 .gameback.finish {
   /* background: url('../green.png') repeat scroll 0% 0% transparent; */
   height: 12.5em;

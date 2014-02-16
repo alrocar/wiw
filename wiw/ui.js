@@ -38,14 +38,24 @@ var UI = es.alrocar.UI = {
                    '</div>' +
               '</div>' +
           '</div>';
+
+    var inited = false;
     
     UI.ui = function() {
         var self = this;
+        
+        if (inited) {
+            return;
+        }
+
+        inited = true;
         $("#start-button").click(function() {
+            console.log('click');
           // $("ul").roundabout();
           if (self.game.isStarted) {
             self.game.gameOver();
           } else {
+            self.game.playSound('click');
             self.game.start();
           }
         });
@@ -327,8 +337,9 @@ var UI = es.alrocar.UI = {
         },
 
         addPoints: function(points) {
-            this.$gamebar.pointcounter("addPoints", points);
-            this.$totalPoints.text(this.game.currentScore);
+            var self = this;
+            self.$gamebar.pointcounter("addPoints", points);
+            self.$totalPoints.text(this.game.currentScore);
         },
 
         removePoints: function(points) {
