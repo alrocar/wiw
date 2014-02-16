@@ -19,8 +19,7 @@ $(document).ready(function() {
                 easey_handlers.TouchHandler()];
 
   var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-  
-  isMobile = true;
+      
   if(!isMobile) {
       handlers = [th];
   } else {

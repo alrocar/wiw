@@ -41,10 +41,9 @@ WW.ModestMapsController.prototype = {
 
     registerForMapAnswers: function() {
         var self = this;
-        var map = self.map, game = self.game;
         if (this.isMobile) {
             $('body').bind('map-tap', function(event, pos) {
-                var game = self.game;
+                var map = self.map, game = self.game;
                 // alert('tap');
                 if (!game || !game.question || !game.isStarted) {
                     return;
@@ -60,6 +59,7 @@ WW.ModestMapsController.prototype = {
             });
         } else {
             this.map.addCallback('drawn', _.throttle(function() {
+                var map = self.map, game = self.game;
                 if (!game || !game.question || !game.isStarted) {
                     return;
                 }

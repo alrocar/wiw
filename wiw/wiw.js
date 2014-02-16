@@ -231,9 +231,13 @@ var WW = es.alrocar.WW = {
             if (this.getRemainingTime() <= 0) {
                 // console.log("No more time");                
                 this._performBadAnswer();    
-            } else if (this.getRemainingTime() * 3 < this._timeForNextQuestion) {
+            } else if (this._isBlinking()) {
                 this.ui.blinkQuestion();
             }
+        },
+
+        _isBlinking: function() {
+            return this.getRemainingTime() * 3 < this._timeForNextQuestion;
         },
 
         getRank: function() {
@@ -305,10 +309,16 @@ var WW = es.alrocar.WW = {
                 return;
             }
 
-            if (this._wait) return;            
+            if (this._wait) return;
+
             var correct = this.gameModel.isAnswerCorrect(answer, this.isMobile);
             if (correct) {
+                this.character.hideHint();
                 this._performCorrectAnswer();
+            } 
+
+            if (this._isBlinking()) {
+                this.character.showHint("Distance: " + Math.round(answer.distance) + " Km.");
             }
             return correct;
         },

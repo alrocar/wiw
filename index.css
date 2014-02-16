@@ -132,9 +132,9 @@ input[type="submit"]:hover { background: none repeat scroll 0% 0% rgb(34, 34, 34
 ul.navigation li a { padding: 10px; height: 40px; text-indent: 20px; }
 a.submit-session { background-position: 83px -213px; }
 a.venue { background-position: 83px -295px; margin-top: 10px; }
-#person-wrapper { position: absolute; bottom: 20%; left: 35%; width: 220px; height: 0px; z-index: 10; }
-#keyboard-shortcuts { position: absolute; top: 40px; left: -440px; margin-bottom: 10px; color: white; padding: 10px; right: 0px; width: 200px; background: none repeat scroll 0% 0% rgba(52, 152, 219,0.8); font: 14px/17px 'OpenSansRegular',Arial,sans-serif; border-radius: 3px 3px 3px 3px; text-align: center;}
-#keyboard-shortcuts:after { position: absolute; bottom: -5px; left: 105px; display: inline-block; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 5px solid rgba(52, 152, 219,0.8); content: ""; }
+#person-wrapper { position: absolute; bottom: 70%; right: 25%; width: 220px; height: 0px; z-index: 10; }
+#keyboard-shortcuts { position: absolute; top: 40px; left: -440px; margin-bottom: 10px; color: white; padding: 10px; right: 0px; width: 200px; background: none repeat scroll 0% 0% rgba(52, 152, 219, 0.9); font: 14px/17px 'OpenSansRegular',Arial,sans-serif; border-radius: 3px 3px 3px 3px; }
+#keyboard-shortcuts:after { position: absolute; bottom: -5px; left: 105px; display: inline-block; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 5px solid rgba(52, 152, 219, 0.9); content: ""; }
 #person-marker { position: relative; top: 100px; left: -350px; width: 40px; height: 60px; background-image: url('walk-cycle.png'); }
 .sprite { display: block; background-image: url('img/wiw.png'); background-repeat: no-repeat; }
 .logo { width: 121px; height: 121px; margin: 0pt auto; }

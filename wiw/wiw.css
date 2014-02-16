@@ -529,10 +529,16 @@ a {
 
 .start-button {
   width:121px;
-  height:121px;
+  height: 61px;
   margin:0 auto;
   display: block;
   margin-bottom: -40px;
+  background-image: url("../img/wiw.png"); background-repeat: no-repeat; 
+  background-size: 30px; 
+  background-position-x: 15px; 
+  background-position-y: 13px;
+  text-align: left;
+  /* padding-right: 59px; */
 }
 
 .no-border {

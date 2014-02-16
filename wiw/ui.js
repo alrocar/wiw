@@ -44,7 +44,7 @@ var UI = es.alrocar.UI = {
         $(".start-button").click(function() {
           // $("ul").roundabout();
           if (self.game.isStarted) {
-            self.game.restart();
+            self.game.gameOver();
           } else {
             self.game.start();
           }
@@ -57,7 +57,7 @@ var UI = es.alrocar.UI = {
 
         game: null,
         firstGame: true,
-        time: 10,
+        time: 62,
 
         setGame: function(wiw) {
             this.game = wiw;
@@ -145,7 +145,7 @@ var UI = es.alrocar.UI = {
                 }
             }
 
-            $('.start-button').text('RESTART');
+            $('.start-button').text('STOP');
         },
 
         stop: function() {

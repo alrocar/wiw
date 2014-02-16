@@ -388,16 +388,18 @@
 /* Button 2g */
 .btn-2g {
 	border-radius: 40px;
+	box-shadow: 0 2px #375777;
+	/* padding: 0; */
 }
 
 .btn-2g:hover {
-	box-shadow: 0 4px #ab3c3c;
-	top: 2px;
+	box-shadow: 0 3px #375777;
+	top: -2px;
 }
 
 .btn-2g:active {
-	box-shadow: 0 0 #ab3c3c;
-	top: 6px;
+	box-shadow: 0 0 #3498db;
+	top: 1px;
 }
 
 /* Button 2h */
