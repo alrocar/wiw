@@ -44,7 +44,7 @@ var WW = es.alrocar.WW = {
         1000: 'Mapper',
         1100: 'Addams Family',
         1200: 'Scribblenaut',
-        1300: 'Gaymer',
+        1300: 'Gamer',
         1400: 'Geek',
         1500: 'Geo-Geek',
         1600: 'Dr. Northing',
