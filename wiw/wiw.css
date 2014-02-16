@@ -1,3 +1,6 @@
+body {
+  background-color: white;
+}
 .gameback.finish {
   /* background: url('../green.png') repeat scroll 0% 0% transparent; */
   height: 12.5em;
@@ -584,4 +587,20 @@ a {
   left: 0; z-index: 9999999999999; width: 50px; height: 63px; background-size: 50px;
   margin-top: 5px;
   margin-left: 5px;
+}
+
+.rotate-device {
+  background: url('../img/rotate.jpg') no-repeat scroll 0% 0% transparent;
+  margin: auto;
+  width: 440px;
+  height: 440px;
+}
+
+#warning-message {
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  background-color: white;
+  height: 100%;
+  width: 100%;
 }
