@@ -2,6 +2,6 @@
 
 WiW is a mapping game to locate geospatial information on a map (city names, countries, flags, monuments, ...)
 
-It's currently under development (almost abandoned :P)
+Try the <a href="http://alrocar.github.io/wiw">beta release</a>, comments, issues, feature requests and forks are welcome
 
 [![](https://raw.github.com/alrocar/wiw/master/wiw_web.png)](http://github.com/alrocar/wiw)
