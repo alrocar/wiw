@@ -5,7 +5,7 @@ WW.Character = function(th, character) {
     window.ch = this;
     document.getElementById('person-marker').style.backgroundPosition = '0px ' + '0px';
     th.callback(function(speed) {
-        self.dir = Math.atan2(speed.y, speed.x) / (Math.PI / 4);
+        self.dir = Math.atan2(-speed.y, -speed.x) / (Math.PI / 4);
 
         var x;
         switch (Math.round(self.dir)) {
@@ -21,7 +21,7 @@ WW.Character = function(th, character) {
         }
 
         // Euclidean distance, normalize
-        var spd = Math.round(Math.sqrt(Math.pow(speed.x, 2) + Math.pow(speed.y, 2)) / 5);
+        var spd = Math.round(Math.sqrt(Math.pow(speed.x/8, 2) + Math.pow(speed.y/8, 2)) / 5);
 
         if ((+new Date() - self.lastdate) > (110 / spd)) {
             self.frame++;

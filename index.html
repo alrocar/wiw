@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta http-equiv="Access-Control-Allow-Origin" content="*">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1, maximum-scale=1">
     <title>Where in the world</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <script src="js/vendor/underscore.js"></script>
@@ -20,6 +21,8 @@
     <script src="js/vendor/jquery.easing.compatibility.js"></script>
     <script src="js/vendor/soundjs-0.5.2.min.js"></script>
     <script src="js/vendor/filters.js"></script>
+    <!-- <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin=""></script> -->
+    <script src="js/vendor/leaflet-src.js"></script>
     <script src="js/modestmaps.js"></script>
     <script src="js/mmg.js"></script>
     <script src="js/modlayer.js"></script>
@@ -37,90 +40,93 @@
     <script src="js/vendor/easey.js"></script>
     <script src="js/vendor/easey.handlers.js"></script>
     <script src="app.js"></script>
-
-
-<link rel="stylesheet" type="text/css" href="css/component.css" />
-<link rel="stylesheet" type="text/css" href="css/default.css" media="all">
-<link rel="stylesheet" type="text/css" href="css/downclock.css" media="all">
-<link rel="stylesheet" type="text/css" href="css/pointcounter.css" media="all">
-<link rel="stylesheet" type="text/css" href="css/wiw.css" media="all">
-
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin="" />
+    <link rel="stylesheet" type="text/css" href="css/component.css" />
+    <link rel="stylesheet" type="text/css" href="css/default.css" media="all">
+    <link rel="stylesheet" type="text/css" href="css/downclock.css" media="all">
+    <link rel="stylesheet" type="text/css" href="css/pointcounter.css" media="all">
+    <link rel="stylesheet" type="text/css" href="css/wiw.css" media="all">
 </head>
+
 <body>
     <style type="text/css">
-    #warning-message { display: none; }
-    @media only screen and (orientation:portrait){
-        #wrapper { display:none; }
-        #warning-message { display:block; }
+    #warning-message {
+        display: none;
     }
-    @media only screen and (orientation:landscape){
-        #warning-message { display:none; }
+
+    @media only screen and (orientation:portrait) {
+        #wrapper {
+            display: none;
+        }
+        #warning-message {
+            display: block;
+        }
     }
-</style>
 
-<div id="wrapper">
-    <!-- your html for your website -->
+    @media only screen and (orientation:landscape) {
+        #warning-message {
+            display: none;
+        }
+    }
+    </style>
+    <div id="wrapper">
+        <!-- your html for your website -->
+        <script>
+        $(document).ready(function() {
 
-    <script>
-      $(document).ready(function() {
-
-      });
-    </script>
-<div id="gamebar-container">
-<div id="gamebar">
-
-  </div>
-  </div>
-    <div style="padding: 0pt; overflow: hidden;" id="back-map"></div>
-    <div class="notice" id="status-message"></div>
-    <div class="attribution">
-        <a href="http://openstreetmap.org/" target="_blank">© OpenStreetMap contributors</a>
-    </div>
-    <!-- <div id="wiw-logo">
+        });
+        </script>
+        <div id="gamebar-container">
+            <div id="gamebar">
+            </div>
+        </div>
+        <div style="padding: 0pt; overflow: hidden;" id="back-map"></div>
+        <div class="notice" id="status-message"></div>
+        <div class="attribution">
+            <a href="http://openstreetmap.org/" target="_blank">© OpenStreetMap contributors</a>
+        </div>
+        <!-- <div id="wiw-logo">
     </div> -->
-    <div id="person-wrapper">
-      <div id="keyboard-shortcuts">
-        Click the "PLAY" button and try to find in the map every city you are asked for!
-      </div>
-      <div style="background-position: 0px -180px;" id="person-marker"></div>
-    </div>
-    <div class="saw">
-    </div>
-    <div class="limiter">
-      <div id="home">
-        <button id="start-button" class="wiw-button btn btn-2 btn-2g">Play</button>
-
-        <!-- <h1 class="main-title">Where in the world!</h1>
+        <div id="person-wrapper">
+            <div id="keyboard-shortcuts">
+                Click the "PLAY" button and try to find in the map every city you are asked for!
+            </div>
+            <div style="background-position: 0px -180px;" id="person-marker"></div>
+        </div>
+        <div class="saw">
+        </div>
+        <div class="limiter">
+            <div id="home">
+                <button id="start-button" class="wiw-button btn btn-2 btn-2g">Play</button>
+                <!-- <h1 class="main-title">Where in the world!</h1>
         <h3 class="main-title">The mapping game</h3> -->
-
-        <div class="section no-border">
-          <h3 class="question-label" id="q2"></h3>
-
-          <div class="counter-mobile" style="height:120px;width:120px;margin-left:-10px;margin-top:10px">
-            <div style="position:relative;width:120px;margin:auto">
-                <div style="position:absolute;left:0px;top:0px">
-                    <div style="display:inline;width:120px;height:120px">
-                        <input readonly="readonly" style="color:white !important;" class="knob hour" data-min="0" data-bgcolor="#905ba1" data-fgcolor="#3498db" data-displayinput="true" data-width="120" data-height="120" data-thickness=".4" data-max="60" data-readOnly=true/>
+                <div class="section no-border">
+                    <h3 class="question-label" id="q2"></h3>
+                    <div class="counter-mobile" style="height:120px;width:120px;margin-left:-10px;margin-top:10px">
+                        <div style="position:relative;width:120px;margin:auto">
+                            <div style="position:absolute;left:0px;top:0px">
+                                <div style="display:inline;width:120px;height:120px">
+                                    <input readonly="readonly" style="color:white !important;" class="knob hour" data-min="0" data-bgcolor="#905ba1" data-fgcolor="#3498db" data-displayinput="true" data-width="120" data-height="120" data-thickness=".4" data-max="60" data-readOnly=true/>
+                                </div>
+                            </div>
+                            <div style="position:absolute;left:20px;top:20px">
+                                <div style="display:inline;width:80px;height:80px;">
+                                    <input readonly="readonly" class="knob minute" data-min="0" data-bgcolor="#905ba1" data-fgcolor="#fff" data-displayinput="false" data-width="80" data-height="80" data-thickness=".2" data-readOnly=true/>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div style="position:absolute;left:20px;top:20px">
-                    <div style="display:inline;width:80px;height:80px;">
-                        <input readonly="readonly" class="knob minute" data-min="0" data-bgcolor="#905ba1" data-fgcolor="#fff" data-displayinput="false" data-width="80" data-height="80" data-thickness=".2" data-readOnly=true/>
-                    </div>
+                    <h3 class="total-points"></h3>
+                    <button id="pass-button" class="wiw-button btn btn-2 btn-2g">Next</button>
                 </div>
             </div>
         </div>
-        <h3 class="total-points"></h3>
-        <button id="pass-button" class="wiw-button btn btn-2 btn-2g">Next</button>
+    </div>
+    <div id="warning-message">
+        <span>This website is only viewable in landscape mode, please rotate your device</span>
+        <div class="rotate-device">
         </div>
-      </div>
     </div>
-</div>
-<div id="warning-message">
-    <span>This website is only viewable in landscape mode, please rotate your device</span>
-    <div class="rotate-device">
-    </div>
-</div>
-
 </body>
+
 </html>

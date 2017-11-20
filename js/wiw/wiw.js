@@ -63,7 +63,7 @@ var WW = es.alrocar.WW = {
     };
 
     var sounds = {};
-    
+
     WW.Game = function(gameModel, user, ui, scoreBoard, map, mapController, character, isMobile) {
         var self = this;
         this.gameModel = gameModel;
@@ -116,7 +116,7 @@ var WW = es.alrocar.WW = {
         passCounter: 3,
 
         start: function() {
-            this.question = null;            
+            this.question = null;
             this._lastQuestion = null;
             this._timeForNextQuestion = null;
             this.isStarted = true;
@@ -168,7 +168,7 @@ var WW = es.alrocar.WW = {
             if (this.question)
                 this._lastQuestion = $.extend({}, this.question);
             this.question = this.gameModel.nextQuestion();
-            
+
             if (!this.question) {
                 this.gameOver();
                 if (this.correctAnswers > 10) {
@@ -179,14 +179,14 @@ var WW = es.alrocar.WW = {
                 return;
             }
 
-            this._iniTime = new Date().getTime();    
+            this._iniTime = new Date().getTime();
             this._timeForNextQuestion = this.timeForNextQuestion();
             this.ui.setQuestion(this.question, this._timeForNextQuestion);
-            // console.log("timeForNextQuestion: " + this._timeForNextQuestion); 
+            // console.log("timeForNextQuestion: " + this._timeForNextQuestion);
             if (this.correctAnswers === 0) {
                 this.character.showHint(this.hints.move.format(this.question.name));
             }
-            
+
             return this.question;
         },
 
@@ -203,7 +203,7 @@ var WW = es.alrocar.WW = {
             this._wait = true;
 
             this.playSound('pass');
-            
+
             var penaltyTime = this._getPenalty();
 
             this._addBadAnswer();
@@ -214,14 +214,14 @@ var WW = es.alrocar.WW = {
         },
 
         timeForNextQuestion: function() {
-            var lastLocation = new MM.Location(0, 0);
+            var lastLocation = this.mapController.point(0, 0);
             if (this._lastQuestion) {
-                lastLocation = new MM.Location(this.map.getCenter().lat, this.map.getCenter().lon);
-            } 
-            var lastPoint = this.map.locationPoint(lastLocation);
+                lastLocation = this.map.getCenter();
+            }
+            var lastPoint = this.mapController.toPixel(lastLocation);
 
-            var nextLocation = new MM.Location(this.question.lat, this.question.lon);
-            var nextPoint = this.map.locationPoint(nextLocation);
+            var nextLocation = this.mapController.point(this.question.lat, this.question.lon);
+            var nextPoint = this.mapController.toPixel(nextLocation);
 
             var distancePx = MM.Point.distance(lastPoint, nextPoint);
 
@@ -235,8 +235,8 @@ var WW = es.alrocar.WW = {
         updateTime: function() {
             this.timePlaying++;
             if (this.getRemainingTime() <= 0) {
-                // console.log("No more time");                
-                this._performBadAnswer();    
+                // console.log("No more time");
+                this._performBadAnswer();
             } else if (this._isBlinking()) {
                 this.playSound('blink');
                 this.ui.blinkQuestion();
@@ -290,12 +290,12 @@ var WW = es.alrocar.WW = {
             this.ui.addPoints(questionScore);
             this.ui.addTime(Math.floor(questionScore/10));
             this._addMarker(this.question, questionScore);
-            this.ui.correctAnswer(this.nextQuestion, this);                
+            this.ui.correctAnswer(this.nextQuestion, this);
             this.character.showHint(this.hints.welldone, this.hintDuration);
         },
 
         getElapsedTime: function() {
-            var currentTime = new Date().getTime();            
+            var currentTime = new Date().getTime();
             var elapsed = currentTime - this._iniTime;
             // console.log("elapsed time: " + elapsed);
             return elapsed;
@@ -324,7 +324,7 @@ var WW = es.alrocar.WW = {
             if (correct) {
                 this.character.hideHint();
                 this._performCorrectAnswer();
-            } 
+            }
 
             if (this._isBlinking()) {
                 this.character.showHint("Distance: " + Math.round(answer.distance) + " Km.");
@@ -422,13 +422,13 @@ var WW = es.alrocar.WW = {
         },
 
         _addMarker: function(question, score) {
-            var marker = { 
+            var marker = {
                 "type": "Feature",
-                "geometry": { 
+                "geometry": {
                     "type": "Point",
                     "coordinates": [question.lon, question.lat]
                 },
-                "properties": {                    
+                "properties": {
                     "text":  question.name  + "  +" +score
                 }
             };
@@ -441,7 +441,7 @@ var WW = es.alrocar.WW = {
         this.lon = lon;
         this.lat = lat;
         this.name = name;
-        this.p = p;        
+        this.p = p;
     }
 
     WW.Question.prototype = {
