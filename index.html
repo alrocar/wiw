@@ -1,55 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1, maximum-scale=1">
-
-
-
     <title>Where in the world</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    
-    <!-- <script src="track.js" data-site-id="4fa92e80613f5d30700000eb" id="gauges-tracker" async="" type="text/javascript"></script>
-    <script src="ga.js" async="" type="text/javascript"></script> -->
-    <script src="underscore.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>    
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js"></script>        
-    <script src="jquery.event.drag-2.2.js"></script>
-    <script src="jquery.event.drag.live-2.2.js"></script>
-    <script src="jquery.event.drop-2.2.js"></script>
-    <script src="jquery.event.drop.live-2.2.js"></script>
-    <script src="jquery.roundabout.js"></script>
-    <script src="jquery.roundabout-shapes.js"></script>    
-    <script src="jquery.easing.1.3.js"></script>
-    <script src="jquery.easing.compatibility.js"></script>    
-    <script src="soundjs-0.5.2.min.js"></script>
-    <script src="filters.js"></script>
-    <script src="modestmaps.js"></script>
-    <script src="mmg.js"></script>
-    <script src="modlayer.js"></script>
-    <script src="keyboard.js"></script>        
-    <script src="wiw/jquery.knob.js"></script>
-    <script src="wiw/wiw.js"></script>
-    <script src="wiw/players.js"></script>
-    <script src="wiw/character.js"></script>
-    <script src="wiw/ui.js"></script>
-    <script src="g.mapcontroller.js"></script>    
-    <script src="wiw/wcapitals.json"></script>
-    <script src="wiw/gcapitals.js"></script>
-    <script src="wiw/ui.downclock.js"></script>
-    <script src="wiw/ui.pointcounter.js"></script>    
-    <script src="easey.js"></script>
-    <script src="easey.handlers.js"></script>
-    <script src="site.js"></script>
-  
-  
-<link rel="stylesheet" type="text/css" href="css/default.css" />
+    <script src="js/vendor/underscore.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js"></script>
+    <script src="js/vendor/jquery.event.drag-2.2.js"></script>
+    <script src="js/vendor/jquery.event.drag.live-2.2.js"></script>
+    <script src="js/vendor/jquery.event.drop-2.2.js"></script>
+    <script src="js/vendor/jquery.event.drop.live-2.2.js"></script>
+    <script src="js/vendor/jquery.roundabout.js"></script>
+    <script src="js/vendor/jquery.roundabout-shapes.js"></script>
+    <script src="js/vendor/jquery.easing.1.3.js"></script>
+    <script src="js/vendor/jquery.easing.compatibility.js"></script>
+    <script src="js/vendor/soundjs-0.5.2.min.js"></script>
+    <script src="js/vendor/filters.js"></script>
+    <script src="js/modestmaps.js"></script>
+    <script src="js/mmg.js"></script>
+    <script src="js/modlayer.js"></script>
+    <script src="js/keyboard.js"></script>
+    <script src="js/wiw/jquery.knob.js"></script>
+    <script src="js/wiw/wiw.js"></script>
+    <script src="js/wiw/players.js"></script>
+    <script src="js/wiw/character.js"></script>
+    <script src="js/wiw/ui.js"></script>
+    <script src="js/g.mapcontroller.js"></script>
+    <script src="js/wiw/wcapitals.json"></script>
+    <script src="js/wiw/gcapitals.js"></script>
+    <script src="js/wiw/ui.downclock.js"></script>
+    <script src="js/wiw/ui.pointcounter.js"></script>
+    <script src="js/vendor/easey.js"></script>
+    <script src="js/vendor/easey.handlers.js"></script>
+    <script src="app.js"></script>
+
+
 <link rel="stylesheet" type="text/css" href="css/component.css" />
-<link rel="stylesheet" type="text/css" href="index.css" media="all">
-<link rel="stylesheet" type="text/css" href="wiw/downclock.css" media="all">
-<link rel="stylesheet" type="text/css" href="wiw/pointcounter.css" media="all">
-<link rel="stylesheet" type="text/css" href="wiw/wiw.css" media="all">
+<link rel="stylesheet" type="text/css" href="css/default.css" media="all">
+<link rel="stylesheet" type="text/css" href="css/downclock.css" media="all">
+<link rel="stylesheet" type="text/css" href="css/pointcounter.css" media="all">
+<link rel="stylesheet" type="text/css" href="css/wiw.css" media="all">
 
 </head>
 <body>
@@ -69,66 +63,15 @@
 
     <script>
       $(document).ready(function() {
-        
-        //NORMAL
-        // $('ul').roundabout({easing: "jswing" ,shape: "waterWheel", enableDrag: true});
-
-         //3DCUBE
-        // $('li')
-        //   .bind({
-        //     "reposition": function() {
-        //       var degrees = $(this).data('roundabout').degrees,
-        //           roundaboutBearing = $(this).parent().data('roundabout').bearing,
-        //           rotateY = Math.round(roundaboutBearing - degrees);
-              
-        //       $(this).css({
-        //         "-webkit-transform": "perspective(2000) rotateY(" + rotateY + "deg)",
-        //         "-moz-transform": "perspective(2000) rotateY(" + rotateY + "deg)",
-        //         "transform": "perspective(2000) rotateY(" + rotateY + "deg)"
-        //       });
-        //     }
-        //   })
-        
-        // $('ul').roundabout({
-        //   minScale: 0.7,
-        //   easing: 'easeOutElastic',
-        //   duration: 1600
-        // });
-
-//         $('.roundabout-holder').grumble(
-//   {
-//     text: '<h4>1. Elige un mapa y haz click aquí para continuar</h4>',
-//     angle: 310,
-//     distance: 30,
-//     showAfter: 300,
-//     hideAfter: false,
-//     hasHideButton: false,
-//     hideOnClick: true,
-//     onHide: function() { },
-//     onBeginHide: function() { },
-//     onShow: function() { }
-//   }
-// );
-
-        // var $grum = $(".grumble, .grumble-text");
-        // $grum.css("top", $grum.offset().top - $(".test").outerHeight() / 3);
-        // $('ul').bind("childrenUpdated", function(){
-        //     var a = $(".roundabout-in-focus");
-        //     if (a.length != 0) {
-        //         var prov = a.find("img").attr("alt");
-        //         window.map.getLayerAt(0).setProvider(new MM.Template(prov, {}));
-        //     }            
-        // });
-
 
       });
     </script>
 <div id="gamebar-container">
 <div id="gamebar">
-    
-  </div>    
-  </div>    
-    <div style="padding: 0pt; overflow: hidden;" id="back-map"></div> 
+
+  </div>
+  </div>
+    <div style="padding: 0pt; overflow: hidden;" id="back-map"></div>
     <div class="notice" id="status-message"></div>
     <div class="attribution">
         <a href="http://openstreetmap.org/" target="_blank">© OpenStreetMap contributors</a>
@@ -139,18 +82,18 @@
       <div id="keyboard-shortcuts">
         Click the "PLAY" button and try to find in the map every city you are asked for!
       </div>
-      <div style="background-image: url('idle-cycle.png'); background-position: 0px -180px;" id="person-marker"></div>
+      <div style="background-position: 0px -180px;" id="person-marker"></div>
     </div>
     <div class="saw">
     </div>
     <div class="limiter">
       <div id="home">
         <button id="start-button" class="wiw-button btn btn-2 btn-2g">Play</button>
-        
+
         <!-- <h1 class="main-title">Where in the world!</h1>
         <h3 class="main-title">The mapping game</h3> -->
-        
-        <div class="section no-border">         
+
+        <div class="section no-border">
           <h3 class="question-label" id="q2"></h3>
 
           <div class="counter-mobile" style="height:120px;width:120px;margin-left:-10px;margin-top:10px">
@@ -169,60 +112,9 @@
         </div>
         <h3 class="total-points"></h3>
         <button id="pass-button" class="wiw-button btn btn-2 btn-2g">Next</button>
-        <!-- <div id="mapselector">
-        <ul  class="test">
-            <li>
-            <img src="img/geography-class.png" width="196" alt="/wiw/MAPBOX_GEO_flatx/{Z}/{X}/{Y}.png"/>
-          </li>
-          <li>
-            <img src="img/blue.png" width="196" alt="/wiw/MAPBOX_BLUE_flatx/{Z}/{X}/{Y}.png"/>
-          </li>
-          <li>
-            <img src="img/blue8.png" width="196" alt="/wiw/MAPBOX_BLUE8_flatx/{Z}/{X}/{Y}.png"/>
-          </li>
-          <li>
-            <img src="img/fire.png" width="196" alt="/wiw/MAPBOX_FIRE_flatx/{Z}/{X}/{Y}.png"/>
-          </li>          
-          <li>
-            <img src="img/natural.png" width="196" alt="/wiw/MAPBOX_NATURAL_flatx/{Z}/{X}/{Y}.png"/>
-          </li>
-          <li>
-            <img src="img/toner.png" width="196" alt="/wiw/STAMEN_TONER_flatx/{Z}/{X}/{Y}.jpg"/>
-          </li>
-          <li>
-            <img src="img/watercolor.png" width="196" alt="/wiw/STAMEN_flatx/{Z}/{X}/{Y}.jpg"/>
-          </li>          
-          <li>
-            <img src="img/watercolor.png" width="196" alt="http://a.tile.openstreetmap.org/{Z}/{X}/{Y}.png"/>
-          </li> 
-        </ul>
-        </div>            -->
-        </div>           
-      </div>           
+        </div>
+      </div>
     </div>
-
-<script type="text/javascript">
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-48140558-1', 'alrocar.github.io');
-  ga('send', 'pageview');
-</script>
-<script type="text/javascript">
-  // var _gauges = _gauges || [];
-  // (function() {
-  //   var t   = document.createElement('script');
-  //   t.type  = 'text/javascript';
-  //   t.async = true;
-  //   t.id    = 'gauges-tracker';
-  //   t.setAttribute('data-site-id', '4fa92e80613f5d30700000eb');
-  //   t.src = '//secure.gaug.es/track.js';
-  //   var s = document.getElementsByTagName('script')[0];
-  //   s.parentNode.insertBefore(t, s);
-  // })();
-</script>  
 </div>
 <div id="warning-message">
     <span>This website is only viewable in landscape mode, please rotate your device</span>

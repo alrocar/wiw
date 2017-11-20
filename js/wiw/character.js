@@ -21,7 +21,7 @@ WW.Character = function(th, character) {
         }
 
         // Euclidean distance, normalize
-        var spd = Math.round(Math.sqrt(Math.pow(speed.x, 2) + Math.pow(speed.y, 2)) / 5);    
+        var spd = Math.round(Math.sqrt(Math.pow(speed.x, 2) + Math.pow(speed.y, 2)) / 5);
 
         if ((+new Date() - self.lastdate) > (110 / spd)) {
             self.frame++;
@@ -43,7 +43,7 @@ WW.Character = function(th, character) {
 };
 
 WW.Character.prototype = {
-    map: null,    
+    map: null,
     // there are 8 frames in the sequence
     frame: 0,
     totalFrames: 8,
@@ -68,8 +68,8 @@ WW.Character.prototype = {
    width: 40,
     height: 60,
     heightPx: 60,
-    walkImg: "img/walk-cycle.png",
-    idleImg: "img/idle-cycle.png",
+    walkImg: "../../img/walk-cycle.png",
+    idleImg: "../../img/idle-cycle.png",
     vertical: true,
 
   /*var spritetypes = {
@@ -94,8 +94,8 @@ WW.Character.prototype = {
         }
 
         $("#person-marker").css({
-                "width": this.width + "px", 
-                "height": this.height + "px", 
+                "width": this.width + "px",
+                "height": this.height + "px",
                 "backgound-image" : "url(" + this.walkImg + ")"
             });
     },
@@ -137,7 +137,7 @@ WW.Character.prototype = {
             // if (window.ch.frame > window.ch.totalFrames) window.ch.frame = 0;
             // if (window.ch.vertical)
             //     document.getElementById('person-marker').style.backgroundPosition = window.ch.spritetypes[window.ch.guydir] + 'px ' + window.ch.f2y(window.ch.frame) + 'px';
-            // else 
+            // else
             //     document.getElementById('person-marker').style.backgroundPosition = window.ch.f2y(window.ch.frame) + 'px ' + window.ch.spritetypes[window.ch.guydir] + 'px';
             document.getElementById('person-marker').style.backgroundImage = 'url(' + window.ch.walkImg + ')';
         } else {

@@ -39,11 +39,11 @@ body {
 }
 
 .bold {
-    font: 14px/20px 'OpenSansBold',Arial,sans-serif;    
-} 
+    font: 14px/20px 'OpenSansBold',Arial,sans-serif;
+}
 
 .semi-bold {
-    font: 14px/20px 'OpenSansBold',Arial,sans-serif;    
+    font: 14px/20px 'OpenSansBold',Arial,sans-serif;
 }
 
 .score-content {
@@ -60,7 +60,7 @@ body {
 }
 
 .score-content .rank {
-   font-size: 20px; 
+   font-size: 20px;
 }
 
 
@@ -68,11 +68,11 @@ body {
 
 @font-face {
   font-family: "landyicons";
-  src:url("../landy-icons/landyicons.eot");
-  src:url("../landy-icons/landyicons.eot?#iefix") format("embedded-opentype"),
-    url("../landy-icons/landyicons.ttf") format("truetype"),
-    url("../landy-icons/landyicons.svg#landyicons") format("svg"),
-    url("../landy-icons/landyicons.woff") format("woff");
+  src:url("../fonts/landy-icons/landyicons.eot");
+  src:url("../fonts/landy-icons/landyicons.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/landy-icons/landyicons.ttf") format("truetype"),
+    url("../fonts/landy-icons/landyicons.svg#landyicons") format("svg"),
+    url("../fonts/landy-icons/landyicons.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 
@@ -546,10 +546,10 @@ a {
 }
 
 #start-button {
-  background-image: url("../img/wiw.png"); 
-  background-repeat: no-repeat; 
-  background-size: 30px; 
-  background-position-x: 15px; 
+  background-image: url("../img/wiw.png");
+  background-repeat: no-repeat;
+  background-size: 30px;
+  background-position-x: 15px;
   background-position-y: 13px;
 }
 
@@ -578,7 +578,7 @@ a {
 }
 
 .total-points {
-  font: 40px/20px 'OpenSansBold',Arial,sans-serif;
+  font: 40px/20px 'Open Sans',Arial,sans-serif;
   margin-top: 20px;
   margin-left: -15px;
 }
@@ -600,7 +600,7 @@ a {
 
 #wiw-logo {
   background: url('../img/wiw.png') no-repeat scroll 0% 0% transparent;
-  top: 0; 
+  top: 0;
   left: 0; z-index: 9999999999999; width: 50px; height: 63px; background-size: 50px;
   margin-top: 5px;
   margin-left: 5px;
