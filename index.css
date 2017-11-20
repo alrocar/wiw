@@ -1,179 +1,585 @@
 /* ::::: http://stateofthemap.us/css/reset.css ::::: */
 
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, input, select, textarea, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { margin: 0px; padding: 0px; border: 0px none; outline: 0px none; font-size: 100%; vertical-align: baseline; background: none repeat scroll 0% 0% transparent; line-height: inherit; }
-ol, ul, .item-list ul, .item-list ul li { list-style: none outside none; }
-:focus { outline: 0px none; }
-input, select, textarea, body { font: 13px/20px "Helvetica Neue",Helvetica,Arial,sans-serif; }
-/* ::::: http://stateofthemap.us/css/fonts/ostrich-sans/stylesheet.css ::::: */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+input,
+select,
+textarea,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+    margin: 0px;
+    padding: 0px;
+    border: 0px none;
+    outline: 0px none;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: none repeat scroll 0% 0% transparent;
+    line-height: inherit;
+}
 
-@font-face {
-	font-family: "OstrichSansCondensedLight";
-	font-style: normal;
-	font-weight: normal;
-	src: url('ostrich-light-webfont.eot') format("embedded-opentype"), url('ostrich-light-webfont.woff') format("woff"), url('ostrich-light-webfont.ttf') format("truetype"), url('ostrich-light-webfont.svg') format("svg");
+ol,
+ul,
+.item-list ul,
+.item-list ul li {
+    list-style: none outside none;
 }
-@font-face {
-	font-family: "OstrichSansMedium";
-	font-style: normal;
-	font-weight: normal;
-	src: url('ostrich-regular-webfont.eot') format("embedded-opentype"), url('ostrich-regular-webfont.woff') format("woff"), url('ostrich-regular-webfont.ttf') format("truetype"), url('ostrich-regular-webfont.svg') format("svg");
-}
-@font-face {
-	font-family: "OstrichSansBold";
-	font-style: normal;
-	font-weight: normal;
-	src: url('ostrich-bold-webfont.eot') format("embedded-opentype"), url('ostrich-bold-webfont.woff') format("woff"), url('ostrich-bold-webfont.ttf') format("truetype"), url('ostrich-bold-webfont.svg') format("svg");
-}
-@font-face {
-	font-family: "OstrichSansBlack";
-	font-style: normal;
-	font-weight: normal;
-	src: url('ostrich-black-webfont.eot') format("embedded-opentype"), url('ostrich-black-webfont.woff') format("woff"), url('ostrich-black-webfont.ttf') format("truetype"), url('ostrich-black-webfont.svg') format("svg");
-}
-@font-face {
-	font-family: "OstrichSansRoundedMedium";
-	font-style: normal;
-	font-weight: normal;
-	src: url('ostrich-rounded-webfont.eot') format("embedded-opentype"), url('ostrich-rounded-webfont.woff') format("woff"), url('ostrich-rounded-webfont.ttf') format("truetype"), url('ostrich-rounded-webfont.svg') format("svg");
-}
-@font-face {
-	font-family: "OstrichSansDashedMedium";
-	font-style: normal;
-	font-weight: normal;
-	src: url('ostrich-dashed-webfont.eot') format("embedded-opentype"), url('ostrich-dashed-webfont.woff') format("woff"), url('ostrich-dashed-webfont.ttf') format("truetype"), url('ostrich-dashed-webfont.svg') format("svg");
-}
-/* ::::: http://stateofthemap.us/css/fonts/open-sans/stylesheet.css ::::: */
 
-@font-face {
-	font-family: "OpenSansLight";
-	font-style: normal;
-	font-weight: normal;
-	src: url('opensans-light-webfont.eot') format("embedded-opentype"), url('opensans-light-webfont.woff') format("woff"), url('opensans-light-webfont.ttf') format("truetype"), url('opensans-light-webfont.svg') format("svg");
+:focus {
+    outline: 0px none;
 }
-@font-face {
-	font-family: "OpenSansLightItalic";
-	font-style: normal;
-	font-weight: normal;
-	src: url('opensans-lightitalic-webfont.eot') format("embedded-opentype"), url('opensans-lightitalic-webfont.woff') format("woff"), url('opensans-lightitalic-webfont.ttf') format("truetype"), url('opensans-lightitalic-webfont.svg') format("svg");
-}
-@font-face {
-	font-family: "OpenSansRegular";
-	font-style: normal;
-	font-weight: normal;
-	src: url('opensans-regular-webfont.eot') format("embedded-opentype"), url('opensans-regular-webfont.woff') format("woff"), url('opensans-regular-webfont.ttf') format("truetype"), url('opensans-regular-webfont.svg') format("svg");
-}
-@font-face {
-	font-family: "OpenSansItalic";
-	font-style: normal;
-	font-weight: normal;
-	src: url('opensans-italic-webfont.eot') format("embedded-opentype"), url('opensans-italic-webfont.woff') format("woff"), url('opensans-italic-webfont.ttf') format("truetype"), url('opensans-italic-webfont.svg') format("svg");
-}
-@font-face {
-	font-family: "OpenSansSemibold";
-	font-style: normal;
-	font-weight: normal;
-	src: url('opensans-semibold-webfont.eot') format("embedded-opentype"), url('opensans-semibold-webfont.woff') format("woff"), url('opensans-semibold-webfont.ttf') format("truetype"), url('opensans-semibold-webfont.svg') format("svg");
-}
-@font-face {
-	font-family: "OpenSansSemiboldItalic";
-	font-style: normal;
-	font-weight: normal;
-	src: url('opensans-semibolditalic-webfont.eot') format("embedded-opentype"), url('opensans-semibolditalic-webfont.woff') format("woff"), url('opensans-semibolditalic-webfont.ttf') format("truetype"), url('opensans-semibolditalic-webfont.svg') format("svg");
-}
-@font-face {
-	font-family: "OpenSansBold";
-	font-style: normal;
-	font-weight: normal;
-	src: url('opensans-bold-webfont.eot') format("embedded-opentype"), url('opensans-bold-webfont.woff') format("woff"), url('opensans-bold-webfont.ttf') format("truetype"), url('opensans-bold-webfont.svg') format("svg");
-}
-@font-face {
-	font-family: "OpenSansBoldItalic";
-	font-style: normal;
-	font-weight: normal;
-	src: url('opensans-bolditalic-webfont.eot') format("embedded-opentype"), url('opensans-bolditalic-webfont.woff') format("woff"), url('opensans-bolditalic-webfont.ttf') format("truetype"), url('opensans-bolditalic-webfont.svg') format("svg");
-}
-@font-face {
-	font-family: "OpenSansExtrabold";
-	font-style: normal;
-	font-weight: normal;
-	src: url('opensans-extrabold-webfont.eot') format("embedded-opentype"), url('opensans-extrabold-webfont.woff') format("woff"), url('opensans-extrabold-webfont.ttf') format("truetype"), url('opensans-extrabold-webfont.svg') format("svg");
-}
-@font-face {
-	font-family: "OpenSansExtraboldItalic";
-	font-style: normal;
-	font-weight: normal;
-	src: url('opensans-extrabolditalic-webfont.eot') format("embedded-opentype"), url('opensans-extrabolditalic-webfont.woff') format("woff"), url('opensans-extrabolditalic-webfont.ttf') format("truetype"), url('opensans-extrabolditalic-webfont.svg') format("svg");
-}
-/* ::::: http://stateofthemap.us/css/style.css ::::: */
 
-body { background: none repeat scroll 0% 0% rgb(187, 187, 187); color: #2c3e50; font: 14px/20px 'OpenSansRegular',Arial,sans-serif; }
-h1, h2 { font: 36px/36px 'OstrichSansMedium',Arial,sans-serif; text-align: center; margin-top: 20px; }
-h1.main-title { font: 32px/58px 'OstrichSansMedium',Arial,sans-serif; margin-top: -25px; margin-bottom: -15px;}
-h3 { font: 14px/20px 'OpenSansLight',Arial,sans-serif; text-align: center; margin-bottom: 10px; color: white;}
-h4 { font: 14px/21px 'OpenSansSemiBold',Arial,sans-serif; }
-p { font: 14px/21px 'OpenSansItalic',Arial,sans-serif; text-align: center; margin-top: 10px; }
-a { text-decoration: none; font-family: 'OpenSansSemiBoldItalic',Arial,sans-serif; color: rgb(12, 55, 136); }
-a:hover { color: rgb(23, 35, 57); }
-hr { border-width: 0px 0px 1px; border-style: none none solid; border-color: -moz-use-text-color -moz-use-text-color rgb(255, 255, 255); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; -moz-border-image: none; }
-#back-map { z-index: -1; }
-.limiter { z-index:9999;position: absolute; top: 0pt; bottom: 0pt; right: 0pt; width: 189px; background: url('green.png') repeat scroll 0% 0% transparent; overflow-y: scroll; overflow-x: hidden; }
-.saw { z-index:9999;position: absolute; top: 0pt; bottom: 0pt; right: 142pt; width: 20px; background: url('saw.png') repeat scroll 0% 0% transparent; overflow-y: scroll; overflow: hidden; }
+input,
+select,
+textarea,
+body {
+    font: 13px/20px "Open Sans", Helvetica, Arial, sans-serif;
+}
 
-#home, #venue { position: absolute; left: 0px; top: 20px; width: 189px; }
-#venue { display: none; }
-#back-map { position: absolute; top: 0pt; left: 0pt; right: 0pt; bottom: 0pt; }
-form { margin: 20px; }
-input[type="email"] { font: 14px/20px 'OpenSansRegular',Arial,sans-serif; border-radius: 3px 0pt 0pt 3px; height: 20px; width: 185px; padding: 5px; background: none repeat scroll 0% 0% rgb(255, 255, 255); border-right: 5px solid rgba(0, 65, 185, 0.15); }
-input[type="submit"] { background: none repeat scroll 0% 0% rgb(23, 35, 57); font: 10px/20px 'OpenSansBold',Arial,sans-serif; text-transform: uppercase; color: rgb(255, 255, 255); border: 0pt none; margin: 0pt; height: 30px; width: 80px; padding: 6px 10px; cursor: pointer; border-radius: 0pt 3px 3px 0pt; }
-input[type="submit"]:hover { background: none repeat scroll 0% 0% rgb(34, 34, 34); }
-.section { margin: 30px 40px 0pt; padding: 30px 0px 0pt; border-top: 1px solid rgb(255, 255, 255);}
-.button { background: url('sprite.png') no-repeat scroll 0% 0% rgb(23, 35, 57); font: 10px/40px 'OpenSansBold',Arial,sans-serif; text-transform: uppercase; text-decoration: none; color: rgb(255, 255, 255); border: 0pt none; margin: 0pt 20px; border-radius: 3px 3px 3px 3px; display: block; text-align: center; height: 40px; padding: 10px; }
-.button:hover { background-color: rgb(34, 34, 34); color: rgb(255, 255, 255); }
-ul.navigation li a { padding: 10px; height: 40px; text-indent: 20px; }
-a.submit-session { background-position: 83px -213px; }
-a.venue { background-position: 83px -295px; margin-top: 10px; }
-#person-wrapper { position: absolute; bottom: 70%; right: 25%; width: 220px; height: 0px; z-index: 10; }
-#keyboard-shortcuts { position: absolute; top: 40px; left: -440px; margin-bottom: 10px; color: white; padding: 10px; right: 0px; width: 200px; background: none repeat scroll 0% 0% rgba(52, 152, 219, 0.9); font: 14px/17px 'OpenSansRegular',Arial,sans-serif; border-radius: 3px 3px 3px 3px; }
-#keyboard-shortcuts:after { position: absolute; bottom: -5px; left: 105px; display: inline-block; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 5px solid rgba(52, 152, 219, 0.9); content: ""; }
-#person-marker { position: relative; top: 100px; left: -350px; width: 40px; height: 60px; background-image: url('walk-cycle.png'); }
-.sprite { display: block; background-image: url('img/wiw.png'); background-repeat: no-repeat; }
-.logo { width: 121px; height: 121px; margin: 0pt auto; }
-.main-title { margin: 0pt auto; color: white; width: 190px; margin-bottom: -15px;}
-.mountains { width: 320px; height: 100px; background-position: 20px -470px; }
-.clear { clear: both; }
-#twitter a { font-family: 'OpenSansSemiBold'; }
-#twitter { margin: 0pt 20px 20px; padding: 20px; background: none repeat scroll 0% 0% white; border-radius: 3px 3px 3px 3px; position: relative; }
-#twitter:after { position: absolute; bottom: -5px; left: 135px; display: inline-block; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 5px solid white; content: ""; }
-#twitter p.tweet { font: 12px/20px 'OpenSansRegular',Arial,sans-serif; text-align: left; margin-top: 0px; }
-#twitter a.timestamp { font-size: 10px; font-family: 'OpenSansRegular',Arial,sans-serif; text-align: left; }
-.mapplace { background: url('transblue.png') repeat scroll 0% 0% transparent; color: white; display: block; width: 100px; position: absolute; padding: 10px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); font: 12px/20px 'OpenSansRegular',Arial,sans-serif; border-radius: 3px 3px 3px 3px; z-index: 20; left: -50px; top: -25px;}
-.mapplace:after { position: absolute; bottom: -5px; left: 55px; display: inline-block; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 5px solid rgba(23, 35, 57, 0.9); content: ""; }
-.mapplace.right-side:after { position: absolute; bottom: 50px; left: -10px; display: inline-block; border-right: 5px solid rgba(23, 35, 57, 0.9); border-top: 5px solid transparent; border-bottom: 5px solid transparent; content: ""; }
-.mapplace.left-side:after { position: absolute; bottom: 80px; left: 220px; display: inline-block; border-left: 5px solid rgba(23, 35, 57, 0.9); border-top: 5px solid transparent; border-bottom: 5px solid transparent; content: ""; }
-.mapplace a { color: rgb(144, 223, 74); font-family: 'OpenSansSemiBold'; }
-.mapplace a:hover { color: rgb(129, 200, 103); }
-.big { width: 180px; padding: 20px; }
-.big p { font: 18px/20px 'OpenSansBold',Arial,sans-serif; text-align: center; }
-.pirate { width: 70px; height: 65px; background: url('pirate.png') no-repeat scroll 0% 0% transparent; padding: 0px; margin: 0px; text-indent: -9999px; overflow: hidden; box-shadow: none; }
-.birdbutton { background: none repeat scroll 0% 0% rgb(151, 224, 86); border: 2px outset rgb(129, 200, 103); padding: 3px; text-align: center; }
-.birdbutton:hover { background: none repeat scroll 0% 0% rgb(137, 210, 73); }
-.birdbutton a { color: rgb(0, 0, 0); font-size: 20px; }
-#bird { position: absolute; top: 5px; left: 10px; z-index: 9999; display: none; }
-.birdbutton a:hover { color: rgb(0, 0, 0); }
-.fish, .fish_slow { width: 45px; height: 30px; padding: 0px; margin: 0px; text-indent: -9999px; overflow: hidden; box-shadow: none; }
-.fish { background: url('fish.gif') no-repeat scroll 0% 0% transparent; }
-.fish_slow { background: url('fish_slow.gif') no-repeat scroll 0% 0% transparent; }
-#status-message { z-index: 999; position: absolute; top: 25px; right: 25px; background: none repeat scroll 0% 0% transparent; font-size: 30px; line-height: 40px; padding: 20px; display: none; }
-.attribution { position: absolute; bottom: 0px; /* left: 0px; */ padding: 5px 10px; right: 0px; z-index: 9999999; color: white;}
-.tokyo { background: none repeat scroll 0% 0% rgba(23, 35, 57, 0.9); }
-.tokyo p { background: url('spots.png') no-repeat scroll -720px 0px transparent; padding-top: 180px; }
-.mapplace.tokyo:after { border: medium none; }
-.attribution a { font-size: 10px; font-family: 'OpenSansRegular',Arial,sans-serif; color: white;}
-.spot { padding-top: 90px; background: url('spots.png') no-repeat scroll 0% 0% transparent; }
-.location-spot { background-position: 100px -5px; }
-.cafe-spot { background-position: -150px 0px; }
-.open-spot { background-position: -380px -10px; }
-.otherevent { margin: 30px 0pt; }
-.address { text-align: center; display: block; }
-.address p { margin-top: 0px; font: 14px/21px 'OpenSansRegular',Arial,sans-serif; }
-.button.home { text-indent: 20px; background-position: 71px -379px; }
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700');
+
+
+body {
+    background: none repeat scroll 0% 0% rgb(187, 187, 187);
+    color: #2c3e50;
+    font: 14px/20px 'Open Sans', Arial, sans-serif;
+}
+
+h1,
+h2 {
+    font: 36px/36px 'Montserrat', Arial, sans-serif;
+    text-align: center;
+    margin-top: 20px;
+}
+
+h1.main-title {
+    font: 32px/58px 'Montserrat', Arial, sans-serif;
+    margin-top: -25px;
+    margin-bottom: -15px;
+}
+
+h3 {
+    font: 14px/20px 'Open Sans', Arial, sans-serif;
+    text-align: center;
+    margin-bottom: 10px;
+    color: white;
+}
+
+h4 {
+    font: 14px/21px 'Open Sans', Arial, sans-serif;
+}
+
+p {
+    font: 14px/21px 'Open Sans', Arial, sans-serif;
+    text-align: center;
+    margin-top: 10px;
+}
+
+a {
+    text-decoration: none;
+    font-family: 'Open Sans', Arial, sans-serif;
+    color: rgb(12, 55, 136);
+}
+
+a:hover {
+    color: rgb(23, 35, 57);
+}
+
+hr {
+    border-width: 0px 0px 1px;
+    border-style: none none solid;
+    border-color: -moz-use-text-color -moz-use-text-color rgb(255, 255, 255);
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-image: none;
+}
+
+#back-map {
+    z-index: -1;
+}
+
+.limiter {
+    z-index: 9999;
+    position: absolute;
+    top: 0pt;
+    bottom: 0pt;
+    right: 0pt;
+    width: 189px;
+    background: url('green.png') repeat scroll 0% 0% transparent;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.saw {
+    z-index: 9999;
+    position: absolute;
+    top: 0pt;
+    bottom: 0pt;
+    right: 142pt;
+    width: 20px;
+    background: url('saw.png') repeat scroll 0% 0% transparent;
+    overflow-y: scroll;
+    overflow: hidden;
+}
+
+#home,
+#venue {
+    position: absolute;
+    left: 0px;
+    top: 20px;
+    width: 189px;
+}
+
+#venue {
+    display: none;
+}
+
+#back-map {
+    position: absolute;
+    top: 0pt;
+    left: 0pt;
+    right: 0pt;
+    bottom: 0pt;
+}
+
+form {
+    margin: 20px;
+}
+
+input[type="email"] {
+    font: 14px/20px 'Open Sans', Arial, sans-serif;
+    border-radius: 3px 0pt 0pt 3px;
+    height: 20px;
+    width: 185px;
+    padding: 5px;
+    background: none repeat scroll 0% 0% rgb(255, 255, 255);
+    border-right: 5px solid rgba(0, 65, 185, 0.15);
+}
+
+input[type="submit"] {
+    background: none repeat scroll 0% 0% rgb(23, 35, 57);
+    font: 10px/20px 'Open Sans', Arial, sans-serif;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+    border: 0pt none;
+    margin: 0pt;
+    height: 30px;
+    width: 80px;
+    padding: 6px 10px;
+    cursor: pointer;
+    border-radius: 0pt 3px 3px 0pt;
+}
+
+input[type="submit"]:hover {
+    background: none repeat scroll 0% 0% rgb(34, 34, 34);
+}
+
+.section {
+    margin: 30px 40px 0pt;
+    padding: 30px 0px 0pt;
+    border-top: 1px solid rgb(255, 255, 255);
+}
+
+.button {
+    background: url('sprite.png') no-repeat scroll 0% 0% rgb(23, 35, 57);
+    font: 10px/40px 'Open Sans', Arial, sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    border: 0pt none;
+    margin: 0pt 20px;
+    border-radius: 3px 3px 3px 3px;
+    display: block;
+    text-align: center;
+    height: 40px;
+    padding: 10px;
+}
+
+.button:hover {
+    background-color: rgb(34, 34, 34);
+    color: rgb(255, 255, 255);
+}
+
+ul.navigation li a {
+    padding: 10px;
+    height: 40px;
+    text-indent: 20px;
+}
+
+a.submit-session {
+    background-position: 83px -213px;
+}
+
+a.venue {
+    background-position: 83px -295px;
+    margin-top: 10px;
+}
+
+#person-wrapper {
+    position: absolute;
+    bottom: 70%;
+    right: 25%;
+    width: 220px;
+    height: 0px;
+    z-index: 10;
+}
+
+#keyboard-shortcuts {
+    position: absolute;
+    top: 40px;
+    left: -440px;
+    margin-bottom: 10px;
+    color: white;
+    padding: 10px;
+    right: 0px;
+    width: 200px;
+    background: none repeat scroll 0% 0% rgba(52, 152, 219, 0.9);
+    font: 14px/17px 'Open Sans', Arial, sans-serif;
+    border-radius: 3px 3px 3px 3px;
+}
+
+#keyboard-shortcuts:after {
+    position: absolute;
+    bottom: -5px;
+    left: 105px;
+    display: inline-block;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid rgba(52, 152, 219, 0.9);
+    content: "";
+}
+
+#person-marker {
+    position: relative;
+    top: 100px;
+    left: -350px;
+    width: 40px;
+    height: 60px;
+    background-image: url('walk-cycle.png');
+}
+
+.sprite {
+    display: block;
+    background-image: url('img/wiw.png');
+    background-repeat: no-repeat;
+}
+
+.logo {
+    width: 121px;
+    height: 121px;
+    margin: 0pt auto;
+}
+
+.main-title {
+    margin: 0pt auto;
+    color: white;
+    width: 190px;
+    margin-bottom: -15px;
+}
+
+.mountains {
+    width: 320px;
+    height: 100px;
+    background-position: 20px -470px;
+}
+
+.clear {
+    clear: both;
+}
+
+#twitter a {
+    font-family: 'Open Sans';
+}
+
+#twitter {
+    margin: 0pt 20px 20px;
+    padding: 20px;
+    background: none repeat scroll 0% 0% white;
+    border-radius: 3px 3px 3px 3px;
+    position: relative;
+}
+
+#twitter:after {
+    position: absolute;
+    bottom: -5px;
+    left: 135px;
+    display: inline-block;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid white;
+    content: "";
+}
+
+#twitter p.tweet {
+    font: 12px/20px 'Open Sans', Arial, sans-serif;
+    text-align: left;
+    margin-top: 0px;
+}
+
+#twitter a.timestamp {
+    font-size: 10px;
+    font-family: 'Open Sans', Arial, sans-serif;
+    text-align: left;
+}
+
+.mapplace {
+    background: url('transblue.png') repeat scroll 0% 0% transparent;
+    color: white;
+    display: block;
+    width: 100px;
+    position: absolute;
+    padding: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    font: 12px/20px 'Open Sans', Arial, sans-serif;
+    border-radius: 3px 3px 3px 3px;
+    z-index: 20;
+    left: -50px;
+    top: -25px;
+}
+
+.mapplace:after {
+    position: absolute;
+    bottom: -5px;
+    left: 55px;
+    display: inline-block;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid rgba(23, 35, 57, 0.9);
+    content: "";
+}
+
+.mapplace.right-side:after {
+    position: absolute;
+    bottom: 50px;
+    left: -10px;
+    display: inline-block;
+    border-right: 5px solid rgba(23, 35, 57, 0.9);
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    content: "";
+}
+
+.mapplace.left-side:after {
+    position: absolute;
+    bottom: 80px;
+    left: 220px;
+    display: inline-block;
+    border-left: 5px solid rgba(23, 35, 57, 0.9);
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    content: "";
+}
+
+.mapplace a {
+    color: rgb(144, 223, 74);
+    font-family: 'Open Sans';
+}
+
+.mapplace a:hover {
+    color: rgb(129, 200, 103);
+}
+
+.big {
+    width: 180px;
+    padding: 20px;
+}
+
+.big p {
+    font: 18px/20px 'Open Sans', Arial, sans-serif;
+    text-align: center;
+}
+
+.pirate {
+    width: 70px;
+    height: 65px;
+    background: url('pirate.png') no-repeat scroll 0% 0% transparent;
+    padding: 0px;
+    margin: 0px;
+    text-indent: -9999px;
+    overflow: hidden;
+    box-shadow: none;
+}
+
+.birdbutton {
+    background: none repeat scroll 0% 0% rgb(151, 224, 86);
+    border: 2px outset rgb(129, 200, 103);
+    padding: 3px;
+    text-align: center;
+}
+
+.birdbutton:hover {
+    background: none repeat scroll 0% 0% rgb(137, 210, 73);
+}
+
+.birdbutton a {
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+}
+
+#bird {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    z-index: 9999;
+    display: none;
+}
+
+.birdbutton a:hover {
+    color: rgb(0, 0, 0);
+}
+
+.fish,
+.fish_slow {
+    width: 45px;
+    height: 30px;
+    padding: 0px;
+    margin: 0px;
+    text-indent: -9999px;
+    overflow: hidden;
+    box-shadow: none;
+}
+
+.fish {
+    background: url('fish.gif') no-repeat scroll 0% 0% transparent;
+}
+
+.fish_slow {
+    background: url('fish_slow.gif') no-repeat scroll 0% 0% transparent;
+}
+
+#status-message {
+    z-index: 999;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    background: none repeat scroll 0% 0% transparent;
+    font-size: 30px;
+    line-height: 40px;
+    padding: 20px;
+    display: none;
+}
+
+.attribution {
+    position: absolute;
+    bottom: 0px;
+    /* left: 0px; */
+    padding: 5px 10px;
+    right: 0px;
+    z-index: 9999999;
+    color: white;
+}
+
+.tokyo {
+    background: none repeat scroll 0% 0% rgba(23, 35, 57, 0.9);
+}
+
+.tokyo p {
+    background: url('spots.png') no-repeat scroll -720px 0px transparent;
+    padding-top: 180px;
+}
+
+.mapplace.tokyo:after {
+    border: medium none;
+}
+
+.attribution a {
+    font-size: 10px;
+    font-family: 'Open Sans', Arial, sans-serif;
+    color: white;
+}
+
+.spot {
+    padding-top: 90px;
+    background: url('spots.png') no-repeat scroll 0% 0% transparent;
+}
+
+.location-spot {
+    background-position: 100px -5px;
+}
+
+.cafe-spot {
+    background-position: -150px 0px;
+}
+
+.open-spot {
+    background-position: -380px -10px;
+}
+
+.otherevent {
+    margin: 30px 0pt;
+}
+
+.address {
+    text-align: center;
+    display: block;
+}
+
+.address p {
+    margin-top: 0px;
+    font: 14px/21px 'Open Sans', Arial, sans-serif;
+}
+
+.button.home {
+    text-indent: 20px;
+    background-position: 71px -379px;
+}
