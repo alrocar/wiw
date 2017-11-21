@@ -98,10 +98,10 @@ WW.ModestMapsController.prototype = {
         // this.map.removeLayer(this.layer);
         // this.gj.features.push(point);
         // this.layer = L.geoJSON(this.gj.features);
-        var marker = L.marker([point.geometry.coordinates[1], point.geometry.coordinates[0]]).addTo(this.map)
-            .bindPopup(point.properties.text)
-            .openPopup();
-        this.map.addLayer(marker);
+        // var marker = L.marker([point.geometry.coordinates[1], point.geometry.coordinates[0]]).addTo(this.map)
+        //     .bindPopup(point.properties.text)
+        //     .openPopup();
+        // this.map.addLayer(marker);
         // markersLayer.geojson(geoJSON);
     },
 

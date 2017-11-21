@@ -66,6 +66,7 @@ WW.Carto.prototype = {
     },
     start: function() {
         this.correctAnswers = [];
+        this.badAnswers = [];
         var newSql = this.datasetQuery + ' and cartodb_id is null';
         this.sql.setQuery(newSql);
     },
@@ -75,6 +76,7 @@ WW.Carto.prototype = {
         this.sql.setQuery(newSql);
     },
     badAnswer: function(question) {
+        this.badAnswers.push(question.id);
         console.log(question.id);
     }
 }
