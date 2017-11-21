@@ -4,14 +4,14 @@ var previousWW = WW;
 if (!es) {
     var es = {};
     if (!es.alrocar) es.alrocar = {};
-	if (!es.alrocar.WW) es.alrocar.WW = {};
+    if (!es.alrocar.WW) es.alrocar.WW = {};
 }
 
 var WW = es.alrocar.WW = {
-  noConflict: function() {
-    WW = previousWW;
-    return this;
-  }
+    noConflict: function() {
+        WW = previousWW;
+        return this;
+    }
 };
 
 (function(WW) {
@@ -64,7 +64,7 @@ var WW = es.alrocar.WW = {
 
     var sounds = {};
 
-    WW.Game = function(gameModel, user, ui, scoreBoard, map, mapController, character, isMobile) {
+    WW.Game = function(gameModel, user, ui, scoreBoard, map, mapController, character, isMobile, carto) {
         var self = this;
         this.gameModel = gameModel;
         this.user = user;
@@ -75,6 +75,7 @@ var WW = es.alrocar.WW = {
         this.character = character;
         this.mapController.game = this;
         this.isMobile = isMobile;
+        this.carto = carto;
 
         if (this.isMobile) {
             this.hints = $.extend({}, hints, hintsMobile);
@@ -92,18 +93,19 @@ var WW = es.alrocar.WW = {
         });
 
         this.mapController.goToInitPosition();
+        this.carto.init();
 
         return this;
     };
 
     WW.Game.prototype = {
 
-        gameModel : null,
-        user : null,
-        ui : null,
-        scoreBoard : null,
-        map : null,
-        mapController : null,
+        gameModel: null,
+        user: null,
+        ui: null,
+        scoreBoard: null,
+        map: null,
+        mapController: null,
         question: null,
         isStarted: false,
         _lastQuestion: null,
@@ -116,6 +118,7 @@ var WW = es.alrocar.WW = {
         passCounter: 3,
 
         start: function() {
+            this.carto.start();
             this.question = null;
             this._lastQuestion = null;
             this._timeForNextQuestion = null;
@@ -206,7 +209,7 @@ var WW = es.alrocar.WW = {
 
             var penaltyTime = this._getPenalty();
 
-            this._addBadAnswer();
+            this._addBadAnswer(true);
             this._addPoints(-penaltyTime);
             this.ui.removePoints(penaltyTime);
             this.character.showHint(this.hints.pass.format(--this.passCounter), this.hintDuration);
@@ -284,11 +287,11 @@ var WW = es.alrocar.WW = {
         _performCorrectAnswer: function() {
             this._wait = true;
             this.playSound('correct');
-            var questionScore = Math.floor(this.calcScore()/100);
+            var questionScore = Math.floor(this.calcScore() / 100);
             this._addCorrectAnswer();
             this._addPoints(questionScore);
             this.ui.addPoints(questionScore);
-            this.ui.addTime(Math.floor(questionScore/10));
+            this.ui.addTime(Math.floor(questionScore / 10));
             this._addMarker(this.question, questionScore);
             this.ui.correctAnswer(this.nextQuestion, this);
             this.character.showHint(this.hints.welldone, this.hintDuration);
@@ -410,10 +413,12 @@ var WW = es.alrocar.WW = {
         },
 
         _addCorrectAnswer: function() {
+            this.carto.correctAnswer(this.question);
             this.correctAnswers++;
         },
 
-        _addBadAnswer: function() {
+        _addBadAnswer: function(pass) {
+            this.carto.badAnswer(this.question, pass);
             this.badAnswers++;
         },
 
@@ -429,7 +434,7 @@ var WW = es.alrocar.WW = {
                     "coordinates": [question.lon, question.lat]
                 },
                 "properties": {
-                    "text":  question.name  + "  +" +score
+                    "text": question.name + "  +" + score
                 }
             };
 
@@ -437,18 +442,20 @@ var WW = es.alrocar.WW = {
         }
     };
 
-    WW.Question = function(lon, lat, name, p) {
+    WW.Question = function(lon, lat, name, p, id) {
         this.lon = lon;
         this.lat = lat;
         this.name = name;
         this.p = p;
+        this.id = id;
     }
 
     WW.Question.prototype = {
         lon: null,
         lat: null,
         name: null,
-        p: null
+        p: null,
+        id: null
     };
 
     WW.Answer = function(locationPixel, destinationPixel, distance) {
@@ -461,6 +468,25 @@ var WW = es.alrocar.WW = {
         distance: null,
         locationPixel: null,
         destinationPixel: null
+    };
+
+    WW.Dataset = function(userName, query) {
+        this.userName = userName;
+        this.query = query;
+    };
+
+    WW.Dataset.prototype = {
+        getData: function(callback) {
+            $.getJSON('https://' + this.userName + '.carto.com/api/v1/sql?q=' + encodeURIComponent(this.query) + '&format=geojson', function(data) {
+                    callback(data);
+                }).done(function() {
+
+                })
+                .fail(function(jqxhr, textStatus, error) {
+                    var err = textStatus + ", " + error;
+                    callback(null, err);
+                });
+        }
     };
 
     WW.User = function(userName, mail, pass) {
@@ -495,13 +521,12 @@ var WW = es.alrocar.WW = {
     };
 
     //WW.randomFromTo(100,1000) //950
-    WW.randomFromTo = function(from, to){
+    WW.randomFromTo = function(from, to) {
         return Math.floor(Math.random() * (to - from + 1) + from);
     };
 
     //WW.randomItem([1,2,3,4,23,64]) //23
-    WW.randomItem =  function(array){
+    WW.randomItem = function(array) {
         return array[randomFromTo(0, array.length - 1)];
     };
-}
-)(WW);
+})(WW);

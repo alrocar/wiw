@@ -80,6 +80,12 @@ MM.ThrowableHandler = function() {
     };
 
     handler.init = function(map) {
+        map.dragging.disable();
+        map.touchZoom.disable();
+        map.doubleClickZoom.disable();
+        map.scrollWheelZoom.disable();
+        map.boxZoom.disable();
+        map.keyboard.disable();
         function animate(t) {
             var dir = { x: 0, y: 0 };
             if (keysPressed[37]) { dir.x -= 1; }
@@ -94,9 +100,6 @@ MM.ThrowableHandler = function() {
 
             var dt = Math.max(0.1, (t - prevT) / 1000.0);
             if (dir.x || dir.y) {
-
-                console.log('dt: ' + dt);
-                console.log('dir: ' + dir);
                 var len = Math.sqrt(dir.x * dir.x + dir.y * dir.y);
                 dir.x /= len;
                 dir.y /= len;

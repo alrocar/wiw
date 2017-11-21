@@ -81,7 +81,6 @@ WW.ModestMapsController.prototype = {
                 }
                 var destinationPixel = self.toPixel(self.point(game.question.lat, game.question.lon));
                 var distance = self.distance(game.mapController.offset, destinationPixel);
-                console.log(distance);
                 //calculate the answer values
                 var answer = new WW.Answer(game.mapController.offset, destinationPixel, distance);
                 game.isAnswerCorrect(answer);
