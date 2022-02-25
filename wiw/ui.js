@@ -33,8 +33,8 @@ var UI = es.alrocar.UI = {
         '<div class="social container">' +
               '<div class="row">' +
                   '<div class="col-md-12">' +
-                    '<a class="share-button icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://alrocar.github.com/wiw&t=I reached a rank of {0} playing WiW. Try to beat me" target="_blank"></a>' +
-                    '<a class="share-button icon-twitter" href="https://twitter.com/share?source=tweetbutton&text=I reached a rank of {0} playing WiW. Try to beat me&url=http://alrocar.github.com/wiw" target="_blank"></a>' +
+                    '<a class="share-button icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://alrocar.github.io/wiw&t=I reached a rank of {0} playing WiW. Try to beat me" target="_blank"></a>' +
+                    '<a class="share-button icon-twitter" href="https://twitter.com/share?source=tweetbutton&text=I reached a rank of {0} playing WiW. Try to beat me&url=https://alrocar.github.io/wiw" target="_blank"></a>' +
                    '</div>' +
               '</div>' +
           '</div>';
