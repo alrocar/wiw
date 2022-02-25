@@ -326,9 +326,9 @@ var WW = es.alrocar.WW = {
                 this._performCorrectAnswer();
             } 
 
-            if (this._isBlinking()) {
+            //if (this._isBlinking()) {
                 this.character.showHint("Distance: " + Math.round(answer.distance) + " Km.");
-            }
+            //}
             return correct;
         },
 
